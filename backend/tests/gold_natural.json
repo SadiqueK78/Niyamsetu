@@ -1,0 +1,636 @@
+{
+  "gold_version": "1.0",
+  "description": "Natural-language retrieval gold set written by hand from the OCR text of the 19 indexed documents. expected_page is 1-based. negative_trap entries have no answer in the corpus and are excluded from retrieval metrics.",
+  "questions": [
+    {
+      "id": "nat-001",
+      "question": "Nobody runs a proper library in our area and the local trust refuses to; can the State Government open a public library there itself?",
+      "language": "en",
+      "tier": "situation",
+      "expected_file": "GR1.1.pdf",
+      "expected_page": 7,
+      "evidence_snippet": "establish a library for the use of the public in that area :",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-002",
+      "question": "Under the public libraries law, what is the minimum sum the State Government must put into the Library Fund every year?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "GR1.1.pdf",
+      "expected_page": 9,
+      "evidence_snippet": "contribute to the Library Fund every year, a sum not less than twenty-five lakhs of",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-003",
+      "question": "How many times a year must the State Library Council meet at minimum, and how long may pass between two meetings?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "GR1.1.pdf",
+      "expected_page": 6,
+      "evidence_snippet": "The Council shall meet not less than twice in every year, on such dates and",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-004",
+      "question": "I only hold a certificate in library science; how much experience do I need to be nominated as librarian on a District Library Committee?",
+      "language": "en",
+      "tier": "situation",
+      "expected_file": "GR1.2.pdf",
+      "expected_page": 4,
+      "evidence_snippet": "hold a certificate in Library Science with three years experience",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-005",
+      "question": "Within how many days must the Secretary send the minutes of a State Library Council meeting to the presiding authority for approval?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "GR1.2.pdf",
+      "expected_page": 3,
+      "evidence_snippet": "the meeting within fifteen days to the Presiding authority for approval",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-006",
+      "question": "How often, at minimum, is a District Library Committee required to meet under the business procedure rules?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "GR1.2.pdf",
+      "expected_page": 4,
+      "evidence_snippet": "ibrary Committee shall meet at least once in a year on a date to be",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-007",
+      "question": "ग्रंथालय परिषदेत नव्याने सहा सदस्य घेतले असे ऐकले; त्यात विधानसभेचे कोणते आमदार समाविष्ट केले आहेत?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "GR1.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "मा.श्री.दिलीप लांडे, विधानसभा सदस्य सदस्य",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-008",
+      "question": "At which numbered meeting of the State Library Council were the four invited members unanimously approved for inclusion?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "GR1.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "आलेल्या 39 व्या बैठकीमध्ये सर्वानुमते मंजूरी मिळाल्यानुसार खाळील चार निमंत्रित",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-009",
+      "question": "ग्रंथालय परिषदेत सहा सदस्य वाढवणारा निर्णय कोणत्या आधीच्या परिषद-प्रस्थापनेच्या शासन निर्णयावर आधारित आहे?",
+      "language": "mr",
+      "tier": "relationship",
+      "expected_file": "GR1.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "निर्णयान्वये 21 सदस्यीय राज्य ग्रंथालय परिषदेची प्रस्थापना करण्यात आली आहे.",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-010",
+      "question": "जुन्या ग्रंथालय परिषदेची मुदत संपल्यावर ती पुन्हा रचली तेव्हा ग्रंथालय संघाने नाशिक विभागासाठी कोणाला प्रतिनिधी नेमले होते?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "GR1.4.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "3. प्रा.नामदेव जगन्नाथ पाटील सदस्य",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-011",
+      "question": "When the library council was reconstituted after its term expired, which member of the Legislative Council was included as its representative?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "GR1.4.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "1. श्री.रामनाथ मोते ,वि.प.सदस्य",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-012",
+      "question": "ग्रंथालय परिषदेची ही पुनर्रचना कोणत्या जुन्या शासन निर्णयाने रचलेल्या परिषदेची मुदत संपल्यामुळे केली गेली?",
+      "language": "mr",
+      "tier": "relationship",
+      "expected_file": "GR1.4.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "शासन निर्णय -उपरोक्त संदर्भ क्रमांक (1) अन्वये पुनर्रचित करण्यात आलेल्या राज्य ग्रंथालय परिषदेची मुदत",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-013",
+      "question": "सुधारणा कायद्यानंतर ग्रंथालय परिषद नव्याने स्थापन झाली; त्यात माहिती तंत्रज्ञान विभागाचे संचालकही सदस्य आहेत का?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "GR1.5.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "5 संचालक, (माहिती तंत्रज्ञान विभाग) पदसिध्द सदस्य",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-014",
+      "question": "नव्याने स्थापन केलेल्या राज्य ग्रंथालय परिषदेत वांद्रे येथील चेतना महाविद्यालयाच्या कोणत्या ग्रंथपालांना शासन नामनिर्देशित सदस्य केले आहे?",
+      "language": "mr",
+      "tier": "detail",
+      "expected_file": "GR1.5.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "19 डॉ. श्रीमती सिध्दी उमाकांत जगदाळे, ग्रंथालय, चेतना शासन",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-015",
+      "question": "Besides the Library Directorate's letter, which earlier council order of the Higher and Technical Education department does the revised council's establishment cite?",
+      "language": "en",
+      "tier": "relationship",
+      "expected_file": "GR1.5.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "4) शासन निर्णय उच्च व तंत्र शिक्षण विभाग क्र. मराग्रं-1005/(114/05)/ साशि-5,",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-016",
+      "question": "छत्रपती संभाजीनगरच्या विद्यापीठात नवे कौशल्य केंद्र सुरू होत आहे; तिथे विद्यार्थ्यांसाठी ग्रंथालयात अभ्यासिका द्यावी लागेल का?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "GR2.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "विद्यार्थ्यांना अभ्यासिकेची सोय करणे आव्यक आहे.",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-017",
+      "question": "On what funding basis is the new AICTE-approved skill centre at the Marathwada university allowed to start?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "GR2.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "1) सदर मान्यता स्वयं-अर्थसहाय्यीत / कायम विनाअनुदान तत्वावर राहील.",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-018",
+      "question": "विद्यापीठातील नव्या कौशल्य केंद्राला रॅगिंगबाबत कोणता कायदा कठोरपणे लागू करणे बंधनकारक आहे?",
+      "language": "mr",
+      "tier": "detail",
+      "expected_file": "GR2.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "10) रॅगिंगसंदर्भात मा.सर्वोच्च न्यायालयाचे निर्देश व महाराष्ट्र प्रोहिबिशान ऑफ रॅगिंग अँक्ट,",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-019",
+      "question": "मंत्रालयाच्या उपाहारगृहाच्या स्वयंपाकघरात धूर आणि उष्णता बाहेर काढण्याची सोय नाही; नूतनीकरणासाठी एकूण किती खर्च मंजूर झाला?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "GR3.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "तीन कोटी एक लक्ष एकाहत्तर हजार नव्याण्णव फक्त) इतक्या अंदाजित खर्चास खालील अटीच्या अधीन राहून",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-020",
+      "question": "उपाहारगृहाच्या स्वयंपाकगृह आधुनिकीकरणाच्या खर्चासाठी आहरण व संवितरण अधिकारी म्हणून कोणाला घोषित केले आहे?",
+      "language": "mr",
+      "tier": "detail",
+      "expected_file": "GR3.pdf",
+      "expected_page": 3,
+      "evidence_snippet": "4. सदरचा खर्च करण्यासाठी महाव्यवस्थापक, मंत्रालय उपाहारगृहे, मुंबई यांना आहरण व संवितरण अधिकारी",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-021",
+      "question": "मंत्रालय उपाहारगृहाच्या स्वयंपाकगृह आधुनिकीकरणाचा निर्णय कोणत्या अभियंत्यांच्या पत्रांचा संदर्भ घेतो?",
+      "language": "mr",
+      "tier": "relationship",
+      "expected_file": "GR3.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "2) मुख्य अभियंता, सार्वजनिक बांधकाम प्रादेशिक विभाग, मुंबई यांचे जा.क्र.मुअ(मु)/का-2,",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-022",
+      "question": "माझी मुंबईबाहेर बदली झाली पण अजून शासकीय क्वार्टर सोडले नाही; नव्या कार्यालयात घरभाडे भत्ता मिळेल का?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "GR4.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "कार्यालयाच्या आहरण व संवितरण अधिकाऱ्यांकडून घरभाडे भत्ता आणि बदली झाल्यानंतर",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-023",
+      "question": "मुंबईबाहेर बदली झालेल्या कर्मचाऱ्याला निवासस्थान न सोडता घरभाडे भत्ता दिला गेला तर वसुली कोणाकडून करायची?",
+      "language": "mr",
+      "tier": "detail",
+      "expected_file": "GR4.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "निदर्शनास आल्यास त्याची वसूली संबंधित आहरण व संवितरण अधिकाऱ्यांकडून करण्यात यावी.",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-024",
+      "question": "Which earlier government decisions does the order on staff who keep Mumbai quarters after being transferred out list as its references?",
+      "language": "en",
+      "tier": "relationship",
+      "expected_file": "GR4.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "3) शासन निर्णय, वित्त विभाग क्र.सेनिवे 2026/प्र.क्र.35/सेवा-4, दि.03 जून, 2026",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-025",
+      "question": "मी डिसेंबरमध्ये निवृत्त होणार आहे आणि मुलगा दहावीत आहे; शासकीय निवासस्थानात किती काळ राहता येईल?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "GR5.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "जूनअखेरपर्यंत वास्तव्याची मुभा लागू राहील.",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-026",
+      "question": "At what rate is the licence fee charged when a retired employee stays on in government quarters for a child's schooling?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "GR5.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "राहून शासकीय निवासस्थानामध्ये विद्यमान अनुज्ञप्ती शुल्काच्या पाच पट इतक्या दराने",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-027",
+      "question": "निवृत्तीनंतर मुलाच्या शाळेसाठी क्वार्टरमध्ये राहू देण्याचा निर्णय वित्त विभागाच्या कोणत्या आधीच्या निर्णयाचा आधार घेतो?",
+      "language": "mr",
+      "tier": "relationship",
+      "expected_file": "GR5.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "सं.क्र. 3 येथील दिनांक 03 जून, 2026 च्या शासन निर्णयान्वये सेवानिवृत्त शासकीय कर्मचाऱ्यांनी",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-028",
+      "question": "गृह विभागातील एका अवर सचिवांची वित्त विभागात बदली झाली होती, तरी ते अजून गृह विभागातच काम करत आहेत; असे का?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "aadesh 1.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "3. आता या आदेशान्वये श्री. नारायण बीरा माने, अवर सचिव यांच्या बदलीस प्रशासकीय कारणास्तव",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-029",
+      "question": "Until when may the under secretary whose move from Home to Finance was stayed continue in the present department?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "aadesh 1.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "स्थगिती देण्यात येत असून त्यांना एक वर्ष म्हणजेच दिनांक 30.04.2027 पर्यंत ते कार्यरत असलेल्या स्तंभ",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-030",
+      "question": "अवर सचिवांच्या बदलीला स्थगिती देणारा आदेश कोणत्या आधीच्या एकतर्फी कार्यमुक्तीच्या आदेशाचा संदर्भ देतो?",
+      "language": "mr",
+      "tier": "relationship",
+      "expected_file": "aadesh 1.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "बदलीने पदस्थापना करण्यात आली होती. तसेच संदर्भीय दिनांक 05.08.2026 रोजीच्या आदेझान्वये त्यांना",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-031",
+      "question": "वित्त विभागातील कक्ष अधिकाऱ्याला नागपूर महापालिकेत सहायक आयुक्त म्हणून प्रतिनियुक्तीवर पाठवले आहे; हा कालावधी किती वर्षांचा आहे?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "aadesh 2.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "नागपूर महानगरपालिकेतील “सहायक आयुक्त” या पदावर प्रथमत: 03 वर्षाच्या कालावधीसाठी",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-032",
+      "question": "Over a whole career, how many years of deputation in total are allowed to the officer sent to Nagpur Municipal Corporation as assistant commissioner?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "aadesh 2.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "श्री. कोपुलवार यांच्या पूर्ण सेवाकाळात अनुज्ञेय एकूण 10 वर्षांच्या प्रतिनियुक्ती कालावधीतून",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-033",
+      "question": "नागपूर महापालिकेत सहायक आयुक्त म्हणून प्रतिनियुक्तीवर जाणाऱ्या कक्ष अधिकाऱ्याला कोणता विभाग कार्यमुक्त करणार?",
+      "language": "mr",
+      "tier": "detail",
+      "expected_file": "aadesh 2.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "वित्त विभागाने कार्यमुक्त करावे.",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-034",
+      "question": "बदली रद्द व्हावी म्हणून एखाद्या कक्ष अधिकाऱ्याने ओळखीने किंवा थेट दबाव आणला तर त्याचे काय परिणाम होतील?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "aadesh 3.pdf",
+      "expected_page": 4,
+      "evidence_snippet": "आणल्यास संबंधितांची कृती गैरवर्तणूक समजण्यात येईल.",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-035",
+      "question": "In the large inter-departmental reshuffle of Mantralaya section officers, which department is Chinmay Ravindra Marathe posted to?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "aadesh 3.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "श्री | चिन्मय रविंद्र मराठे सामान्य प्रशासन विभाग वैद्यकीय शिक्षण व औषधी द्रव्ये",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-036",
+      "question": "कक्ष अधिकाऱ्यांच्या आंतरविभागीय बदल्या कोणत्या मंडळाच्या शिफारशीनंतर करण्यात आल्या आहेत?",
+      "language": "mr",
+      "tier": "detail",
+      "expected_file": "aadesh 3.pdf",
+      "expected_page": 4,
+      "evidence_snippet": "झाली आहे. सदर बदल्या अधिनियमातील तरतुदीनुसार तसेच नागरी सेवा मंडळाच्या शिफारशीनंतर करण्यात",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-037",
+      "question": "मागील वर्षी बदलीला मुदतवाढ मिळालेल्या दोन कक्ष अधिकाऱ्यांना आता कार्यमुक्त केले; नियोजन विभागातील अधिकारी कुठे जाणार?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "aadesh 4.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "2. श्री । सुधीर शंकर केळसकर नियोजन विभाग वैद्यकीय शिक्षण व औषधी",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-038",
+      "question": "आता कार्यमुक्त केलेल्या त्या दोन कक्ष अधिकाऱ्यांच्या बदलीला आधी कोणत्या तारखेपर्यंत मुदतवाढ दिली होती?",
+      "language": "mr",
+      "tier": "detail",
+      "expected_file": "aadesh 4.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "12.08.2025 रोजीच्या आदेशान्वये खालील अधिकाऱ्यांच्या बदलीस दिनांक 30.04.2026 पर्यंत मुदतवाढ",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-039",
+      "question": "मुदतवाढ संपलेल्या दोन कक्ष अधिकाऱ्यांना कार्यमुक्त करणारा आदेश कोणत्या आधीच्या आदेशांचा संदर्भ देतो?",
+      "language": "mr",
+      "tier": "relationship",
+      "expected_file": "aadesh 4.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "2) सा.प्र.वि., शासन आदेश समक्रमांक दि.12.08.2025",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-040",
+      "question": "नागपूर सुधार प्रन्यासातील मुख्य लेखा व वित्त अधिकाऱ्याला माहिती आयोगात उप सचिव म्हणून पाठवले; त्यांना कार्यमुक्त कोण करणार?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "aadesh 5.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "4. सभापती, सुधार प्रन्यास, नागपूर यांनी श्री.खडसे यांना तात्काळ कार्यमुक्त करावे.",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-041",
+      "question": "For how long is the Nagpur Improvement Trust finance officer appointed on deputation to the State Information Commission's Nagpur bench?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "aadesh 5.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "3 वर्षाच्या कालावधीसाठी प्रतिनियुक्तीने नियुक्‍ती करण्यात येत आहे.",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-042",
+      "question": "माहिती आयोगातील उप सचिव पदावरील प्रतिनियुक्तीचा आदेश प्रतिनियुक्ती धोरणाच्या कोणत्या शासन निर्णयांचा आधार घेतो?",
+      "language": "mr",
+      "tier": "relationship",
+      "expected_file": "aadesh 5.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "निश्चित करण्यात आले असून, संदर्भाधिन क्र. 2 येथील दि. 16-02-2018 च्या शासन निर्णयान्वये सदर",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-043",
+      "question": "आमच्या विभागातील एकाही उप सचिवाला अल्पसंख्यांक संशोधन संस्थेच्या संचालक पदावर जायचे नाही; मग आम्ही काय कळवायचे?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "letter 1.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "कृपया दिनांक 07.09.2026 पर्यंत या विभागास कळविण्यात यावे.",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-044",
+      "question": "Once a deputy secretary has been selected for the minority research institute director post, can the department withdraw that officer's name?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "letter 1.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "6. एकदा निवड झालेल्या उपसचिव संवर्गातील अधिकाऱ्यांचे नांव मागे घेता येणार नाही. तसेच,",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-045",
+      "question": "अल्पसंख्यांक संशोधन संस्थेच्या संचालक पदाच्या पत्रानुसार मंत्रालयीन प्रतिनियुक्तीची कार्यपद्धती कोणत्या शासन निर्णयाने ठरवली आहे?",
+      "language": "mr",
+      "tier": "relationship",
+      "expected_file": "letter 1.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "सुधारणा करण्यात आली आहे. तसेच, संदर्भाधिन क्र.3 येथील दिनांक 31.8.2017 च्या शासन निर्णयान्वये",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-046",
+      "question": "The order fixing permanent and temporary posts at the Sainik Kalyan office in Pune went out with the wrong reference number; what correction was issued?",
+      "language": "en",
+      "tier": "situation",
+      "expected_file": "letter 2.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "क्रमांक : सैकवि-2026/प्र.क्र.147/मासैक\" याऐवजी\" शासन शुद्धीपत्रक क्रमांक : सैकवि-",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-047",
+      "question": "सैनिक कल्याण विभागाच्या पुणे कार्यालयातील पदांबाबतच्या शुद्धीपत्रकावर कोणत्या अवर सचिवांची स्वाक्षरी आहे?",
+      "language": "mr",
+      "tier": "detail",
+      "expected_file": "letter 2.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "(उर्मिला सावंत)",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-048",
+      "question": "सैनिक कल्याण कार्यालयाच्या आकृतीबंधाबाबतचे शुद्धीपत्रक कोणत्या आधीच्या शासन निर्णयात दुरुस्ती करते?",
+      "language": "mr",
+      "tier": "relationship",
+      "expected_file": "letter 2.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "3 च्या शासन निर्णयान्वये निश्चित करण्यात आलेली आहेत. सदर शासन निर्णयामध्ये \"शासन निर्णय",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-049",
+      "question": "मला वसंतराव नाईक कृषी विस्तार प्रशिक्षण संस्थेत सहाय्यक प्राध्यापक (कायदा) म्हणून प्रतिनियुक्तीवर जायचे आहे; अर्ज कोणामार्फत पाठवायचा?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "letter 3.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "नमून्यात टंकलिखित करुन त्यांच्या प्रशासकीय विभागामार्फत निम्न स्वाक्षरीतांकडे दिनांक 25/08/2026 पर्यंत",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-050",
+      "question": "Up to how many years can a deputation at the Vasantrao Naik agricultural extension training institute in Nagpur be extended?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "letter 3.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "जास्त 5 वर्षापर्यंत वाढविता येईल.",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-051",
+      "question": "वसंतराव नाईक संस्थेतील प्रतिनियुक्तीच्या पदांची भरती कार्यपद्धती कोणत्या शासन निर्णयात विहित आहे असे पत्र सांगते?",
+      "language": "mr",
+      "tier": "relationship",
+      "expected_file": "letter 3.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "दि.7.1.2020 मध्ये नमुद केलेली पदे भरण्याची कार्यपध्दती व प्रतिनियुक्तीने भरण्यात येणाऱ्या पदांच्या कर्तव्ये व",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-052",
+      "question": "उप सचिव संवर्गाची तात्पुरती ज्येष्ठतासूची अंतिम झाली का, आणि त्यावर कोणी हरकत घेतली होती का?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "paripatrika 1.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "हरकती व सूचना मागविण्यासाठी प्रसिध्द करण्यात आली होती. त्यास अनुसरून कोणतेही आक्षेप प्राप्त झालेले",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-053",
+      "question": "The final deputy secretary seniority list is subject to which pending Supreme Court petition on reservation in promotion?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "paripatrika 1.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "विशेष अनुज्ञा याचिका (SLP) क्र. 28306/2017 .",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-054",
+      "question": "उप सचिव संवर्गाची ज्येष्ठतासूची तयार करताना कोणत्या ज्येष्ठता नियमावलीतील तरतुदींचा अवलंब केला आहे?",
+      "language": "mr",
+      "tier": "relationship",
+      "expected_file": "paripatrika 1.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "महाराष्ट्र नागरी सेवा (ज्येष्ठतेचे विनियमन) नियमावली, 2021 मधील तरतुदींचा अवलंब करण्यात आला आहे.",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-055",
+      "question": "आमच्या जिल्हाधिकारी कार्यालयाला कुसुमाग्रजांच्या जन्मदिनी मराठी भाषेचा कार्यक्रम घ्यायचा आहे; त्यासाठी किती निधी मिळतो?",
+      "language": "mr",
+      "tier": "situation",
+      "expected_file": "paripatrika 2.pdf",
+      "expected_page": 5,
+      "evidence_snippet": "निधी विभागीय आयुक्‍त व जिल्हाधिकारी यांना रु.30,000/- इतका निधी उपलब्ध करुन देण्यात",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-056",
+      "question": "For the Marathi language pride day programmes, which literary body helps organise events in Kolhapur district?",
+      "language": "en",
+      "tier": "detail",
+      "expected_file": "paripatrika 2.pdf",
+      "expected_page": 4,
+      "evidence_snippet": "5. | दक्षिण महाराष्ट्र साहित्य | कोल्हापूर",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-057",
+      "question": "मराठी भाषा गौरव दिन साजरा करण्याच्या सूचना मुळात कोणत्या आधीच्या शासन निर्णयाने देण्यात आल्या होत्या?",
+      "language": "mr",
+      "tier": "relationship",
+      "expected_file": "paripatrika 2.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "गौरव दिन\" म्हणून साजरा करण्याच्या सूचना यापूर्वी दिनांक 21 जानेवारी, 2013 च्या शासन",
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-058",
+      "question": "अंगणवाडी सेविकांच्या मानधनात वाढ करण्याबाबत शासनाने काय निर्णय घेतला आहे?",
+      "language": "mr",
+      "tier": "negative_trap",
+      "expected_file": null,
+      "expected_page": null,
+      "evidence_snippet": null,
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-059",
+      "question": "शेतकऱ्यांना पीक कर्जमाफीचा लाभ घेण्यासाठी अर्ज कसा करायचा?",
+      "language": "mr",
+      "tier": "negative_trap",
+      "expected_file": null,
+      "expected_page": null,
+      "evidence_snippet": null,
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-060",
+      "question": "How much has the dearness allowance of state government employees been increased?",
+      "language": "en",
+      "tier": "negative_trap",
+      "expected_file": null,
+      "expected_page": null,
+      "evidence_snippet": null,
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-061",
+      "question": "पवित्र पोर्टलवरून शिक्षक भरतीसाठी नोंदणी करण्याची अंतिम मुदत कोणती आहे?",
+      "language": "mr",
+      "tier": "negative_trap",
+      "expected_file": null,
+      "expected_page": null,
+      "evidence_snippet": null,
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-062",
+      "question": "What compensation do farmers get for crops damaged by unseasonal rain or hailstorm?",
+      "language": "en",
+      "tier": "negative_trap",
+      "expected_file": null,
+      "expected_page": null,
+      "evidence_snippet": null,
+      "review_status": "draft"
+    },
+    {
+      "id": "nat-063",
+      "question": "शिधापत्रिकेत कुटुंबातील नवीन सदस्याचे नाव कसे जोडायचे?",
+      "language": "mr",
+      "tier": "negative_trap",
+      "expected_file": null,
+      "expected_page": null,
+      "evidence_snippet": null,
+      "review_status": "draft"
+    }
+  ]
+}

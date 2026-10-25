@@ -5,7 +5,7 @@
 # Every other module imports from here — never hardcode values elsewhere.
 # ─────────────────────────────────────────────────────────
 
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from pathlib import Path
 
 
@@ -27,9 +27,9 @@ class Settings(BaseSettings):
     # Where Ollama is running — always localhost for on-premise
     OLLAMA_BASE_URL: str = "http://localhost:11434"
     # Model used to generate embeddings (converts text to vectors)
-    EMBEDDING_MODEL: str = "nomic-embed-text"
+    EMBEDDING_MODEL: str = "bge-m3"
     # Model used to generate answers (the actual LLM)
-    LLM_MODEL: str = "phi4-mini"
+    LLM_MODEL: str = "qwen2.5:7b"
     # Hard ceiling on a single LLM call, in seconds.
     # Without this the Ollama client defaults to timeout=None — an unbounded
     # wait. A client that gave up long ago leaves the generation running, and
@@ -60,6 +60,17 @@ class Settings(BaseSettings):
     # hit the allocation failure above. 30m spans idle gaps in a chat session.
     LLM_KEEP_ALIVE: str = "30m"
 
+    # ── Remote LLM Provider (e.g., Google Colab) ──────────
+    # URL for the remote inference API (e.g., https://your-colab-url.ngrok.io)
+    # Leave empty to use local Ollama (default behavior)
+    COLAB_API_URL: str = ""
+    # API key for the remote inference API
+    # Format: X-API-Key: <secret> header
+    COLAB_API_KEY: str = ""
+    # Hard ceiling on a single remote LLM call, in seconds.
+    # Without this, requests could hang indefinitely.
+    COLAB_LLM_TIMEOUT: float = 60.0
+
     # ── RAG settings ──────────────────────────────────────
     # How many characters per chunk when splitting PDFs
     CHUNK_SIZE: int = 800
@@ -69,6 +80,65 @@ class Settings(BaseSettings):
     TOP_K: int = 12
     # How many previous chat turns to include for context
     CONTEXT_WINDOW: int = 6
+
+    # ── Retrieval and answer experiments ──────────────────
+    # Every flag in this section defaults to the behaviour that existed
+    # before it, so a deployment that sets none of them runs identically
+    # to one that has never heard of them.
+
+    # Narrow the context to the few source files that dominate the
+    # ranking, instead of sending every retrieved chunk to the LLM.
+    ROUTE_ENABLED: bool = False
+    # How many source files survive routing.
+    ROUTE_TOP_DOCS: int = 3
+    # How deep to retrieve before routing scores the files. Larger than
+    # TOP_K on purpose — routing needs a pool to measure, not a shortlist.
+    ROUTE_POOL_K: int = 30
+    # Ceiling on how many chunks routing passes through.
+    ROUTE_MAX_CHUNKS: int = 8
+
+    # Prepend each kept file's header chunk, so the LLM sees the GR
+    # number, date and department that body chunks leave out.
+    HEADER_INJECT: bool = False
+
+    # Ask the LLM for synonym phrasings of the question and retrieve on
+    # all of them. Costs one extra LLM call per question.
+    QUERY_REWRITE: bool = False
+    # Hard ceiling on that rewrite call, in seconds. On timeout the
+    # original question is used and nothing else changes.
+    QUERY_REWRITE_TIMEOUT: float = 25.0
+
+    # Second LLM pass that checks the generated answer against the same
+    # context block, and refuses rather than answer unsupported claims.
+    ANSWER_VERIFY: bool = False
+    # Hard ceiling on that verification call, in seconds. On timeout the
+    # original answer is kept.
+    VERIFY_TIMEOUT: float = 40.0
+
+    # Pull in chunks from documents the retrieved ones are linked to in the
+    # GR relationship graph — the superseding order, the amendment — which
+    # keyword and vector search both miss because they share no wording
+    # with the question.
+    GRAPH_EXPAND: bool = False
+    # Number of top-ranked distinct files whose graph neighbours may be added.
+    GRAPH_SEED_DOCS: int = 2
+    # How many linked documents may contribute chunks to one answer.
+    GRAPH_MAX_NEIGHBOR_DOCS: int = 2
+    # How many chunks are taken from each of them.
+    GRAPH_CHUNKS_PER_NEIGHBOR: int = 3
+
+    # Answer header questions — the date, the department, the GR number —
+    # straight from the extracted metadata table, with no retrieval and no
+    # LLM call. Only fires on questions that name one document and ask for
+    # one of those three fields; everything else takes the normal path.
+    META_FASTPATH: bool = False
+
+    # For a query written in Latin script, skip BM25 and return the dense
+    # ranking alone. The corpus is almost entirely Devanagari OCR, so an
+    # English query's terms rarely occur in it and the lexical side adds
+    # rank noise rather than evidence. Devanagari and mixed queries are
+    # fused exactly as before.
+    SCRIPT_AWARE_FUSION: bool = False
 
     # ── CORS ──────────────────────────────────────────────
     # Browser origins allowed to call this API, comma-separated.
@@ -149,11 +219,14 @@ class Settings(BaseSettings):
         # Where generated summary files are saved
         return Path(self.DATA_DIR) / "summaries"
 
-    class Config:
+    # pydantic-settings v2 configuration. Replaces the class-based
+    # `class Config`, which pydantic v2 deprecated.
+    model_config = SettingsConfigDict(
         # Tells pydantic to read values from the .env file automatically
-        env_file = ".env"
+        env_file=".env",
         # If a variable is in .env but not defined above, ignore it
-        extra = "ignore"
+        extra="ignore",
+    )
 
 
 # ── Single instance used across the entire app ────────────
