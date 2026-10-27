@@ -1,0 +1,11 @@
+metric,value,k,n
+answer_correct,0.413,31,75
+answer_correct_or_partial,0.48,36,75
+citation_file_hit,1.0,75,75
+top_citation,0.76,57,75
+false_refusal,0.093,7,75
+correct_refusal,0.5,3,6
+language_match,0.975,79,81
+median_sec,5.32,,
+p90_sec,10.38,,
+max_sec,23.86,,

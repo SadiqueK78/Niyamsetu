@@ -108,7 +108,10 @@ async def _run_embedding_job(filenames: list = None):
         # scoped run that marked the whole folder embedded would flag
         # documents that were never touched.
         if filenames is None:
-            pdf_files = list(settings.GRDOCS_PATH.glob("*.pdf"))
+            pdf_files = [
+                path for pattern in ("*.pdf", "*.txt")
+                for path in settings.GRDOCS_PATH.glob(pattern)
+            ]
         else:
             pdf_files = [settings.GRDOCS_PATH / name for name in filenames]
         _embed_state["total_files"] = len(pdf_files)
@@ -270,11 +273,14 @@ async def start_embedding(
         scope_note = f"{len(selected)} selected PDF(s)"
     else:
         # Check there are PDFs to embed
-        pdf_files = [f.name for f in settings.GRDOCS_PATH.glob("*.pdf")]
+        pdf_files = [
+            f.name for pattern in ("*.pdf", "*.txt")
+            for f in settings.GRDOCS_PATH.glob(pattern)
+        ]
         if not pdf_files:
             return {
                 "success": False,
-                "message": "No PDF files found. Upload some GR documents first.",
+                "message": "No PDF or text files found. Upload some GR documents first.",
                 "state":   _embed_state,
             }
         scope_note = f"{len(pdf_files)} PDF(s)"

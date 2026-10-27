@@ -1,0 +1,25 @@
+﻿Group,Configuration,n,Hit@1,Hit@3,MRR
+detail,Dense (bge-m3),38,65.8% (25/38),78.9% (30/38),0.756
+detail,BM25,38,76.3% (29/38),94.7% (36/38),0.860
+detail,Hybrid (RRF),38,76.3% (29/38),97.4% (37/38),0.858
+detail,Hybrid + routing,38,76.3% (29/38),86.8% (33/38),0.816
+detail,Hybrid + routing + graph,38,76.3% (29/38),86.8% (33/38),0.816
+detail,Hybrid + graph,38,76.3% (29/38),97.4% (37/38),0.858
+detail,"Hybrid, script-aware",38,73.7% (28/38),84.2% (32/38),0.822
+detail,Script-aware + reranker,38,84.2% (32/38),97.4% (37/38),0.899
+disambiguation,Dense (bge-m3),20,40.0% (8/20),65.0% (13/20),0.571
+disambiguation,BM25,20,75.0% (15/20),95.0% (19/20),0.854
+disambiguation,Hybrid (RRF),20,60.0% (12/20),95.0% (19/20),0.765
+disambiguation,Hybrid + routing,20,60.0% (12/20),85.0% (17/20),0.717
+disambiguation,Hybrid + routing + graph,20,60.0% (12/20),85.0% (17/20),0.717
+disambiguation,Hybrid + graph,20,60.0% (12/20),95.0% (19/20),0.765
+disambiguation,"Hybrid, script-aware",20,50.0% (10/20),75.0% (15/20),0.658
+disambiguation,Script-aware + reranker,20,75.0% (15/20),90.0% (18/20),0.838
+situation,Dense (bge-m3),17,88.2% (15/17),94.1% (16/17),0.912
+situation,BM25,17,82.4% (14/17),94.1% (16/17),0.897
+situation,Hybrid (RRF),17,94.1% (16/17),100.0% (17/17),0.961
+situation,Hybrid + routing,17,88.2% (15/17),94.1% (16/17),0.902
+situation,Hybrid + routing + graph,17,88.2% (15/17),94.1% (16/17),0.902
+situation,Hybrid + graph,17,94.1% (16/17),100.0% (17/17),0.961
+situation,"Hybrid, script-aware",17,88.2% (15/17),100.0% (17/17),0.931
+situation,Script-aware + reranker,17,94.1% (16/17),100.0% (17/17),0.971

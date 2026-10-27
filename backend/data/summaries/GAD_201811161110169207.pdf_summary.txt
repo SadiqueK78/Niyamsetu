@@ -1,0 +1,38 @@
+GR DOCUMENT: GAD_201811161110169207.pdf.txt
+Processed: 2026-10-27 06:51:26.257683+00:00
+============================================================
+
+METADATA
+----------------------------------------
+{
+  "gr_number": "सदन २०१८/१२५/प्र.क्र.४३/२०-अ",
+  "department": "सामान्य प्रशासन विभाग",
+  "issue_date": "१७ नोव्हेंबर, २०१८",
+  "subject": "नवीन महाराष्ट्र सदन, नवी दिल्ली येथील कक्षबंधांचे आरक्षण व दर यामध्ये सुधारणा व आदेशांचे एकत्रिकरण",
+  "applicable_region": "महाराष्ट्र",
+  "signatory": "महाराष्ट्र शासन"
+}
+
+============================================================
+
+SUMMARY
+----------------------------------------
+1. PURPOSE
+The resolution aims to consolidate and streamline the allocation of rooms and rates for the new Maharashtra House in New Delhi, enhancing the living conditions for officials residing there.
+
+2. KEY PROVISIONS
+- Room allocation and rates for various officials are specified.
+- Certain officials are exempt from room charges.
+- Additional provisions for special cases and additional room requests are outlined.
+
+3. BENEFICIARIES / TARGET GROUP
+Officials residing in the new Maharashtra House in New Delhi, including members of the Maharashtra Legislative Assembly, Vidhan Sabha, and other government servants.
+
+4. FINANCIAL IMPLICATIONS
+Monetary allocations for room charges and exemptions are specified for various officials.
+
+5. IMPLEMENTATION
+The resolution takes effect immediately upon issuance.
+
+6. IMPORTANT DATES / DEADLINES
+Not specified.

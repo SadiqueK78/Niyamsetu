@@ -1,0 +1,15 @@
+﻿Test module,Test cases,Passed,Failed/errors,Time (s)
+test_units,21,21,0,0.01
+test_config,11,11,0,0.4
+test_condense,17,17,0,1.48
+test_eval_followups,10,10,0,0.13
+test_explained,21,21,0,0.01
+test_files_api,23,23,0,0.59
+test_graph,96,96,0,0.05
+test_harness_natural,47,47,0,0.51
+test_meta,99,99,0,0.02
+test_quick_eval,24,24,0,0.18
+test_reranker,21,21,0,2.75
+test_script_aware_fusion,14,14,0,0.01
+test_summary_v2,33,33,0,0.07
+TOTAL,437,437,0,6.21

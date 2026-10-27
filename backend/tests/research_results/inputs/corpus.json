@@ -1,0 +1,580 @@
+{
+ "summary": {
+  "docs": 25,
+  "chunks": 1098,
+  "total_chars": 1990100,
+  "mean_chunk": 1852,
+  "median_chunk": 2124.0,
+  "max_chunk": 2500,
+  "min_chunk": 8,
+  "types": {
+   "GR": 6,
+   "Circular": 3,
+   "Order": 6,
+   "Memorandum": 10
+  },
+  "years": {
+   "2018": 2,
+   "2021": 5,
+   "2022": 1,
+   "2023": 2,
+   "2024": 5,
+   "2025": 7,
+   "2026": 3
+  },
+  "chunking": {
+   "section": 33,
+   "section_split": 926,
+   "fallback": 139
+  },
+  "section_types": [
+   [
+    "वाचा",
+    533
+   ],
+   [
+    "शासन निर्णय",
+    220
+   ],
+   [
+    "__none__",
+    139
+   ],
+   [
+    "शासन आदेश",
+    119
+   ],
+   [
+    "संदर्भ",
+    30
+   ],
+   [
+    "शासन परिपत्रक",
+    28
+   ],
+   [
+    "__header__",
+    24
+   ],
+   [
+    "प्रस्तावना",
+    5
+   ]
+  ],
+  "dim": 1024,
+  "ntotal": 1098,
+  "index_type": "IndexFlatL2"
+ },
+ "rows": [
+  {
+   "file": "GAD_201811161110169207.pdf.txt",
+   "year": 2018,
+   "type": "GR",
+   "chars": 61511,
+   "marathi_chars": 22192,
+   "english_chars": 39319,
+   "devanagari": 14139,
+   "latin": 14550,
+   "chunks": 30,
+   "avg_chunk": 2115,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 1,
+    "प्रस्तावना": 1,
+    "शासन निर्णय": 27
+   },
+   "tables": 108,
+   "date": "2018-11-17",
+   "title": "New Maharashtra Sadan (Delhi): room reservation & rates, consolidated",
+   "short": "Sadan room rates 2018"
+  },
+  {
+   "file": "GAD_201812201818380207.pdf.txt",
+   "year": 2018,
+   "type": "GR",
+   "chars": 117455,
+   "marathi_chars": 55589,
+   "english_chars": 61866,
+   "devanagari": 43937,
+   "latin": 44819,
+   "chunks": 53,
+   "avg_chunk": 2252,
+   "sections": {
+    "__header__": 1,
+    "संदर्भ": 1,
+    "शासन निर्णय": 51
+   },
+   "tables": 28,
+   "date": "2018-12-20",
+   "title": "Government Communication (advertisement) Rules, 2018",
+   "short": "Advertisement rules"
+  },
+  {
+   "file": "GAD_202102011814485107.pdf.txt",
+   "year": 2021,
+   "type": "Circular",
+   "chars": 55328,
+   "marathi_chars": 26066,
+   "english_chars": 29262,
+   "devanagari": 21503,
+   "latin": 24213,
+   "chunks": 28,
+   "avg_chunk": 2015,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 27
+   },
+   "tables": 0,
+   "date": "2021-02-01",
+   "title": "Foreign tours of officers: norms & procedure (consolidated)",
+   "short": "Foreign tours"
+  },
+  {
+   "file": "GAD_202102161256152607.pdf.txt",
+   "year": 2021,
+   "type": "GR",
+   "chars": 108248,
+   "marathi_chars": 47313,
+   "english_chars": 60935,
+   "devanagari": 3688,
+   "latin": 30646,
+   "chunks": 65,
+   "avg_chunk": 1711,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 1,
+    "प्रस्तावना": 1,
+    "शासन निर्णय": 62
+   },
+   "tables": 42,
+   "date": "2021-02-16",
+   "title": "Posts identified for PwD in Lok Ayukta office (RPwD Act s.33)",
+   "short": "PwD posts, Lok Ayukta"
+  },
+  {
+   "file": "GAD_202105201508210107.pdf.txt",
+   "year": 2021,
+   "type": "Circular",
+   "chars": 63105,
+   "marathi_chars": 23794,
+   "english_chars": 39311,
+   "devanagari": 10844,
+   "latin": 11881,
+   "chunks": 30,
+   "avg_chunk": 2161,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 1,
+    "शासन परिपत्रक": 28
+   },
+   "tables": 94,
+   "date": "2021-05-20",
+   "title": "Section Officer provisional seniority list 1986–2016",
+   "short": "SO seniority list"
+  },
+  {
+   "file": "GAD_202108301543421007.pdf.txt",
+   "year": 2021,
+   "type": "Order",
+   "chars": 67233,
+   "marathi_chars": 22083,
+   "english_chars": 45150,
+   "devanagari": 13011,
+   "latin": 15941,
+   "chunks": 30,
+   "avg_chunk": 2292,
+   "sections": {
+    "__header__": 1,
+    "संदर्भ": 29
+   },
+   "tables": 336,
+   "date": "2021-08-30",
+   "title": "Ad hoc promotion: Clerk-Typist → Asst. Section Officer 2020-21",
+   "short": "Ad hoc promo CT→ASO"
+  },
+  {
+   "file": "GAD_202109011815562507.pdf.txt",
+   "year": 2021,
+   "type": "Order",
+   "chars": 86419,
+   "marathi_chars": 27005,
+   "english_chars": 59414,
+   "devanagari": 13249,
+   "latin": 16171,
+   "chunks": 139,
+   "avg_chunk": 679,
+   "sections": {
+    "__none__": 139
+   },
+   "tables": 540,
+   "date": "2021-08-30",
+   "title": "Promotion: Asst. Section Officer → Section Officer 2020-21",
+   "short": "Promo ASO→SO"
+  },
+  {
+   "file": "GAD_202205041847101207.pdf.txt",
+   "year": 2022,
+   "type": "GR",
+   "chars": 56286,
+   "marathi_chars": 23509,
+   "english_chars": 32777,
+   "devanagari": 18017,
+   "latin": 20107,
+   "chunks": 26,
+   "avg_chunk": 2216,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 2,
+    "शासन निर्णय": 23
+   },
+   "tables": 66,
+   "date": "2022-05-04",
+   "title": "Direct recruitment to Gr-B/C/D posts (ex-SSSB): consolidated guidelines",
+   "short": "Direct recruitment rules"
+  },
+  {
+   "file": "GAD_202305111444322707.pdf.txt",
+   "year": 2023,
+   "type": "Order",
+   "chars": 71094,
+   "marathi_chars": 23091,
+   "english_chars": 48003,
+   "devanagari": 14748,
+   "latin": 19985,
+   "chunks": 31,
+   "avg_chunk": 2336,
+   "sections": {
+    "__header__": 1,
+    "शासन आदेश": 30
+   },
+   "tables": 466,
+   "date": "2023-05-11",
+   "title": "Inter-departmental transfers of Asst. Section Officers",
+   "short": "ASO transfers 2023"
+  },
+  {
+   "file": "GAD_202305111455014207.pdf.txt",
+   "year": 2023,
+   "type": "Order",
+   "chars": 68358,
+   "marathi_chars": 22660,
+   "english_chars": 45698,
+   "devanagari": 13484,
+   "latin": 17713,
+   "chunks": 30,
+   "avg_chunk": 2321,
+   "sections": {
+    "__header__": 1,
+    "शासन आदेश": 29
+   },
+   "tables": 440,
+   "date": "2023-05-11",
+   "title": "Inter-departmental transfers of Clerk-Typists",
+   "short": "CT transfers 2023"
+  },
+  {
+   "file": "GAD_202401091710039807.pdf.txt",
+   "year": 2024,
+   "type": "Memorandum",
+   "chars": 97753,
+   "marathi_chars": 48547,
+   "english_chars": 49206,
+   "devanagari": 21050,
+   "latin": 14661,
+   "chunks": 53,
+   "avg_chunk": 1871,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 52
+   },
+   "tables": 72,
+   "date": "2024-01-09",
+   "title": "Clerk-Typist Exam 2021: waiting-list allotment (142)",
+   "short": "CT 2021 waitlist"
+  },
+  {
+   "file": "GAD_202402081834533907.pdf.txt",
+   "year": 2024,
+   "type": "Memorandum",
+   "chars": 114907,
+   "marathi_chars": 45752,
+   "english_chars": 69155,
+   "devanagari": 20139,
+   "latin": 17042,
+   "chunks": 62,
+   "avg_chunk": 1871,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 61
+   },
+   "tables": 70,
+   "date": "2024-02-08",
+   "title": "Clerk-Typist Exam 2022: main-list allotment",
+   "short": "CT 2022 main list"
+  },
+  {
+   "file": "GAD_202405271658209807.pdf.txt",
+   "year": 2024,
+   "type": "Circular",
+   "chars": 67400,
+   "marathi_chars": 21799,
+   "english_chars": 45601,
+   "devanagari": 12109,
+   "latin": 10412,
+   "chunks": 30,
+   "avg_chunk": 2301,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 29
+   },
+   "tables": 312,
+   "date": "2024-05-27",
+   "title": "Date of regular promotion to Joint Secretary",
+   "short": "Joint Secy promotion"
+  },
+  {
+   "file": "GAD_202406201431224807.pdf.txt",
+   "year": 2024,
+   "type": "Memorandum",
+   "chars": 92716,
+   "marathi_chars": 47757,
+   "english_chars": 44959,
+   "devanagari": 20453,
+   "latin": 13793,
+   "chunks": 50,
+   "avg_chunk": 1876,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 49
+   },
+   "tables": 64,
+   "date": "2024-06-20",
+   "title": "Clerk-Typist Exam 2022: waiting-list allotment (155)",
+   "short": "CT 2022 waitlist"
+  },
+  {
+   "file": "GAD_202412311532051007.pdf.txt",
+   "year": 2024,
+   "type": "Memorandum",
+   "chars": 92997,
+   "marathi_chars": 41161,
+   "english_chars": 51836,
+   "devanagari": 17787,
+   "latin": 13651,
+   "chunks": 49,
+   "avg_chunk": 1915,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 48
+   },
+   "tables": 60,
+   "date": "2024-12-31",
+   "title": "Steno-Typist Exam 2022: main-list allotment",
+   "short": "Steno-typist main"
+  },
+  {
+   "file": "GAD_202504221732089007.pdf.txt",
+   "year": 2025,
+   "type": "GR",
+   "chars": 52991,
+   "marathi_chars": 24692,
+   "english_chars": 28299,
+   "devanagari": 19053,
+   "latin": 24279,
+   "chunks": 25,
+   "avg_chunk": 2222,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 1,
+    "प्रस्तावना": 2,
+    "शासन निर्णय": 21
+   },
+   "tables": 0,
+   "date": "2025-04-22",
+   "title": "Review of suspended employees' cases: consolidated guidelines",
+   "short": "Suspension review"
+  },
+  {
+   "file": "GAD_202506201818570507.pdf.txt",
+   "year": 2025,
+   "type": "Order",
+   "chars": 72493,
+   "marathi_chars": 24412,
+   "english_chars": 48081,
+   "devanagari": 15572,
+   "latin": 20356,
+   "chunks": 32,
+   "avg_chunk": 2303,
+   "sections": {
+    "__header__": 1,
+    "शासन आदेश": 31
+   },
+   "tables": 446,
+   "date": "2025-06-20",
+   "title": "Inter-departmental transfers of Clerk-Typists",
+   "short": "CT transfers 2025"
+  },
+  {
+   "file": "GAD_202506201827169907.pdf.txt",
+   "year": 2025,
+   "type": "Order",
+   "chars": 67026,
+   "marathi_chars": 21248,
+   "english_chars": 45778,
+   "devanagari": 13860,
+   "latin": 18184,
+   "chunks": 30,
+   "avg_chunk": 2284,
+   "sections": {
+    "__header__": 1,
+    "शासन आदेश": 29
+   },
+   "tables": 388,
+   "date": "2025-06-20",
+   "title": "Inter-departmental transfers of Asst. Section Officers",
+   "short": "ASO transfers 2025"
+  },
+  {
+   "file": "GAD_202507101245073307.pdf.txt",
+   "year": 2025,
+   "type": "Memorandum",
+   "chars": 73154,
+   "marathi_chars": 36223,
+   "english_chars": 36931,
+   "devanagari": 15724,
+   "latin": 12334,
+   "chunks": 37,
+   "avg_chunk": 2005,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 36
+   },
+   "tables": 50,
+   "date": "2025-07-10",
+   "title": "Higher Grade Stenographer 2022: waiting list 1",
+   "short": "HG steno WL1"
+  },
+  {
+   "file": "GAD_202507101251499107.pdf.txt",
+   "year": 2025,
+   "type": "Memorandum",
+   "chars": 83356,
+   "marathi_chars": 35553,
+   "english_chars": 47803,
+   "devanagari": 15830,
+   "latin": 12851,
+   "chunks": 48,
+   "avg_chunk": 1762,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 47
+   },
+   "tables": 52,
+   "date": "2025-07-10",
+   "title": "Lower Grade Stenographer 2022: waiting list 1",
+   "short": "LG steno WL1"
+  },
+  {
+   "file": "GAD_202507101257147007.pdf.txt",
+   "year": 2025,
+   "type": "Memorandum",
+   "chars": 90633,
+   "marathi_chars": 36351,
+   "english_chars": 54282,
+   "devanagari": 16979,
+   "latin": 13700,
+   "chunks": 51,
+   "avg_chunk": 1802,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 50
+   },
+   "tables": 54,
+   "date": "2025-07-10",
+   "title": "Steno-Typist 2022: waiting list 1",
+   "short": "Steno-typist WL1"
+  },
+  {
+   "file": "GAD_202512231639505907.pdf.txt",
+   "year": 2025,
+   "type": "GR",
+   "chars": 83602,
+   "marathi_chars": 27615,
+   "english_chars": 55987,
+   "devanagari": 17294,
+   "latin": 19180,
+   "chunks": 39,
+   "avg_chunk": 2202,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 1,
+    "प्रस्तावना": 1,
+    "शासन निर्णय": 36
+   },
+   "tables": 136,
+   "date": "2025-12-23",
+   "title": "Navi Maharashtra Sadan: room & hall reservation/fee revision",
+   "short": "Sadan fees 2025"
+  },
+  {
+   "file": "GAD_202602021744599807.pdf.txt",
+   "year": 2026,
+   "type": "Memorandum",
+   "chars": 79680,
+   "marathi_chars": 36037,
+   "english_chars": 43643,
+   "devanagari": 16163,
+   "latin": 13856,
+   "chunks": 43,
+   "avg_chunk": 1888,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 42
+   },
+   "tables": 52,
+   "date": "2026-02-02",
+   "title": "Lower Grade Stenographer 2022: waiting list 2",
+   "short": "LG steno WL2"
+  },
+  {
+   "file": "GAD_202602021751282007.pdf.txt",
+   "year": 2026,
+   "type": "Memorandum",
+   "chars": 91342,
+   "marathi_chars": 36705,
+   "english_chars": 54637,
+   "devanagari": 17314,
+   "latin": 15196,
+   "chunks": 47,
+   "avg_chunk": 1967,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 46
+   },
+   "tables": 56,
+   "date": "2026-02-02",
+   "title": "Steno-Typist 2022: waiting list 2",
+   "short": "Steno-typist WL2"
+  },
+  {
+   "file": "GAD_202602161741378907.pdf.txt",
+   "year": 2026,
+   "type": "Memorandum",
+   "chars": 75013,
+   "marathi_chars": 35967,
+   "english_chars": 39046,
+   "devanagari": 16067,
+   "latin": 13404,
+   "chunks": 40,
+   "avg_chunk": 1900,
+   "sections": {
+    "__header__": 1,
+    "वाचा": 39
+   },
+   "tables": 52,
+   "date": "2026-02-16",
+   "title": "Higher Grade Stenographer 2022: waiting list 2",
+   "short": "HG steno WL2"
+  }
+ ]
+}

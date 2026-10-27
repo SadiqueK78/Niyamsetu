@@ -12,7 +12,7 @@
     "हे माहिती दिलेल्या दस्तऐवजात आढळली नाही.",
     "This information was not found in the uploaded documents."
   ],
-  "llm_endpoint": "https://viewing-unretired-jazz.ngrok-free.dev",
+  "llm_endpoint": "https://<redacted-tunnel>.ngrok-free.dev",
   "graded": false,
   "aborted": false,
   "completed": 50,

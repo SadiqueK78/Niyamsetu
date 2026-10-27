@@ -23,7 +23,7 @@ from typing import Optional
 import httpx
 
 # LangChain PDF loader — reads PDF pages into Document objects
-from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader, TextLoader
 
 # Splits large documents into smaller overlapping chunks
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -1138,13 +1138,16 @@ async def embed_all_pdfs(progress_callback=None, filenames: Optional[list] = Non
                 "failed_files": [],
             }
     else:
-        # Find all PDFs
-        pdf_files = list(settings.GRDOCS_PATH.glob("*.pdf"))
+        # Find all supported documents
+        pdf_files = [
+            path for pattern in ("*.pdf", "*.txt")
+            for path in settings.GRDOCS_PATH.glob(pattern)
+        ]
 
         if not pdf_files:
             return {
                 "success": False,
-                "message": "No PDF files found in grdocs folder. Upload some GRs first.",
+                "message": "No PDF or text files found in grdocs folder. Upload some GRs first.",
                 "total_chunks": 0,
                 "failed_files": [],
             }
@@ -1152,14 +1155,23 @@ async def embed_all_pdfs(progress_callback=None, filenames: Optional[list] = Non
     all_documents = []
     failed_files   = []
 
-    # ── Step 1 & 2: Load each PDF ─────────────────────────
+    # ── Step 1 & 2: Load each document ───────────────────
     for i, pdf_path in enumerate(pdf_files):
         if progress_callback:
             progress_callback(pdf_path.name, i + 1, len(pdf_files))
 
         try:
-            from core.ocr import load_pdf_with_ocr_fallback
-            pages = load_pdf_with_ocr_fallback(str(pdf_path))
+            if pdf_path.suffix.lower() == ".txt":
+                pages = TextLoader(
+                    str(pdf_path),
+                    encoding="utf-8",
+                    autodetect_encoding=False,
+                ).load()
+                for page in pages:
+                    page.metadata["page"] = 1
+            else:
+                from core.ocr import load_pdf_with_ocr_fallback
+                pages = load_pdf_with_ocr_fallback(str(pdf_path))
 
             # Add filename to each page's metadata
             # This is what powers citations later —
@@ -1178,7 +1190,7 @@ async def embed_all_pdfs(progress_callback=None, filenames: Optional[list] = Non
     if not all_documents:
         return {
             "success": False,
-            "message": "All PDFs failed to load. Check if files are valid PDFs.",
+            "message": "All documents failed to load. Check that the files are valid PDFs or UTF-8 text.",
             "total_chunks": 0,
             "failed_files": failed_files,
         }

@@ -1,0 +1,15 @@
+{
+  "_note": "Manual review of harness_natural_20261027_071414.json answers. Overrides the automatic key-match grade only where a human reading disagreed; every other answer keeps its auto grade. Y = correct, P = partly correct, N = wrong or refused.",
+  "gad-001": "Y",
+  "gad-009": "N",
+  "gad-013": "Y",
+  "gad-016": "P",
+  "gad-024": "N",
+  "gad-028": "P",
+  "gad-038": "N",
+  "gad-052": "P",
+  "gad-061": "P",
+  "gad-064": "P",
+  "gad-065": "Y",
+  "gad-070": "N"
+}

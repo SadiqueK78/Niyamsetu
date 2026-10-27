@@ -1,0 +1,9 @@
+config,label,hit1,hit3,hit12,mrr,mean_files,n
+dense_only,Dense (bge-m3),0.64,0.787,0.933,0.742,4.0,75
+bm25_only,BM25,0.773,0.947,1.0,0.867,5.8,75
+hybrid,Hybrid (RRF),0.76,0.973,1.0,0.857,5.28,75
+hybrid_routed,Hybrid + routing,0.747,0.88,0.88,0.809,2.52,75
+hybrid_routed_graph,Hybrid + routing + graph,0.747,0.88,0.88,0.809,2.52,75
+hybrid_graph,Hybrid + graph,0.76,0.973,1.0,0.857,5.25,75
+hybrid_script_aware,"Hybrid, script-aware",0.707,0.853,0.987,0.803,4.69,75
+hybrid_script_aware_rerank,Script-aware + reranker,0.84,0.96,0.973,0.899,2.71,75

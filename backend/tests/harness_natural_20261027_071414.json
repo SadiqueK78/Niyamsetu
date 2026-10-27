@@ -1,0 +1,3638 @@
+{
+  "run_at": "2026-10-27 07:14:14.387064+00:00",
+  "base_url": "http://localhost:8000",
+  "question_file": "tests\\gold_gad25.json",
+  "total": 81,
+  "mode": "natural",
+  "tag": "gad25_phi4mini",
+  "timeout_sec": 300.0,
+  "retry": "once, after 5s",
+  "page_convention": "citation pages are the API's 1-based display pages (build_citations: metadata page + 1), compared to the gold expected_page (1-based) with no further offset",
+  "refusal_messages": [
+    "हे माहिती दिलेल्या दस्तऐवजात आढळली नाही.",
+    "This information was not found in the uploaded documents."
+  ],
+  "llm_endpoint": "https://<redacted-tunnel>.ngrok-free.dev",
+  "graded": false,
+  "aborted": false,
+  "elapsed_sec": 562.64,
+  "completed": 81,
+  "summary": {
+    "citation_file_hit": {
+      "k": 75,
+      "n": 75,
+      "rate": 1.0
+    },
+    "citation_page_hit": {
+      "k": 0,
+      "n": 75,
+      "rate": 0.0
+    },
+    "top_citation_is_expected": {
+      "k": 57,
+      "n": 75,
+      "rate": 0.76
+    },
+    "language_match": {
+      "k": 79,
+      "n": 81,
+      "rate": 0.975
+    },
+    "correct_refusal": {
+      "k": 3,
+      "n": 6,
+      "rate": 0.5
+    },
+    "false_refusal": {
+      "k": 7,
+      "n": 75,
+      "rate": 0.093
+    },
+    "median_sec": 5.32,
+    "max_sec": 23.86,
+    "errors": 0,
+    "infra_excluded": 0,
+    "questions": 81
+  },
+  "results": [
+    {
+      "id": "gad-001",
+      "tier": "situation",
+      "language": "en",
+      "question": "Which 2018 order consolidated the room reservation policy and rates at the new Maharashtra guest house in Delhi?",
+      "expected_file": "GAD_201811161110169207.pdf.txt",
+      "expected_page": null,
+      "answer": "Government Resolution No. House 2018/125/ Q.No. 43/20-A",
+      "citations": [
+        [
+          "GAD_201811161110169207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202512231639505907.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 6.51,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-002",
+      "tier": "detail",
+      "language": "en",
+      "question": "From what date was the New Maharashtra Sadan on Kasturba Gandhi Marg opened for use, according to the 2018 rates resolution?",
+      "expected_file": "GAD_201811161110169207.pdf.txt",
+      "expected_page": null,
+      "answer": "According to the provided context, specifically from Source 1 (GAD_201811161110169207.pdf.txt, Page 1), the New Maharashtra Sadan on Kasturba Gandhi Marg was opened for use from 15th August, 2013.",
+      "citations": [
+        [
+          "GAD_201811161110169207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202512231639505907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_201812201818380207.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.27,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-003",
+      "tier": "detail",
+      "language": "mr",
+      "question": "नवीन महाराष्ट्र सदनातील कक्षबंधांचे आरक्षण व दर यांचा २०१८ चा एकत्रित शासन निर्णय कोणत्या दिनांकाचा आहे?",
+      "expected_file": "GAD_201811161110169207.pdf.txt",
+      "expected_page": null,
+      "answer": "२०१८ नोव्हेंबर १७.",
+      "citations": [
+        [
+          "GAD_201811161110169207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202512231639505907.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 3.77,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-004",
+      "tier": "situation",
+      "language": "en",
+      "question": "Our office wants to place government advertisements on social media and in newspapers; which rules govern how such advertisements are distributed?",
+      "expected_file": "GAD_201812201818380207.pdf.txt",
+      "expected_page": null,
+      "answer": "- The Government Communication Rules, 2018, effective from January 1, 2019, govern the distribution of government advertisements on social media and in newspapers.\n- Classified and front-page advertisements must be distributed by the Directorate General of Information and Public Relations.\n- Advertisements must adhere to approved newspapers and rates.\n- Newspapers must print their logo in front advertisements of institutions and state government companies.\n- Advertisements must be distributed on specific occasions as per the availability of the Darshan Ad Fund.\n- The Directorate General has the power to reduce newspapers from the approved list for non-compliance.\n- Advertisements must be distributed through the General Directorate's headquarters.\n- The Director General and the Secretary, General Administration Department have separate financial powers for giving advertisements to periodicals outside the Government List, with a limit of 200 in a financial year and a value between Rs. 5000 and Rs. 1 lakh per advertisement.\n- Advertisements must be distributed through the approved list of newspapers, with rates determined by the Directorate General.\n- The Directorate General will also distribute advertisements at the rate of DAVP in newspapers outside the state and at a special rate for international newspapers if demanded.\n- The Technical Committee will make final decisions on rates for publications, considering factors like readership and economic level.\n- Advertisements must be sent to the concerned office of the Directorate General of Information and Public Relations, with a record of the original distribution order.\n- The Directorate General will determine the details for outdoor media initiatives on digital platforms.\n- The Directorate General will also determine the details for external media organizations to make their submissions.\n- The Directorate General will have the power to remove newspapers from the approved list for various reasons, including prejudicial content or failure to comply with rules.",
+      "citations": [
+        [
+          "GAD_201812201818380207.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 11.32,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-005",
+      "tier": "detail",
+      "language": "en",
+      "question": "From which date did the revised government advertisement rules of 2018 come into effect?",
+      "expected_file": "GAD_201812201818380207.pdf.txt",
+      "expected_page": null,
+      "answer": "The revised government advertisement rules of 2018 came into effect from January 1, 2019.",
+      "citations": [
+        [
+          "GAD_201812201818380207.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.02,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-006",
+      "tier": "detail",
+      "language": "mr",
+      "question": "सुधारित जाहिरात वितरण नियमावलीसाठी स्थापन केलेल्या अभ्यासगटाचे अध्यक्ष कोण होते?",
+      "expected_file": "GAD_201812201818380207.pdf.txt",
+      "expected_page": null,
+      "answer": "शासन निर्णय क्रमांकः मावज-२०१८/प्र.क्र.३४८/३४ wherever it mentions \"गठित करण्यात आलेली तांत्रिक समिती\" or similar phrases indicating the formation of a committee, it would typically be the name of the official or authority that established the committee. However, the provided text does not explicitly state the name of the committee's chairman. To find the name of the committee's chairman, one would need to refer to the official document or announcement that established the committee.",
+      "citations": [
+        [
+          "GAD_201812201818380207.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.83,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-007",
+      "tier": "situation",
+      "language": "en",
+      "question": "A corporation officer wants to attend an international workshop abroad; what procedure and norms apply to his foreign visit proposal?",
+      "expected_file": "GAD_202102011814485107.pdf.txt",
+      "expected_page": null,
+      "answer": "- The proposal for the foreign visit should be submitted to the General Administration Department for submission to the Recommendation Committee.\n- The proposal should clearly state that it fits the criteria prescribed for foreign visits.\n- If the proposal includes officers of All India Services or Heads of Department along with other officers or staff, a consolidated proposal should be prepared and sent to the General Administration Department with the approval of the Minister.\n- The proposal should not be submitted if it does not fit the prescribed criteria or if it is not received within the prescribed period.\n- Approval of the Central Government will be required after the Chief Minister approves the proposal for foreign tour.\n- The travel approval orders should be issued only after the approval of the necessary ministries of the central government for foreign travel.",
+      "citations": [
+        [
+          "GAD_202102011814485107.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 7.24,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-008",
+      "tier": "detail",
+      "language": "en",
+      "question": "Who heads the Recommendation Committee that examines foreign tour proposals of state officers?",
+      "expected_file": "GAD_202102011814485107.pdf.txt",
+      "expected_page": null,
+      "answer": "- The Recommendation Committee that examines foreign tour proposals of state officers is headed by the Chief Secretary.",
+      "citations": [
+        [
+          "GAD_202102011814485107.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.62,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-009",
+      "tier": "detail",
+      "language": "mr",
+      "question": "अधिकाऱ्यांच्या विदेश दौऱ्यासंबंधीचे एकत्रित आदेश असलेले परिपत्रक कोणत्या तारखेला काढले?",
+      "expected_file": "GAD_202102011814485107.pdf.txt",
+      "expected_page": null,
+      "answer": "परिपत्रक तारखा १४२०/प्र.क्र.२६/११ आहे.",
+      "citations": [
+        [
+          "GAD_202102011814485107.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.98,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-010",
+      "tier": "situation",
+      "language": "en",
+      "question": "Which posts in the Lok Ayukta office have been identified as suitable for persons with disabilities?",
+      "expected_file": "GAD_202102161256152607.pdf.txt",
+      "expected_page": null,
+      "answer": "The posts in the Lok Ayukta office that have been identified as suitable for persons with disabilities are those in the Group-A to Group-D cadre.",
+      "citations": [
+        [
+          "GAD_202102161256152607.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202205041847101207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.76,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-011",
+      "tier": "detail",
+      "language": "en",
+      "question": "Under which section of the Rights of Persons with Disabilities Act, 2016 must posts be identified for disabled persons in the Lok Ayukta office?",
+      "expected_file": "GAD_202102161256152607.pdf.txt",
+      "expected_page": null,
+      "answer": "The context does not contain the specific section of the Rights of Persons with Disabilities Act, 2016 that mandates the identification of posts for disabled persons in the Lok Ayukta office.",
+      "citations": [
+        [
+          "GAD_202102161256152607.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 3.78,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-012",
+      "tier": "situation",
+      "language": "mr",
+      "question": "लोक आयुक्त कार्यालयातील गट-अ ते गट-ड पदे दिव्यांगांसाठी सुनिश्चित करण्याचा निर्णय कोणता?",
+      "expected_file": "GAD_202102161256152607.pdf.txt",
+      "expected_page": null,
+      "answer": "लोक आयुक्त कार्यालयातील गट-अ ते गट-ड पदे दिव्यांगांसाठी सुनिश्चित करण्याचा निर्णय शासन निर्णय क्रमांक: प्रानिमं १२२२/प्र.क्र.५४/का.१३-अ आहे.",
+      "citations": [
+        [
+          "GAD_202102161256152607.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202205041847101207.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.62,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-013",
+      "tier": "situation",
+      "language": "en",
+      "question": "I am a section officer in Mantralaya; where can I object to the provisional seniority list of my cadre for 1986 to 2016?",
+      "expected_file": "GAD_202105201508210107.pdf.txt",
+      "expected_page": null,
+      "answer": "- Submit objections/suggestions to the Under Secretary, Office 14-B, General Administration Department, Hall No. 559 Extension, 5th Floor, Mantralaya, Mumbai-400 032, on or before 20.08.2021 by post or by e-mail to Desk14b.gad-mh@gov.in.",
+      "citations": [
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.86,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-014",
+      "tier": "detail",
+      "language": "en",
+      "question": "Which Special Leave Petition number was filed in the Supreme Court against the High Court order of 06.08.2018 on cell officer seniority?",
+      "expected_file": "GAD_202105201508210107.pdf.txt",
+      "expected_page": null,
+      "answer": "The Special Leave Petition number filed in the Supreme Court against the High Court order of 06.08.2018 on cell officer seniority is No. 25181/2018.",
+      "citations": [
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202405271658209807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.2,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-015",
+      "tier": "detail",
+      "language": "mr",
+      "question": "कक्ष अधिकारी संवर्ग कोणत्या दोन जुन्या संवर्गांचे एकत्रीकरण करून अस्तित्वात आला?",
+      "expected_file": "GAD_202105201508210107.pdf.txt",
+      "expected_page": null,
+      "answer": "कक्ष अधिकारी संवर्ग ६६२/३ (महाराष्ट्र शासन) आणि ३३१/३ (सरळसेवा) केतावरील पदोन्नती कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% (सरळसेवा) केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१/३ केतावरील पदोन्नत कोटा ८०% केतावरील पदोन्नत कोटा २०% केतावरील पदोन्नत कोटा ६६२/३ आणि ३३१",
+      "citations": [
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_201811161110169207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 19.77,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-016",
+      "tier": "situation",
+      "language": "en",
+      "question": "Which order gave clerk-typists a temporary ad hoc promotion to Assistant Section Officer for the 2020-21 select list year?",
+      "expected_file": "GAD_202108301543421007.pdf.txt",
+      "expected_page": null,
+      "answer": "Government Order No.: KAP 1221/ P.No. 22/14-B, Dy. August 30, 2021",
+      "citations": [
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.46,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-017",
+      "tier": "detail",
+      "language": "mr",
+      "question": "लिपिक-टंकलेखकांना सहायक कक्ष अधिकारी पदावर तदर्थ पदोन्नती देताना लिपिक-टंकलेखक पदाची वेतनश्रेणी काय दर्शवली आहे?",
+      "expected_file": "GAD_202108301543421007.pdf.txt",
+      "expected_page": null,
+      "answer": "लिपिक-टंकलेखक पदाची वेतनश्रेणी S-१४.",
+      "citations": [
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 6.68,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-018",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "In the August 2021 ad hoc promotion order for clerk-typists, which department is A.R. Kalakar posted to?",
+      "expected_file": "GAD_202108301543421007.pdf.txt",
+      "expected_page": null,
+      "answer": "The Department of Public Works",
+      "citations": [
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 3.63,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-019",
+      "tier": "situation",
+      "language": "en",
+      "question": "Which order promoted Assistant Section Officers to Section Officer (Cell Officer) posts for the 2020-2021 select list year?",
+      "expected_file": "GAD_202109011815562507.pdf.txt",
+      "expected_page": null,
+      "answer": "Government Order No. Kap 1221/ P.No. 22/14-B, Dy. August 30, 2021",
+      "citations": [
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 3.78,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-020",
+      "tier": "detail",
+      "language": "en",
+      "question": "What pay scale does the Cell Officer post carry in the 2021 promotion order for Assistant Section Officers?",
+      "expected_file": "GAD_202109011815562507.pdf.txt",
+      "expected_page": null,
+      "answer": "The pay scale for the Cell Officer post in the 2021 promotion order for Assistant Section Officers is Group-B (Gazetted) Pay Scale S-17, with a salary range of Rs. 47600-151100.",
+      "citations": [
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 3.81,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-021",
+      "tier": "disambiguation",
+      "language": "mr",
+      "question": "सहायक कक्ष अधिकाऱ्यांना कक्ष अधिकारी पदावर पदोन्नती देण्याच्या आदेशात श्री भ.गो.लब्दे यांची पदस्थापना कोणत्या विभागात केली?",
+      "expected_file": "GAD_202109011815562507.pdf.txt",
+      "expected_page": null,
+      "answer": "शिवाय कक्ष अधिकारी पदावरील तात्पुरती पदोन्नतीच्या आदेशात श्री भ.गो.लब्दे यांची पदस्थापना सार्वजनिक बांधकाम विभागात केली.",
+      "citations": [
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 7.21,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-022",
+      "tier": "situation",
+      "language": "en",
+      "question": "How should departments fill Group-C and Group-D posts by direct recruitment now that the old subordinate service selection boards are gone?",
+      "expected_file": "GAD_202205041847101207.pdf.txt",
+      "expected_page": null,
+      "answer": "- Direct recruitment to Group-B (Non-Gazetted), Group-C, and Group-D cadres in the nomination quota under the purview of the erstwhile Secondary Service Selection Boards (outside the purview of the Maharashtra Public Service Commission) is prescribed vide Government Orders No. 1 dated 13th June, 2018, No. 4 dated 17th August, 2020, No. 7 dated 22nd April, 2021, and No. 8 dated 19th May, 2021.\n- The consolidated procedure for filling up the vacancies in Group-B (Non-Gazetted), Group-C, and Group-D cadres under the purview of the erstwhile Secondary Service Selection Boards (outside the purview of the Maharashtra Public Service Commission) through direct recruitment through the Mahapariksha Portal has been prescribed vide Government Resolution No. 1 dated 13th June, 2018.\n- A comprehensive notification regarding direct recruitment to the posts under the purview of the erstwhile Secondary Service Selection Boards (outside the purview of the Maharashtra Public Service Commission) has been issued.",
+      "citations": [
+        [
+          "GAD_202205041847101207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202102161256152607.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 10.26,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-023",
+      "tier": "detail",
+      "language": "en",
+      "question": "What did the government decide about conducting recruitment examinations through the empanelled OMR vendors?",
+      "expected_file": "GAD_202205041847101207.pdf.txt",
+      "expected_page": null,
+      "answer": "The government decided not to conduct the recruitment examination through the empaneled OMR vendors.",
+      "citations": [
+        [
+          "GAD_202205041847101207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.96,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-024",
+      "tier": "detail",
+      "language": "mr",
+      "question": "भूतपूर्व दुय्यम सेवा निवड मंडळांच्या कक्षेतील पदे सरळसेवेने भरण्याबाबतचा एकत्रित शासन निर्णय कोणत्या दिनांकाचा आहे?",
+      "expected_file": "GAD_202205041847101207.pdf.txt",
+      "expected_page": null,
+      "answer": "भूतपूर्व दुय्यम सेवा निवड मंडळांच्या कक्षेतील पदे सरळसेवेने भरण्याबाबतचा एकत्रित शासन निर्णय दि. ०४.०१.२०२१ च्या अधिसूचनेन्वये आहे.",
+      "citations": [
+        [
+          "GAD_202205041847101207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202102161256152607.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.1,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-025",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "In May 2023, which order transferred Assistant Section Officers between Mantralaya departments?",
+      "expected_file": "GAD_202305111444322707.pdf.txt",
+      "expected_page": null,
+      "answer": "Government Order No. 2023/ PR No. 10/14 A",
+      "citations": [
+        [
+          "GAD_202305111444322707.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201827169907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111455014207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.78,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-026",
+      "tier": "detail",
+      "language": "en",
+      "question": "To which department was Sudhir Ramchandra Pednekar transferred in the May 2023 transfer order?",
+      "expected_file": "GAD_202305111444322707.pdf.txt",
+      "expected_page": null,
+      "answer": "The General Administration Department",
+      "citations": [
+        [
+          "GAD_202305111444322707.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111455014207.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.04,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-027",
+      "tier": "detail",
+      "language": "mr",
+      "question": "मे २०२३ च्या बदली आदेशानुसार सहायक कक्ष अधिकारी किरण सदाशिव काळे यांची बदली कोणत्या विभागात झाली?",
+      "expected_file": "GAD_202305111444322707.pdf.txt",
+      "expected_page": null,
+      "answer": "साध्य प्रशासन विभाग",
+      "citations": [
+        [
+          "GAD_202305111444322707.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201827169907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111455014207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202405271658209807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201818570507.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 3.81,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-028",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "Which May 2023 government order made inter-departmental transfers of clerk-typists in Mantralaya?",
+      "expected_file": "GAD_202305111455014207.pdf.txt",
+      "expected_page": null,
+      "answer": "- Government Order No.: TRANSFER 2023/ PR No. 22/14 A\n- Date of release: May 11, 2023\n- Department: General Administration Department\n- Location: Mantralaya, Mumbai 400032\n- Source: GAD_202305111444322707.pdf.txt, Page 1",
+      "citations": [
+        [
+          "GAD_202506201827169907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111444322707.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111455014207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201818570507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 6.69,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-029",
+      "tier": "detail",
+      "language": "en",
+      "question": "Where was clerk-typist Bhushan Manoj Vichare transferred in 2023?",
+      "expected_file": "GAD_202305111455014207.pdf.txt",
+      "expected_page": null,
+      "answer": "The provided context does not contain the specific information regarding the transfer destination of clerk-typist Bhushan Manoj Vichare in 2023.",
+      "citations": [
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111455014207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201818570507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111444322707.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.99,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-030",
+      "tier": "detail",
+      "language": "mr",
+      "question": "लिपिक-टंकलेखक पूजा दिपक फातर्फेकर यांची बदली कोणत्या विभागात करण्यात आली?",
+      "expected_file": "GAD_202305111455014207.pdf.txt",
+      "expected_page": null,
+      "answer": "लिपिक-टंकलेखक पूजा दिपक फातर्फेकर यांची बदली सामान्य प्रशासन विभाग (मजलीय) विभागात करण्यात आली आहे.",
+      "citations": [
+        [
+          "GAD_202305111455014207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201818570507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111444322707.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201827169907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.57,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-031",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "How many waiting-list candidates of the Clerk-Typist Examination 2021 did MPSC make available for allotment in January 2024?",
+      "expected_file": "GAD_202401091710039807.pdf.txt",
+      "expected_page": null,
+      "answer": "142",
+      "citations": [
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.0,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-032",
+      "tier": "detail",
+      "language": "en",
+      "question": "By what date must the Clerk-Typist 2021 waiting-list candidates accept their provisional appointment in person?",
+      "expected_file": "GAD_202401091710039807.pdf.txt",
+      "expected_page": null,
+      "answer": "By 28 December 2023",
+      "citations": [
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 3.78,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-033",
+      "tier": "situation",
+      "language": "mr",
+      "question": "लिपिक-टंकलेखक परीक्षा-२०२१ च्या प्रतिक्षायादीतील उमेदवारांना विभागांमध्ये नियतवाटप कोणत्या ज्ञापनाने केले?",
+      "expected_file": "GAD_202401091710039807.pdf.txt",
+      "expected_page": null,
+      "answer": "लिपिक-टंकलेखक परीक्षा-२०२१ च्या प्रतिक्षायादीतील उमेदवारांना विभागांमध्ये नियतवाटप महाराष्ट्र लोकसेवा आयोगाने लघुटंकलेखक (मराठी/इंग्रजी) परीक्षा-२०२२ च्या अंतीम (निकालाच्या आधारे शिफारस केलेल्या लघुटंकलेखक (मराठी) -२१ व लघुटंकलेखक (इंग्रजी)-१२ उमेदवारांऐवजी प्रतिक्षा यादीत असलेल्या उमेदवारांची नेमणूक पुढील अटी व शर्तीच्या अधिन राहून निव्वळ तात्पुरत्या स्वरुपात करण्यात यावी.",
+      "citations": [
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 6.99,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-034",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "Which memorandum allotted the main-list candidates of the Clerk-Typist Examination 2022 to Mantralaya departments in February 2024?",
+      "expected_file": "GAD_202402081834533907.pdf.txt",
+      "expected_page": null,
+      "answer": "Government Memorandum No: ASC 1524 / P.No.15 / Pr. 3 (14-A), dated February 8, 2024.",
+      "citations": [
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.87,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-035",
+      "tier": "detail",
+      "language": "en",
+      "question": "What is the last date for Clerk-Typist 2022 main-list candidates to accept their appointment under the February 2024 memorandum?",
+      "expected_file": "GAD_202402081834533907.pdf.txt",
+      "expected_page": null,
+      "answer": "The last date for Clerk-Typist 2022 main-list candidates to accept their appointment under the February 2024 memorandum is 08.02.2026. This is derived from Source 11, which states, \"Name of the candidates in the accompanying statement 'A' and 'B' for the post of Short Writer (Marathi / English) Fixed Allotment in the Ministries / Brihanmumbai Government Office as indicated in RACANA No.7.\"",
+      "citations": [
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 6.18,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-036",
+      "tier": "detail",
+      "language": "mr",
+      "question": "लिपिक-टंकलेखक परीक्षा-२०२२ साठी आयोगाची जाहिरात क्रमांक ०७७/२०२२ कोणत्या दिनांकाची होती?",
+      "expected_file": "GAD_202402081834533907.pdf.txt",
+      "expected_page": null,
+      "answer": "जाहिरात क्रमांक ०७७/२०२२ दिनांक २८.०६.२०२२.",
+      "citations": [
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.76,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-037",
+      "tier": "situation",
+      "language": "en",
+      "question": "After the court-ordered seniority revision, how is the date of regular promotion to Joint Secretary being fixed?",
+      "expected_file": "GAD_202405271658209807.pdf.txt",
+      "expected_page": null,
+      "answer": "- The revised regular promotion dates for the post of Joint Secretary are being determined based on the seniority list after the court-ordered seniority revision.\n- The promotion is temporary and does not entitle the officers to regularization.\n- The revised regular promotion dates are subject to pending court cases and other matters mentioned in the circular.",
+      "citations": [
+        [
+          "GAD_202405271658209807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 6.14,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-038",
+      "tier": "detail",
+      "language": "mr",
+      "question": "सह सचिव पदावरील नियमित पदोन्नतीचा दिनांक देण्याबाबतचे परिपत्रक कोणत्या तारखेचे आहे?",
+      "expected_file": "GAD_202405271658209807.pdf.txt",
+      "expected_page": null,
+      "answer": "सह सचिव पदावरील नियमित पदोन्नतीचा दिनांक देण्याबाबतचे परिपत्रक तारखे खालीलप्रमाणे आहेत:\n\n1. २. मा.उच्च न्यायालय, मुंबई यांनी याचिका क्र.२७९७/२०१५ मध्ये दि. ४.८.२०१७ रोजी दिलेल्या निर्णयाविरोधात राज्य शासनाने मा. सर्वोच्च न्यायालयात विशेष अनुज्ञा याचिका क्र. २८३०६/२०१७ दाखल केली आहे.\n2. सामान्य प्रशासन विभाग, कार्यासन-१६-ब यांच्या शासन निर्णय दि.७.५.२०२१ मधील तरतुदीनुसार पदोन्नतीच्या कोट्यातील सर्व रिक्त पदे दि.२५.५.२००४ च्या स्थितीनुसार निव्वळ तात्पुरत्या स्वरूपात सेवाज्येष्ठतेनुसार मा. सर्वोच्च न्यायालयाच्या निर्णयाच्या अधीन राहून भरण्यात येत आहेत.\n3. संबंधित लिपिक-टंकलेखक यांना सहायक कक्ष अधिकारी पदावरील तदर्थ पदोन्नती दिव्यांग प्रवर्गातून करण्यात येत आहे.\n4. सदर तदर्थ पदोन्नती तात्पुरत्या स्वरुपात प्रशासकीय निकड म्हणून लोकहितास्तव देण्यात आली आहे.\n5. सदर पदोन्नती तात्पुरत्या स्वरुपात आणि मा.सर्वोच्च न्यायालयात दाखल दाखल केलेल्या केलेल्या विशेष विशेष अनुज्ञा याचिका क्र.२८३०६/२०१७ मध्ये होणाऱ्या निर्णयाच्या अधीन राहून करण्यात येत आहे.\n6. संबंधित लिपिक-टंकलेखक यांनी सहायक कक्ष अधिकारी पदावरील तदर्थ पदोन्नती न स्वीकारल्यास सामान्य प्रशासन विभाग, शासन निर्णय क्रमांक एसआरव्ही - २०१५/प्र.क्र.३०३/का. १२, दिनांक १२.०९.२०१६ अन्वये त्यांचे नाव सन २०२०-२०२१ च्या निवडसूचीतून काढून टाकण्यात येईल व पृष्ठ ११ पैकी १०.\n7. सदर शासन आदेशातील अनुक्रमांक ३४३४, , ११३, ११९, १३०, १३१ व १३२ येथील लिपिक-टंकलेखकांना सहायक कक्ष अधिकारी पदावरील तात्पुरती पदोन्नती दिव्यांग प्रवर्गातून करण्यात येत आहे.\n8. दोन्ही वर्षी होणाऱ्या निवडसूच्यांमध्ये त्यांच्या नावाचा विचार न करता तिसऱ्या वर्षाच्या निवडसूचीत सहायक कक्ष अधिकारी पदावरील पदोन्नतीसाठीची पात्रता तपासण्यात येईल.\n\nया परिपत्रकांमधून, आपल्याला सह सचिव पदावरील नियमित पदोन्नतीचा दिनांक देण्याबाबतचे तात्पर्य स्पष्टपणे समजता येईल.",
+      "citations": [
+        [
+          "GAD_202405271658209807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 17.75,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-039",
+      "tier": "detail",
+      "language": "en",
+      "question": "On what date were the revised merit lists of Section Officer, Under Secretary and Deputy Secretary finalised before the Joint Secretary promotion circular?",
+      "expected_file": "GAD_202405271658209807.pdf.txt",
+      "expected_page": null,
+      "answer": "According to the original text \"D. Under 03.02.2023, have been finalized.\n3. Ma. The High Court Pursuant to the order dated 06.08.2018, the Government Circular on Temporary Seniority of the cadre of Cell Officers for the period 1986 to 2004 prepared by the Group constituted under the Government Order, dated 12.10.2018, vide No. These were issued on 31.07.2019 and 26.09.2019. The Government has received objections/ suggestions regarding these provisional seniority notices.\nThe selection list and seniority of the cadre of Cell Officers published earlier for the period from 1986 to 2004 have been revised. The following are the revised seniority figures for the period 1986-2004:\n\n---\n\n[Source 12: GAD_202405271658209807.pdf.txt, Page 1]\n८. उपरोक्त पदोन्नत अधिकाऱ्यांनी त्यांच्या वेतन निश्चितीसंबंधीचा विकल्प या आदेशाच्या दिनांकापासून\nएक महिन्य्याच्या आत द्यावा. अशा प्रकारचा विकल्प न दिल्यास त्यांची वेतन निश्चिती महाराष्ट्र नागरी सेवा (वेतन)\nनियम १९८१ मधील नियम ११(१) नुसार पदोन्नतीचा दिनांक विचारात घेऊन केली जाईल.\n९. सदर शासन परिपत्रक महाराष्ट्र शासनाच्या www.maharashtra.gov.in या संकेतस्थळावर उपलब्ध\\r\\n\\r\\n===== ENGLISH TRANSLATION =====\\r\\n# Page 1\nRegular promotion to the post of Joint Secretary\nregarding the date.\nGovernment of Maharashtra\nthe General Administration Department\nGovernment Circular No.: SASY 1123 / Q. No. 01 / PRASS-1 (Ka. 14)\nMadam Cama Marg, Martyrdom Rajguru Chowk,\nMantralaya, Mumbai - 400 032\nDate: May 27, 2024.\nRead: -\n------------------------------------------------------------------------------\n| 1  |   | Government Order र.ससप1109/प RQ र.215/09/14, D 05.08.2010          |\n| 2  |   | Government Order र.ससप1109/प RQ र.215/09/14, D 08.02.2011          |\n| 3  |   | Government Order र.ससप1109/प RQ र.215/09/14, D 30.04.2011          |\n| 4  |   | GOVERNMENT ORDER र.ससप1110/प R.K. र.227/10/क Q. 14, D. 06.03.2012  |\n| 5  |   | GOVERNMENT ORDER र.ससप-110/प R.K. र.227/10/क Q. 14, D. 06.03.2012  |\n| 6  |   | GOVERNMENT ORDER र.ससप-1110/प R.K. र.118/11/क Q. 14, D. 08.10.2012 |\n| 7  |   | GOVERNMENT ORDER र.ससप-1112/प R.K. र.136/12/क Q. 14, D. 09.07.2015 |\n| 8  |   | GOVERNMENT ORDER र.ससप-1113/प R.K. र.110/13/क Q. 14, D. 04.08.2015 |\n| 9  |   | GOVERNMENT ORDER र.ससप-113/प R.K. र.110/13/क Q. 14, D. 26.08.201",
+      "citations": [
+        [
+          "GAD_202405271658209807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 23.86,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-040",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "How many waiting-list candidates of the Clerk-Typist Examination 2022 were allotted in June 2024?",
+      "expected_file": "GAD_202406201431224807.pdf.txt",
+      "expected_page": null,
+      "answer": "This information was not found in the uploaded documents.",
+      "citations": [
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.1,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": true,
+      "false_refusal": true
+    },
+    {
+      "id": "gad-041",
+      "tier": "detail",
+      "language": "en",
+      "question": "Until what date could the Clerk-Typist 2022 waiting-list candidates of June 2024 accept their appointment?",
+      "expected_file": "GAD_202406201431224807.pdf.txt",
+      "expected_page": null,
+      "answer": "The Clerk-Typist 2022 waiting-list candidates of June 2024 could accept their appointment until 08.08.2025.",
+      "citations": [
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.6,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-042",
+      "tier": "disambiguation",
+      "language": "mr",
+      "question": "लिपिक-टंकलेखक परीक्षा-२०२२ च्या प्रतिक्षायादीतील उमेदवारांचे नियतवाटप करणारे जून २०२४ चे ज्ञापन कोणते?",
+      "expected_file": "GAD_202406201431224807.pdf.txt",
+      "expected_page": null,
+      "answer": "जून २०२४ चे ज्ञापन क्रमांक एएससी १५२४/प्र.क्र.१७६ /प्रशा-३ आहे.",
+      "citations": [
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.72,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-043",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "Which December 2024 memorandum allotted MPSC-recommended Steno-typist (Marathi/English) 2022 candidates to departments?",
+      "expected_file": "GAD_202412311532051007.pdf.txt",
+      "expected_page": null,
+      "answer": "The December 2024 memorandum that allotted MPSC-recommended Steno-typist (Marathi/English) 2022 candidates to departments is the Government Memorandum of Intent dated 31.12.2024.",
+      "citations": [
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.89,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-044",
+      "tier": "detail",
+      "language": "en",
+      "question": "By which date did steno-typist candidates allotted in December 2024 have to accept their provisional appointment?",
+      "expected_file": "GAD_202412311532051007.pdf.txt",
+      "expected_page": null,
+      "answer": "December 2024 candidates had to accept their provisional appointment by 04.03.2026.",
+      "citations": [
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.49,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-045",
+      "tier": "situation",
+      "language": "mr",
+      "question": "लघुटंकलेखक परीक्षा-२०२२ च्या मूळ निवडसूचीतील उमेदवारांना पदस्थापना कोणत्या ज्ञापनाने दिली?",
+      "expected_file": "GAD_202412311532051007.pdf.txt",
+      "expected_page": null,
+      "answer": "लघुटंकलेखक परीक्षा-२०२२ च्या मूळ निवडसूचीतील उमेदवारांना पदस्थापना महाराष्ट्र लोकसेवा आयोगाने शिफारस केलेल्या उमेदवारांच्या संदर्भाधिन क्र. २ या ज्ञापनाने दिली.",
+      "citations": [
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.15,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-046",
+      "tier": "situation",
+      "language": "en",
+      "question": "An employee has been under suspension for months; what are the guidelines for reviewing such suspension cases?",
+      "expected_file": "GAD_202504221732089007.pdf.txt",
+      "expected_page": null,
+      "answer": "- Review the suspension subject to transfer to a non-executive position.\n- The competent authority should decide whether to continue with its suspension or how.\n- If the suspension is beyond three months, the competent authority reviewing the suspension itself should issue an order with a written reasoned decision on whether to continue or not.\n- The extension should be minimal and not exceed six months at a time.\n- If the suspension is to be continued, it should be reviewed by a review committee.\n- The suspension should be reviewed within three months from the date of the employee's release from arrest or release.\n- If the employee is involved in more than one case, the senior-most officer should be reviewed.\n- The competent authority should take a decision on reinstating the employee based on the merits of the case.\n- If the employee is under suspension in a criminal case, the competent authority should decide whether to terminate the suspension or how.\n- The competent authority should ensure that the position of the officer/employee remains in a non-executive position.",
+      "citations": [
+        [
+          "GAD_202504221732089007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 9.98,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-047",
+      "tier": "detail",
+      "language": "en",
+      "question": "According to the Supreme Court judgment cited in the suspension review guidelines, how long may a suspension continue if no chargesheet is served?",
+      "expected_file": "GAD_202504221732089007.pdf.txt",
+      "expected_page": null,
+      "answer": "The Supreme Court judgment cited in the suspension review guidelines states that a suspension may continue for a maximum of three months if no chargesheet is served. This is mentioned in the context where it says, \"We, therefore, direct that the currency of a Suspension Order should not extend beyond three months if within this period the Memorandum of Charges/Chargesheet is not served on the delinquent officer/employee; if the Memorandum of Charges/Chargesheet is served a reasoned order must be passed for the extension of the suspension.\" (Source 4: GAD_202504221732089007.pdf.txt, Page 2)",
+      "citations": [
+        [
+          "GAD_202504221732089007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 8.57,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-048",
+      "tier": "detail",
+      "language": "mr",
+      "question": "निलंबित शासकीय कर्मचाऱ्यांच्या प्रकरणांचा आढावा घेण्याबाबतच्या एकत्रित मार्गदर्शक सूचनांचा शासन निर्णय कोणत्या तारखेचा आहे?",
+      "expected_file": "GAD_202504221732089007.pdf.txt",
+      "expected_page": null,
+      "answer": "निलंबित शासकीय कर्मचाऱ्यांच्या प्रकरणांचा आढावा घेण्याबाबतच्या एकत्रित मार्गदर्शक सूचनांचा शासन निर्णय २२ एप्रिल, २०२५ रोजी जारी केला गेला आहे.",
+      "citations": [
+        [
+          "GAD_202504221732089007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.4,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-049",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "Which June 2025 order transferred clerk-typists from the General Administration Department to other departments?",
+      "expected_file": "GAD_202506201818570507.pdf.txt",
+      "expected_page": null,
+      "answer": "- Government Order Number: TRANSFER 2025 / P.No.42 / PRASS-3, D 20.06.2025 (Source 5: GAD_202506201818570507.pdf.txt, Page 1)",
+      "citations": [
+        [
+          "GAD_202506201818570507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201827169907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111444322707.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.63,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-050",
+      "tier": "detail",
+      "language": "en",
+      "question": "To which department was clerk-typist Pragati Aban Desai transferred in June 2025?",
+      "expected_file": "GAD_202506201818570507.pdf.txt",
+      "expected_page": null,
+      "answer": "The General Administration Department",
+      "citations": [
+        [
+          "GAD_202506201818570507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201827169907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.99,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-051",
+      "tier": "detail",
+      "language": "mr",
+      "question": "जून २०२५ च्या लिपिक-टंकलेखक बदली आदेशाचा क्रमांक काय आहे?",
+      "expected_file": "GAD_202506201818570507.pdf.txt",
+      "expected_page": null,
+      "answer": "जून २०२५ च्या लिपिक-टंकलेखक बदली आदेशाचा क्रमांक २०२५/प्र.क्र. ४२/प्रशा-३ आहे.",
+      "citations": [
+        [
+          "GAD_202506201818570507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111455014207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201827169907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.04,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-052",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "Which June 2025 order made inter-departmental transfers of Assistant Section Officers?",
+      "expected_file": "GAD_202506201827169907.pdf.txt",
+      "expected_page": null,
+      "answer": "- Government Order Number: TRANSFER 2025 / P.No. 65 / PRASS-3 (14A)\n- Date: June 20, 2025\n- Source: GAD_202506201827169907.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 42 / PRASS-3, D 20.06.2025\n- Source: GAD_202506201818570507.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 42 / PRASS-3, D 20.06.2025\n- Source: GAD_202506201827169907.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 65 / PRASS-3 (14A), D. 20.06.2025\n- Source: GAD_202506201827169907.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 42 / PRASS-3, D 20.06.2025\n- Source: GAD_202506201818570507.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 65 / PRASS-3 (14A), D. 20.06.2025\n- Source: GAD_202506201827169907.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 42 / PRASS-3, D 20.06.2025\n- Source: GAD_202506201818570507.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 65 / PRASS-3 (14A), D. 20.06.2025\n- Source: GAD_202506201827169907.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 42 / PRASS-3, D 20.06.2025\n- Source: GAD_202506201818570507.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 65 / PRASS-3 (14A), D. 20.06.2025\n- Source: GAD_202506201827169907.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 42 / PRASS-3, D 20.06.2025\n- Source: GAD_202506201818570507.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 65 / PRASS-3 (14A), D. 20.06.2025\n- Source: GAD_202506201827169907.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 42 / PRASS-3, D 20.06.2025\n- Source: GAD_202506201818570507.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 65 / PRASS-3 (14A), D. 20.06.2025\n- Source: GAD_202506201827169907.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 42 / PRASS-3, D 20.06.2025\n- Source: GAD_202506201818570507.pdf.txt, Page 1\n\n- Government Order Number: TRANSFER 2025 / P.No. 65 / PRASS-3",
+      "citations": [
+        [
+          "GAD_202506201827169907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201818570507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111444322707.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111455014207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 23.48,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-053",
+      "tier": "detail",
+      "language": "en",
+      "question": "Where was Assistant Section Officer Supriya Vipul Savalwade transferred in June 2025?",
+      "expected_file": "GAD_202506201827169907.pdf.txt",
+      "expected_page": null,
+      "answer": "The Assistant Section Officer Supriya Vipul Savalwade was transferred from the General Administration Department to the Tribal Development Department in June 2025.",
+      "citations": [
+        [
+          "GAD_202506201827169907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201818570507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.61,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-054",
+      "tier": "detail",
+      "language": "mr",
+      "question": "सहायक कक्ष अधिकाऱ्यांच्या जून २०२५ च्या बदली आदेशाचा क्रमांक काय?",
+      "expected_file": "GAD_202506201827169907.pdf.txt",
+      "expected_page": null,
+      "answer": "शासन आदेश क्रमांकः बदली २०२५/प्र.क्र. ६५/प्रशा-३ (१४ अ), दि. २०.०६.२०२५",
+      "citations": [
+        [
+          "GAD_202506201827169907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202109011815562507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111444322707.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201818570507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202108301543421007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.92,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-055",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "In July 2025, how many Higher Grade Stenographer (Marathi) and (English) candidates did MPSC recommend from the first waiting list?",
+      "expected_file": "GAD_202507101245073307.pdf.txt",
+      "expected_page": null,
+      "answer": "The context does not provide information on the number of Higher Grade Stenographer (Marathi) and (English) candidates recommended by MPSC in July 2025. This information was not found in the uploaded documents.",
+      "citations": [
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 6.03,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": true,
+      "false_refusal": true
+    },
+    {
+      "id": "gad-056",
+      "tier": "situation",
+      "language": "mr",
+      "question": "उच्चश्रेणी लघुलेखक परीक्षा-२०२२ च्या पहिल्या प्रतिक्षायादीतील उमेदवारांचे नियतवाटप कोणत्या ज्ञापनाने झाले?",
+      "expected_file": "GAD_202507101245073307.pdf.txt",
+      "expected_page": null,
+      "answer": "उच्चश्रेणी लघुलेखक (मराठी/इंग्रजी) परीक्षा-२०२२ च्या पहिल्या प्रतिक्षायादीतील उमेदवारांचे नियतवाटप महाराष्ट्र शासन ज्ञापन क्रमांक: एएससी १५२४/प्र.क्र.१७५ /प्रशा-३, हुतात्मा राजगुरू चौक, मादाम कामा रोड, मंत्रालय, मुंबई-४०० ०३२, दिनांक: १० जुलै, २०२५.",
+      "citations": [
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 6.71,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-057",
+      "tier": "detail",
+      "language": "en",
+      "question": "How many Higher Grade Stenographer (Marathi) and (English) candidates were originally recommended on the final result of the 2022 exam?",
+      "expected_file": "GAD_202507101245073307.pdf.txt",
+      "expected_page": null,
+      "answer": "The context does not contain the specific number of Higher Grade Stenographer (Marathi) and (English) candidates originally recommended on the final result of the 2022 exam. This information was not found in the uploaded documents.",
+      "citations": [
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.51,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": true,
+      "false_refusal": true
+    },
+    {
+      "id": "gad-058",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "How many Lower Grade Stenographer (Marathi) and (English) candidates were recommended from the first waiting list in July 2025?",
+      "expected_file": "GAD_202507101251499107.pdf.txt",
+      "expected_page": null,
+      "answer": "Four",
+      "citations": [
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.14,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-059",
+      "tier": "situation",
+      "language": "mr",
+      "question": "निम्नश्रेणी लघुलेखक परीक्षा-२०२२ च्या पहिल्या प्रतिक्षायादीतील उमेदवारांना पदस्थापना कोणत्या ज्ञापनाद्वारे दिली गेली?",
+      "expected_file": "GAD_202507101251499107.pdf.txt",
+      "expected_page": null,
+      "answer": "महाराष्ट्र लोकसेवा आयोगाने उच्चश्रेणी लघुलेखक (मराठी) परीक्षा-२०२२ च्या अंतीम नोंदणीकृत उमेदवारांना पदस्थापना दिली गेली.",
+      "citations": [
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.32,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-060",
+      "tier": "detail",
+      "language": "en",
+      "question": "How many Lower Grade Stenographer candidates (Marathi and English) did not accept appointment before the first waiting list was requested?",
+      "expected_file": "GAD_202507101251499107.pdf.txt",
+      "expected_page": null,
+      "answer": "This information was not found in the uploaded documents.",
+      "citations": [
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 13.67,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": true,
+      "false_refusal": true
+    },
+    {
+      "id": "gad-061",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "How many Steno-typist (Marathi) and (English) waiting-list candidates were allotted in July 2025?",
+      "expected_file": "GAD_202507101257147007.pdf.txt",
+      "expected_page": null,
+      "answer": "According to the provided context, specifically from Source 1 (GAD_202507101257147007.pdf.txt, Page 1), in July 2025, 15 candidates were allotted for the post of Short Writer (English) and 29 candidates for the post of Short Writer (Marathi). However, there is no specific mention of Steno-typist (Marathi) and (English) candidates in the provided context. Therefore, this information was not found in the uploaded documents.",
+      "citations": [
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 7.48,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": true,
+      "false_refusal": true
+    },
+    {
+      "id": "gad-062",
+      "tier": "situation",
+      "language": "mr",
+      "question": "लघुटंकलेखक परीक्षा-२०२२ च्या पहिल्या प्रतिक्षायादीतील उमेदवारांचे जुलै २०२५ मधील नियतवाटप कोणते?",
+      "expected_file": "GAD_202507101257147007.pdf.txt",
+      "expected_page": null,
+      "answer": "लघुटंकलेखक परीक्षा-२०२२ च्या पहिल्या प्रतिक्षायादीतील उमेदवारांचे जुलै २०२५ मधील नियतवाटप:\\n\\nमहाराष्ट्र लोकसेवा आयोगाने उच्चश्रेणी लघुलेखक (मराठी/इंग्रजी) परीक्षा-२०२२ च्या अंतीम\\nनिकालाच्या आधारे शिफारस केलेल्या उच्चश्रेणी लघुलेखक (मराठी) -२९ व उच्चश्रेणी लघुलेखक (इंग्रजी)-२८ उमेदवारांचे संदर्भाधिन क्र. ३ येथील शासन ज्ञापनान्वये मंत्रालयीन विभाग व बृहन्मुंबई शासकीय कार्यालयात नियतवाटप करण्यात आले होते.",
+      "citations": [
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 8.23,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-063",
+      "tier": "detail",
+      "language": "en",
+      "question": "How many Steno-typist (Marathi) and (English) candidates were recommended on the final result of the 2022 steno-typist examination?",
+      "expected_file": "GAD_202507101257147007.pdf.txt",
+      "expected_page": null,
+      "answer": "The context provided does not contain information regarding the number of Steno-typist (Marathi) and (English) candidates recommended on the final result of the 2022 steno-typist examination. This information was not found in the uploaded documents.",
+      "citations": [
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.86,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": true,
+      "false_refusal": true
+    },
+    {
+      "id": "gad-064",
+      "tier": "situation",
+      "language": "en",
+      "question": "What are the latest charges for booking halls and rooms at Navi Maharashtra Sadan in Delhi?",
+      "expected_file": "GAD_202512231639505907.pdf.txt",
+      "expected_page": null,
+      "answer": "- Banquet Hall (250 seats): Rs. 1,50,000 for the entire day, with an advance security deposit of Rs. 30,000.\n- Banquet Hall II (1st Floor, 50+50 seating capacity): Rs. 50,000 for a full-time program, with an advance security deposit of Rs. 5,000.",
+      "citations": [
+        [
+          "GAD_202512231639505907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_201811161110169207.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 6.81,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-065",
+      "tier": "detail",
+      "language": "en",
+      "question": "Which earlier resolution on Navi Maharashtra Sadan fees does the December 2025 decision override?",
+      "expected_file": "GAD_202512231639505907.pdf.txt",
+      "expected_page": null,
+      "answer": "Government Decision No. House - 2024/124 Q. No: 92 / Rajbh overrides Government Decision No. House - 2024/380 Q. No: 120 / Rajbh.",
+      "citations": [
+        [
+          "GAD_202512231639505907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_201811161110169207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201827169907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202205041847101207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201818570507.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.18,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-066",
+      "tier": "detail",
+      "language": "mr",
+      "question": "नविन महाराष्ट्र सदनातील कक्षबंध व सभागृहांच्या शुल्कात सुधारणा करणारा शासन निर्णय कोणत्या दिनांकाचा आहे?",
+      "expected_file": "GAD_202512231639505907.pdf.txt",
+      "expected_page": null,
+      "answer": "नविन महाराष्ट्र सदनातील कक्षबंध व सभागृहांच्या शुल्कात सुधारणा करणारा शासन निर्णय २३ डिसेंबर, २०२५ रोजी ((Source 7: GAD_202512231639505907.pdf.txt, Page 1)) पासून दिलेला आहे.",
+      "citations": [
+        [
+          "GAD_201811161110169207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202512231639505907.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.41,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-067",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "How many Lower Grade Stenographer candidates were recommended from waiting list no. 2 in February 2026?",
+      "expected_file": "GAD_202602021744599807.pdf.txt",
+      "expected_page": null,
+      "answer": "Four",
+      "citations": [
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.04,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-068",
+      "tier": "disambiguation",
+      "language": "mr",
+      "question": "निम्नश्रेणी लघुलेखक परीक्षा-२०२२ च्या प्रतिक्षायादी क्र. २ मधील उमेदवारांचे नियतवाटप कोणत्या ज्ञापनाने केले?",
+      "expected_file": "GAD_202602021744599807.pdf.txt",
+      "expected_page": null,
+      "answer": "नियमितवाटप (नियामित पद) लघुलेखक (मराठी/इंग्रजी) परीक्षा-२०२२ च्या प्रतिक्षायादी (मuhammad) क्र. २ मधील उमेदवारांचे नियतवाटप महाराष्ट्र लोकसेवा आयोगाने लिपिक-टंकलेखक (मराठी/इंग्रजी) (मुख्य) परीक्षा-२०२१ च्या अंतिम निकालाच्या आधारे केलेले आहे.",
+      "citations": [
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 6.23,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-069",
+      "tier": "detail",
+      "language": "en",
+      "question": "On what date did MPSC send its letter (GDR-2422/Q.No.44/2022/29) recommending the second waiting list of Lower Grade Stenographers?",
+      "expected_file": "GAD_202602021744599807.pdf.txt",
+      "expected_page": null,
+      "answer": "The MPSC sent its letter (GDR-2422/Q.No.44/2022/29) on 06 November 2025, recommending the second waiting list of Lower Grade Stenographers.",
+      "citations": [
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 6.67,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-070",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "How many Steno-typist (Marathi) and (English) candidates were recommended from waiting list no. 2 in February 2026?",
+      "expected_file": "GAD_202602021751282007.pdf.txt",
+      "expected_page": null,
+      "answer": "29 and 28",
+      "citations": [
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.18,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-071",
+      "tier": "disambiguation",
+      "language": "mr",
+      "question": "लघुटंकलेखक परीक्षा-२०२२ च्या प्रतिक्षायादी क्र. २ मधील उमेदवारांचे फेब्रुवारी २०२६ मधील नियतवाटप कोणते?",
+      "expected_file": "GAD_202602021751282007.pdf.txt",
+      "expected_page": null,
+      "answer": "महाराष्ट्र शासन सामान्य प्रशासन विभाग.",
+      "citations": [
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.44,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-072",
+      "tier": "detail",
+      "language": "en",
+      "question": "How many Steno-typist candidates (Marathi and English) did not accept appointment or left service, leading to the second waiting-list requisition of 08.10.2025?",
+      "expected_file": "GAD_202602021751282007.pdf.txt",
+      "expected_page": null,
+      "answer": "Four",
+      "citations": [
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.04,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-073",
+      "tier": "disambiguation",
+      "language": "en",
+      "question": "How many Higher Grade Stenographer candidates were recommended from waiting list no. 2 in February 2026?",
+      "expected_file": "GAD_202602161741378907.pdf.txt",
+      "expected_page": null,
+      "answer": "The context provided does not contain explicit information about the number of Higher Grade Stenographer candidates recommended from waiting list no. 2 in February 2026. This information was not found in the uploaded documents.",
+      "citations": [
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 6.11,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": true,
+      "false_refusal": true
+    },
+    {
+      "id": "gad-074",
+      "tier": "disambiguation",
+      "language": "mr",
+      "question": "उच्चश्रेणी लघुलेखक परीक्षा-२०२२ च्या प्रतिक्षायादी क्र. २ मधील उमेदवारांचे नियतवाटप कोणत्या दिनांकाच्या ज्ञापनाने झाले?",
+      "expected_file": "GAD_202602161741378907.pdf.txt",
+      "expected_page": null,
+      "answer": "दिनांक ०५.१२.२०२४",
+      "citations": [
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.8,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-075",
+      "tier": "detail",
+      "language": "en",
+      "question": "On what date was MPSC letter GDR-2422/Q.No.79/2022/29 for the second Higher Grade Stenographer waiting list issued?",
+      "expected_file": "GAD_202602161741378907.pdf.txt",
+      "expected_page": null,
+      "answer": "The MPSC letter GDR-2422/Q.No.79/2022/29 for the second Higher Grade Stenographer waiting list was issued on 07 November 2025.",
+      "citations": [
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101257147007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 6.66,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "gad-n01",
+      "tier": "negative_trap",
+      "language": "en",
+      "question": "What is the eligibility for study leave under the Maharashtra Civil Services rules?",
+      "expected_file": null,
+      "expected_page": null,
+      "answer": "- Study tours should not be conducted for general information.\n- Officers nearing retirement are not necessarily qualified. Moreover, it is not guaranteed that such officers will be able to contribute to increasing the productivity and efficiency of the government. Therefore, those officers who have at least one year left to retire, such officers should be sent on a foreign tour. However, in the cases of tours in categories (d) and (e) of paragraph 3, exceptions will be considered as required. However, in case of other foreign tours, the proposal of officers with less than one year of service left will not be considered.\n- It should be examined and certified as to whether the information received from the foreign trip will be received through other means, how it can be attended through video conference without a foreign trip, as well as how it is possible to send other junior officials on a trip.\n- An officer may be permitted to undertake a maximum of three foreign visits of the above-mentioned nature in a financial year.\n- No foreign visit, except in respect of 3 (h) above, shall be for a period not exceeding 15 days including the period of stay.\n- An officer sent on a foreign tour by the Government may stay abroad on leave in connection with the foreign tour for the maximum period permissible under the rules in force.",
+      "citations": [
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202102011814485107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202405271658209807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202512231639505907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 10.38,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "correct_refusal": false
+    },
+    {
+      "id": "gad-n02",
+      "tier": "negative_trap",
+      "language": "en",
+      "question": "What is the dearness allowance rate for state employees from January 2025?",
+      "expected_file": null,
+      "expected_page": null,
+      "answer": "This information was not found in the uploaded documents.",
+      "citations": [
+        [
+          "GAD_202506201827169907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202506201818570507.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202512231639505907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_201811161110169207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_201812201818380207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202102161256152607.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202305111444322707.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.69,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": true,
+      "correct_refusal": true
+    },
+    {
+      "id": "gad-n03",
+      "tier": "negative_trap",
+      "language": "mr",
+      "question": "शेतकरी कर्जमाफी योजनेसाठी पात्रतेचे निकष काय आहेत?",
+      "expected_file": null,
+      "expected_page": null,
+      "answer": "शेतकरी कर्जमाफी योजनेसाठी पात्रतेचे निकष खालीलप्रमाणे आहेत:\n\n1. **कंपनीची निवड करताना संबंधित कंपनीस महाराष्ट्रासह इतर दोन राज्यात व केंद्र शासनाकडील शासकीय / निमशासकीय पदभरतीच्या स्पर्धा परीक्षा राबविण्याचा किमान ५ वर्षाचा अनुभव असावा.**\n   - संबंधित कंपनीस किमान ५,००,००० उमेदवारांसाठी स्पर्धा परीक्षा राबविण्याचा अनुभव असावा.\n\n2. **कंपनीची निवड करताना, सदर कंपनीचे नांव मागील ५ वर्षात कोणत्याही राज्य शासनाच्या व केंद्र शासनाच्या कोणत्याही विभागाच्या काळ्या यादीत नसावे.**\n\n3. **स्पर्धा परीक्षेसाठी सुरक्षिततेच्या दृष्टीने आवश्यक त्या सर्व तांत्रिक बाबींची कंपनीने पूर्तता करणे आवश्यक राहील.**\n   - स्पर्धा परीक्षेच्या सुरक्षिततेच्या दृष्टीने आवश्यक असलेल्या उपाययोजना योजवित करणे.\n\n4. **स्पर्धा परीक्षेसाठी पारदर्शकपणे, विश्वासार्ह, गोपनीयता बाळगून, सुरक्षितरित्या व सुलभतेने पार पाडण्यासाठी आवश्यक असलेल्या इतर सर्व उपाययोजना योजावयाच्या सुविधा सामंजस्य करारात उल्लेख असावा.**\n   - जसे की, सीसीटीव्ही प्रणाली, मोबाइल जॅमर, बायोमॅट्रीक उपस्थिती, आयरिस स्कॅन, उमेदवारांचे फ्रिस्किंग, पोलीस बंदोबस्त इत्यादी.\n\n5. **स्पर्धा परीक्षेसाठी प्रश्नसंच (Question Bank) कंपनीमार्फत तयार करण्यात यावा.**\n   - प्रश्नसंच कंपनीमार्फत तयार करण्यात यावा.\n\n6. **एकापेक्षा जास्त सत्रांमध्ये परीक्षा घ्यावी लागली तर प्रश्नांची काठीण्यपातळी समान असावी तसेच प्रश्नांचे यादृच्छिकीकरण (Randomization) करण्यात यावे.**\n   - प्रश्नांची काठीण्यपातळी समान असावी.\n\n7. **एकापेक्षा जास्त सत्रांमध्ये परीक्षा घ्यावी लागली तर गुणांचे सामान्यीकरण (Normalization) प्रक्रिया करणे आवश्यक राहील.**\n   - गुणांचे सामान्यीकरण प्रक्रिया करणे.\n\n8. **प्रश्नापरीक्षेसाठी नियंत्रण कक्षाची स्थापना करावी.**\n   - नियंत्रण कक्षामध्ये कंपनी व संबंधित विभाग/कार्यालयाचा प्रतिनिधी नेमावा.\n\n9. **उमेदवारांकडून प्राप्त झालेले स्पर्धा परीक्षेचे अर्ज स्वीकारणे, त्याची छाननी करणे, परीक्षा शुल्क ऑनलाईन पद्धतीने स्वीकारणे, अर्जावर योग्य ती प्रक्रिया करुन ऑनलाईन प्रवेशपत्र तयारकरणे, परीक्षेचा निकाल तसेच शिफारस झालेल्या व न झालेल्या उमेदवारांच्या याद्या संकेतस्थळावर जाहीर करणे.**\n   - कंपनीमार्फत सर्व प्रक्रिया पारदर्शकपणे आणि सुलभतेने पार पाडण्यासाठी.\n\nयातल्यानुसार, कंपनीची निवड करताना, स्पर्धा परीक्षेसाठी आवश्यक तांत्रिक सुविधा योजवित करणे, पारदर्शकता, गोपनीयता, सुरक्षितता, सुलभता योजवित करणे, प्रश्नसंच कंपनीमार्फत तयार करणे, समानता, यादृच्छिकीकरण, गुणांचे सामान्यीकरण, नियंत्रण कक्षाची स्थापना करणे, सर्व प्रक्रिया पारदर्शकपणे आणि सुलभतेने पार पाडणे यासंदर्भात समावेश करणे आवश्यक आहे.",
+      "citations": [
+        [
+          "GAD_201812201818380207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202402081834533907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602161741378907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202412311532051007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101245073307.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202507101251499107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202406201431224807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202205041847101207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202401091710039807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021744599807.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 21.6,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "correct_refusal": false
+    },
+    {
+      "id": "gad-n04",
+      "tier": "negative_trap",
+      "language": "mr",
+      "question": "जुनी निवृत्तीवेतन योजना पुन्हा लागू करण्याबाबत शासनाचा निर्णय काय आहे?",
+      "expected_file": null,
+      "expected_page": null,
+      "answer": "जुनी निवृत्तीवेतन योजना पुन्हा लागू करण्याबाबत शासनाचा निर्णय म्हणजे, केंद्र सरकारने २०१० साली घोषित केलेला फॉरेन कॉन्ट्रीब्युशन (रेग्यूलेशन) अॅक्ट, २०१० अनुसार, जो केंद्र शासनाच्या केंद्रीय गृह मंत्रालयाकडून केलेला आहे, त्याचे पालन करणे आवश्यक आहे. या नियमानुसार, राज्य शासनाच्या सार्वजनिक क्षेत्रातील उपक्रम किंवा महामंडळे यांच्याकडून सादर केल्या जाणाऱ्या प्रस्तावांनाही ही कार्यपद्धती लागू आहे. याचा अर्थ असा की, केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य सरकारच्या अधिकारी किंवा पदाधिकारी इतर देशांमध्ये काम करण्यासाठी या प्रस्तावांवर विचार करणे आवश्यक आहे. केंद्र सरकारच्या अनुमतीसाठी, राज्य",
+      "citations": [
+        [
+          "GAD_202205041847101207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202504221732089007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_201812201818380207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_201811161110169207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202512231639505907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202102011814485107.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 21.66,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "correct_refusal": false
+    },
+    {
+      "id": "gad-n05",
+      "tier": "negative_trap",
+      "language": "en",
+      "question": "How many days of maternity leave does a female government employee get?",
+      "expected_file": null,
+      "expected_page": null,
+      "answer": "This information was not found in the uploaded documents.",
+      "citations": [
+        [
+          "GAD_202512231639505907.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202504221732089007.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202102011814485107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_201811161110169207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202105201508210107.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202405271658209807.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202602021751282007.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 8.13,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": true,
+      "correct_refusal": true
+    },
+    {
+      "id": "gad-n06",
+      "tier": "negative_trap",
+      "language": "en",
+      "question": "What are the room rates at Maharashtra Bhavan in Kolkata?",
+      "expected_file": null,
+      "expected_page": null,
+      "answer": "This information was not found in the uploaded documents.",
+      "citations": [
+        [
+          "GAD_201811161110169207.pdf.txt",
+          "2"
+        ],
+        [
+          "GAD_202512231639505907.pdf.txt",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 4.75,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": true,
+      "correct_refusal": true
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+﻿Question type,What it tests,English,Marathi,Total
+Situation,"Plain-language need, no GR terminology",11,6,17
+Detail,"One specific fact (date, number, name)",24,14,38
+Disambiguation,Telling near-identical GRs apart,15,5,20
+Negative trap,No answer in corpus; system must refuse,4,2,6
+Total,,54,27,81

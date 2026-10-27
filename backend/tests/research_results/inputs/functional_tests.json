@@ -1,0 +1,168 @@
+[
+ {
+  "id": "FT-01",
+  "area": "Authentication",
+  "description": "Login with valid credentials",
+  "input": "admin / correct password",
+  "expected": "HTTP 200 with JWT",
+  "actual": "HTTP 200, token issued=True",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-02",
+  "area": "Authentication",
+  "description": "Login with wrong password",
+  "input": "admin / wrong password",
+  "expected": "Rejected (401)",
+  "actual": "HTTP 401",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-03",
+  "area": "Access control",
+  "description": "Chat query without a token",
+  "input": "POST /api/query/chat, no Authorization",
+  "expected": "Rejected (401/403)",
+  "actual": "HTTP 401",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-04",
+  "area": "Access control",
+  "description": "Non-admin lists users",
+  "input": "user1 token, GET /api/auth/users",
+  "expected": "Forbidden (403)",
+  "actual": "HTTP 403",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-05",
+  "area": "Document registry",
+  "description": "List uploaded GRs",
+  "input": "GET /api/upload/list",
+  "expected": "25 documents listed",
+  "actual": "HTTP 200, 25 documents",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-06",
+  "area": "Evidence-first citation",
+  "description": "Open cited source document",
+  "input": "GET /api/files/GAD_202504221732089007.pdf.txt",
+  "expected": "HTTP 200, document served",
+  "actual": "HTTP 404, 32 bytes",
+  "status": "Fail",
+  "note": "Corpus is indexed as .pdf.txt text exports; api/files.py serves only *.pdf, so citation links 404 for this corpus. Add the source PDFs to data/grdocs or allow .txt."
+ },
+ {
+  "id": "FT-07",
+  "area": "Security",
+  "description": "Path traversal on file endpoint",
+  "input": "GET /api/files/..%2F.env",
+  "expected": "Rejected (4xx), no secrets",
+  "actual": "HTTP 404",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-08",
+  "area": "Robustness",
+  "description": "Request a missing document",
+  "input": "GET /api/files/does_not_exist.pdf",
+  "expected": "404 Not Found",
+  "actual": "HTTP 404",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-09",
+  "area": "Health",
+  "description": "Retrieval health check",
+  "input": "GET /api/query/health",
+  "expected": "HTTP 200",
+  "actual": "HTTP 200: {\"success\":true,\"vector_ready\":true,\"ollama_online\":true,\"llm_model\":\"phi4-mini\",\"embed_model\":\"bge-m3\"}",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-10",
+  "area": "Semantic search",
+  "description": "Marathi search without LLM",
+  "input": "POST /api/query/search 'निलंबित ... आढावा'",
+  "expected": "Suspension-review GR ranked first",
+  "actual": "HTTP 200, top=GAD_202504221732089007.pdf.txt, 1.9s",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-11",
+  "area": "Summarisation",
+  "description": "List generated summaries",
+  "input": "GET /api/summary/list",
+  "expected": "Stored summary listed",
+  "actual": "HTTP 200, contains summary=True",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-12",
+  "area": "Metadata registry",
+  "description": "Registry metadata endpoint",
+  "input": "GET /api/meta/",
+  "expected": "HTTP 200",
+  "actual": "HTTP 200, 1295 bytes",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-13",
+  "area": "Bilingual answers",
+  "description": "Answer is written in the language of the question",
+  "input": "All 81 harness questions (en + mr)",
+  "expected": "Same script as question",
+  "actual": "79/81 matched",
+  "status": "Pass",
+  "note": "2 mismatches"
+ },
+ {
+  "id": "FT-14",
+  "area": "Cross-lingual QA",
+  "description": "English question about a Marathi-original GR",
+  "input": "Who heads the Recommendation Committee that examines foreign tour proposals of state officers?",
+  "expected": "Chief Secretary; cites GAD_202102011814485107",
+  "actual": "- The Recommendation Committee that examines foreign tour proposals of state officers is headed by the Chief Secretary.",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-15",
+  "area": "Hallucination control",
+  "description": "Out-of-corpus question is refused",
+  "input": "What is the dearness allowance rate for state employees from January 2025?",
+  "expected": "Fixed refusal message",
+  "actual": "This information was not found in the uploaded documents.",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-16",
+  "area": "Hallucination control",
+  "description": "Abstract example: study leave (not in corpus) is refused",
+  "input": "What is the eligibility for study leave under the Maharashtra Civil Services rules?",
+  "expected": "Fixed refusal message",
+  "actual": "- Study tours should not be conducted for general information. - Officers nearing retirement are not necessarily qualified. Moreover, it is …",
+  "status": "Fail",
+  "note": "Answered from the foreign-tours circular instead of refusing"
+ },
+ {
+  "id": "FT-17",
+  "area": "Near-duplicate GRs",
+  "description": "Pick the right memo among near-identical allotment memos",
+  "input": "Which memorandum allotted the main-list candidates of the Clerk-Typist Examination 2022 to Mantralaya departments in February 2024?",
+  "expected": "ASC 1524/P.No.15, 8 Feb 2024",
+  "actual": "Government Memorandum No: ASC 1524 / P.No.15 / Pr. 3 (14-A), dated February 8, 2024.",
+  "status": "Pass"
+ },
+ {
+  "id": "FT-18",
+  "area": "Near-duplicate GRs",
+  "description": "Read a count from the second waiting-list memo",
+  "input": "How many Lower Grade Stenographer candidates were recommended from waiting list no. 2 in February 2026?",
+  "expected": "Marathi 15, English 11",
+  "actual": "Four",
+  "status": "Fail",
+  "note": "Correct GR retrieved; 3.8B model misread the count"
+ }
+]

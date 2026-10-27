@@ -66,8 +66,6 @@ def _load_pdf_text(pdf_path: str, stage_label: str = "") -> str:
     Returns:
         Cleaned text string, max 12000 characters
     """
-    from core.ocr import load_pdf_with_ocr_fallback
-
     # ── DIAGNOSTIC ────────────────────────────────────────
     # Character counts at each transform, so a document that ends up
     # producing an empty or truncated prompt can be traced to the exact
@@ -75,12 +73,16 @@ def _load_pdf_text(pdf_path: str, stage_label: str = "") -> str:
     # stdout — without it these can appear after the HTTP access logs.
     tag = f"[{Path(pdf_path).name}|{stage_label or 'unlabelled'}]"
 
-    documents = load_pdf_with_ocr_fallback(pdf_path)
-    raw_chars = sum(len(doc.page_content) for doc in documents)
-    print(f"{tag} STAGE 1 pdf loaded      : {len(documents)} page(s), {raw_chars} chars", flush=True)
-
-    # Join all pages into one text block
-    full_text = "\n".join(doc.page_content for doc in documents)
+    if Path(pdf_path).suffix.lower() == ".txt":
+        full_text = Path(pdf_path).read_text(encoding="utf-8")
+        raw_chars = len(full_text)
+        print(f"{tag} STAGE 1 text loaded       : 1 file, {raw_chars} chars", flush=True)
+    else:
+        from core.ocr import load_pdf_with_ocr_fallback
+        documents = load_pdf_with_ocr_fallback(pdf_path)
+        raw_chars = sum(len(doc.page_content) for doc in documents)
+        full_text = "\n".join(doc.page_content for doc in documents)
+        print(f"{tag} STAGE 1 pdf loaded       : {len(documents)} page(s), {raw_chars} chars", flush=True)
     print(f"{tag} STAGE 2 pages joined    : {len(full_text)} chars", flush=True)
 
     # Clean whitespace and normalize line breaks

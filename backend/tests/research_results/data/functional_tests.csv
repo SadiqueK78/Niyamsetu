@@ -1,0 +1,19 @@
+id,area,description,input,expected,actual,status,note
+FT-01,Authentication,Login with valid credentials,admin / correct password,HTTP 200 with JWT,"HTTP 200, token issued=True",Pass,
+FT-02,Authentication,Login with wrong password,admin / wrong password,Rejected (401),HTTP 401,Pass,
+FT-03,Access control,Chat query without a token,"POST /api/query/chat, no Authorization",Rejected (401/403),HTTP 401,Pass,
+FT-04,Access control,Non-admin lists users,"user1 token, GET /api/auth/users",Forbidden (403),HTTP 403,Pass,
+FT-05,Document registry,List uploaded GRs,GET /api/upload/list,25 documents listed,"HTTP 200, 25 documents",Pass,
+FT-06,Evidence-first citation,Open cited source document,GET /api/files/GAD_202504221732089007.pdf.txt,"HTTP 200, document served","HTTP 404, 32 bytes",Fail,"Corpus is indexed as .pdf.txt text exports; api/files.py serves only *.pdf, so citation links 404 for this corpus. Add the source PDFs to data/grdocs or allow .txt."
+FT-07,Security,Path traversal on file endpoint,GET /api/files/..%2F.env,"Rejected (4xx), no secrets",HTTP 404,Pass,
+FT-08,Robustness,Request a missing document,GET /api/files/does_not_exist.pdf,404 Not Found,HTTP 404,Pass,
+FT-09,Health,Retrieval health check,GET /api/query/health,HTTP 200,"HTTP 200: {""success"":true,""vector_ready"":true,""ollama_online"":true,""llm_model"":""phi4-mini"",""embed_model"":""bge-m3""}",Pass,
+FT-10,Semantic search,Marathi search without LLM,POST /api/query/search 'निलंबित ... आढावा',Suspension-review GR ranked first,"HTTP 200, top=GAD_202504221732089007.pdf.txt, 1.9s",Pass,
+FT-11,Summarisation,List generated summaries,GET /api/summary/list,Stored summary listed,"HTTP 200, contains summary=True",Pass,
+FT-12,Metadata registry,Registry metadata endpoint,GET /api/meta/,HTTP 200,"HTTP 200, 1295 bytes",Pass,
+FT-13,Bilingual answers,Answer is written in the language of the question,All 81 harness questions (en + mr),Same script as question,79/81 matched,Pass,2 mismatches
+FT-14,Cross-lingual QA,English question about a Marathi-original GR,Who heads the Recommendation Committee that examines foreign tour proposals of state officers?,Chief Secretary; cites GAD_202102011814485107,- The Recommendation Committee that examines foreign tour proposals of state officers is headed by the Chief Secretary.,Pass,
+FT-15,Hallucination control,Out-of-corpus question is refused,What is the dearness allowance rate for state employees from January 2025?,Fixed refusal message,This information was not found in the uploaded documents.,Pass,
+FT-16,Hallucination control,Abstract example: study leave (not in corpus) is refused,What is the eligibility for study leave under the Maharashtra Civil Services rules?,Fixed refusal message,"- Study tours should not be conducted for general information. - Officers nearing retirement are not necessarily qualified. Moreover, it is …",Fail,Answered from the foreign-tours circular instead of refusing
+FT-17,Near-duplicate GRs,Pick the right memo among near-identical allotment memos,Which memorandum allotted the main-list candidates of the Clerk-Typist Examination 2022 to Mantralaya departments in February 2024?,"ASC 1524/P.No.15, 8 Feb 2024","Government Memorandum No: ASC 1524 / P.No.15 / Pr. 3 (14-A), dated February 8, 2024.",Pass,
+FT-18,Near-duplicate GRs,Read a count from the second waiting-list memo,How many Lower Grade Stenographer candidates were recommended from waiting list no. 2 in February 2026?,"Marathi 15, English 11",Four,Fail,Correct GR retrieved; 3.8B model misread the count

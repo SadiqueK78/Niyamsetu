@@ -1,0 +1,17 @@
+language,config,label,hit1,hit3,mrr,n
+en,dense_only,Dense (bge-m3),0.56,0.72,0.678,50
+en,bm25_only,BM25,0.78,0.94,0.865,50
+en,hybrid,Hybrid (RRF),0.7,0.96,0.818,50
+en,hybrid_routed,Hybrid + routing,0.72,0.86,0.787,50
+en,hybrid_routed_graph,Hybrid + routing + graph,0.72,0.86,0.787,50
+en,hybrid_graph,Hybrid + graph,0.7,0.96,0.818,50
+en,hybrid_script_aware,"Hybrid, script-aware",0.62,0.78,0.738,50
+en,hybrid_script_aware_rerank,Script-aware + reranker,0.8,0.94,0.868,50
+mr,dense_only,Dense (bge-m3),0.8,0.92,0.87,25
+mr,bm25_only,BM25,0.76,0.96,0.87,25
+mr,hybrid,Hybrid (RRF),0.88,1.0,0.933,25
+mr,hybrid_routed,Hybrid + routing,0.8,0.92,0.853,25
+mr,hybrid_routed_graph,Hybrid + routing + graph,0.8,0.92,0.853,25
+mr,hybrid_graph,Hybrid + graph,0.88,1.0,0.933,25
+mr,hybrid_script_aware,"Hybrid, script-aware",0.88,1.0,0.933,25
+mr,hybrid_script_aware_rerank,Script-aware + reranker,0.92,1.0,0.96,25

@@ -1,0 +1,13 @@
+﻿Component,Setting used in this evaluation
+Corpus,"25 GAD documents (2018-2026), bilingual text: Marathi original + English translation"
+Document types,"Memorandum 10, GR 6, Order 6, Circular 3"
+Chunking,"Section-aware (GR headings), fallback 800 chars / 150 overlap; 1098 chunks, mean 1852 chars"
+Embedding model,"bge-m3 (multilingual), 1024-dimensional"
+Vector index,"FAISS IndexFlatL2 (exact search), 1098 vectors"
+Lexical retrieval,BM25 over the same chunks
+Fusion,Reciprocal rank fusion of dense + BM25 (deployed configuration)
+Reranker (offline test),"BAAI/bge-reranker-v2-m3 cross-encoder, 20 candidates -> top 5, CPU"
+Retrieved chunks per query,top-k = 12
+Generator LLM,"phi4-mini (3.8B, Q4_K_M) via Ollama, context 8192, max 800 output tokens"
+Answer test,"81 questions through live POST /api/query/chat, timeout 300.0 s"
+Grading,Key facts per question (auto) + manual review; refusal = fixed refusal string

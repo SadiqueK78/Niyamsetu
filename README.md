@@ -199,6 +199,62 @@ retrieval alone cannot find it. Citations from those chunks are marked
 Tuned by `GRAPH_MAX_NEIGHBOR_DOCS` and `GRAPH_CHUNKS_PER_NEIGHBOR`.
 
 
+## Evaluation results — 25 GAD Government Resolutions
+
+All results below were produced on 2026-10-27 against the 25 General
+Administration Department documents in `backend/data/grdocs/` (bilingual
+text exports from [orgpedia/mahGRs](https://github.com/orgpedia/mahGRs):
+Marathi original plus English translation; 1,098 chunks, bge-m3, FAISS).
+Every table, figure and raw run file is in
+[`backend/tests/research_results/`](backend/tests/research_results/);
+[`RESULTS.md`](backend/tests/research_results/RESULTS.md) has all tables in one place.
+
+**Test set:** 81 hand-written questions (`backend/tests/gold_gad25.json`):
+75 answerable (17 situation, 38 detail, 20 near-duplicate disambiguation;
+50 English, 25 Marathi) and 6 with no answer in the corpus. Every evidence
+snippet was verified to occur in its expected GR.
+
+| Measure | Result |
+|---|---|
+| Retrieval Hit@1 / Hit@3 / Hit@12, deployed hybrid (BM25 + dense, RRF) | 76.0% / 97.3% / 100% |
+| Retrieval Hit@1 with bge-reranker-v2-m3 cross-encoder | 84.0% (≈30 s per query on CPU) |
+| Answer cites the correct GR | 100% (75/75); cited first 76.0% |
+| Answer fully correct (phi4-mini) | 41.3% (31/75); correct or partial 48.0% |
+| Fully correct — English / Marathi questions | 50.0% / 24.0% |
+| Out-of-corpus questions refused | 3/6 |
+| Answer language matches question | 97.5% (79/81) |
+| Median response time | 5.3 s |
+| Automated test suite | 437/437 passed |
+| Functional test cases (live API) | 15/18 passed |
+
+![Retrieval accuracy by configuration](backend/tests/research_results/fig1_retrieval_by_config.png)
+![End-to-end answer accuracy](backend/tests/research_results/fig4_answer_accuracy.png)
+
+Known gaps found by the evaluation:
+- Citation links 404 for this corpus: `api/files.py` serves only `*.pdf`,
+  while the corpus is indexed as `.pdf.txt` (functional test FT-06).
+- Script-aware fusion (`SCRIPT_AWARE_FUSION`) lowers Hit@1 on this corpus
+  (70.7% vs 76.0%), because each document carries an English translation
+  that BM25 matches well.
+- Most wrong answers had the right GR in context; the 3.8B generator
+  misread a table, count or date.
+
+To regenerate everything from the raw runs:
+
+```
+cd backend
+python tests/score_retrieval.py --gold tests/gold_gad25.json --top-k 12
+python tests/run_harness.py --gold tests/gold_gad25.json --tag gad25
+python tests/make_research_report.py --retrieval tests/retrieval_scores_natural_<ts>.json \
+    --harness tests/harness_natural_<ts>.json \
+    --units tests/research_results/inputs/unit_results.json \
+    --corpus tests/research_results/inputs/corpus.json \
+    --review tests/gold_gad25_review.json \
+    --functional tests/research_results/inputs/functional_tests.json
+```
+
+`make_research_report.py` needs `matplotlib` for the figures.
+
 ## Workflow for Contributors
 
 1. Create a feature branch off `main`.
