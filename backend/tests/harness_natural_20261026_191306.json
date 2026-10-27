@@ -1,0 +1,426 @@
+{
+  "run_at": "2026-10-26 19:13:06.398480+00:00",
+  "base_url": "http://localhost:8000",
+  "question_file": "tests\\gold_natural.json",
+  "total": 63,
+  "mode": "natural",
+  "tag": "baseline_7b_local2",
+  "timeout_sec": 120.0,
+  "retry": "once, after 5s",
+  "page_convention": "citation pages are the API's 1-based display pages (build_citations: metadata page + 1), compared to the gold expected_page (1-based) with no further offset",
+  "refusal_messages": [
+    "हे माहिती दिलेल्या दस्तऐवजात आढळली नाही.",
+    "This information was not found in the uploaded documents."
+  ],
+  "llm_endpoint": "http://10.171.205.190:11434",
+  "graded": false,
+  "aborted": false,
+  "completed": 7,
+  "summary": {
+    "citation_file_hit": {
+      "k": 6,
+      "n": 7,
+      "rate": 0.857
+    },
+    "citation_page_hit": {
+      "k": 6,
+      "n": 7,
+      "rate": 0.857
+    },
+    "top_citation_is_expected": {
+      "k": 6,
+      "n": 7,
+      "rate": 0.857
+    },
+    "language_match": {
+      "k": 6,
+      "n": 6,
+      "rate": 1.0
+    },
+    "correct_refusal": {
+      "k": 0,
+      "n": 0,
+      "rate": null
+    },
+    "false_refusal": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0
+    },
+    "median_sec": 61.52,
+    "max_sec": 106.8,
+    "errors": 1,
+    "infra_excluded": 1,
+    "questions": 7
+  },
+  "results": [
+    {
+      "id": "nat-001",
+      "tier": "situation",
+      "language": "en",
+      "question": "Nobody runs a proper library in our area and the local trust refuses to; can the State Government open a public library there itself?",
+      "expected_file": "GR1.1.pdf",
+      "expected_page": 7,
+      "answer": "- Yes, the State Government can open a public library in the area itself.\n- According to the Maharashtra Public Libraries Act, 1967, if the local authority, society, or trust is unwilling or incompetent to provide library service to the public, the State Government may establish a library for the use of the public in that area. Specifically, Section 11 of the Act states that no such library shall be established without giving an opportunity to the local authority, society, or trust to show cause why the State Government should not establish a library in the said local area.",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ]
+      ],
+      "elapsed_sec": 106.8,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-002",
+      "tier": "detail",
+      "language": "en",
+      "question": "Under the public libraries law, what is the minimum sum the State Government must put into the Library Fund every year?",
+      "expected_file": "GR1.1.pdf",
+      "expected_page": 9,
+      "answer": "- The State Government shall, after due appropriation made by law in this behalf, contribute to the Library Fund every year, a sum not less than twenty-five lakhs of rupees.",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ],
+        [
+          "GR1.1.pdf",
+          "3"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ]
+      ],
+      "elapsed_sec": 61.58,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-003",
+      "tier": "detail",
+      "language": "en",
+      "question": "How many times a year must the State Library Council meet at minimum, and how long may pass between two meetings?",
+      "expected_file": "GR1.1.pdf",
+      "expected_page": 6,
+      "answer": "- The State Library Council must meet at least twice a year.\n- Six months shall not intervene between two successive meetings.",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ]
+      ],
+      "elapsed_sec": 61.45,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-004",
+      "tier": "situation",
+      "language": "en",
+      "question": "I only hold a certificate in library science; how much experience do I need to be nominated as librarian on a District Library Committee?",
+      "expected_file": "GR1.2.pdf",
+      "expected_page": 4,
+      "answer": "- To be nominated as a Librarian on a District Library Committee, you need to have three years of experience as a Librarian, in addition to holding a certificate in Library Science. This is according to the rules specified in clause (ii) of sub-section (1) of section 11 of the Maharashtra Public Libraries Act, 1967.",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 48.76,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 2,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-005",
+      "tier": "detail",
+      "language": "en",
+      "question": "Within how many days must the Secretary send the minutes of a State Library Council meeting to the presiding authority for approval?",
+      "expected_file": "GR1.2.pdf",
+      "expected_page": 3,
+      "answer": "- The Secretary shall submit the minutes of the meeting within fifteen days to the Presiding authority for approval.",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ]
+      ],
+      "elapsed_sec": 61.36,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-006",
+      "tier": "detail",
+      "language": "en",
+      "question": "How often, at minimum, is a District Library Committee required to meet under the business procedure rules?",
+      "expected_file": "GR1.2.pdf",
+      "expected_page": 4,
+      "answer": "- Every District Library Committee shall meet at least once in a year on a date to be fixed by the President.",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ]
+      ],
+      "elapsed_sec": 65.18,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-007",
+      "tier": "situation",
+      "language": "mr",
+      "question": "ग्रंथालय परिषदेत नव्याने सहा सदस्य घेतले असे ऐकले; त्यात विधानसभेचे कोणते आमदार समाविष्ट केले आहेत?",
+      "expected_file": "GR1.pdf",
+      "expected_page": 2,
+      "answer": "",
+      "citations": [],
+      "elapsed_sec": 122.04,
+      "http_status": null,
+      "error": "ReadTimeout: timed out",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    }
+  ]
+}

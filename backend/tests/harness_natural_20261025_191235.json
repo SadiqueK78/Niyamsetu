@@ -1,0 +1,1659 @@
+{
+  "run_at": "2026-10-25 19:12:35.534837+00:00",
+  "base_url": "http://localhost:8000",
+  "question_file": "tests\\gold_natural.json",
+  "total": 63,
+  "mode": "natural",
+  "tag": "natural",
+  "timeout_sec": 120.0,
+  "retry": "once, after 5s",
+  "page_convention": "citation pages are the API's 1-based display pages (build_citations: metadata page + 1), compared to the gold expected_page (1-based) with no further offset",
+  "refusal_messages": [
+    "हे माहिती दिलेल्या दस्तऐवजात आढळली नाही.",
+    "This information was not found in the uploaded documents."
+  ],
+  "llm_endpoint": "https://viewing-unretired-jazz.ngrok-free.dev",
+  "graded": false,
+  "aborted": false,
+  "completed": 28,
+  "summary": {
+    "citation_file_hit": {
+      "k": 24,
+      "n": 28,
+      "rate": 0.857
+    },
+    "citation_page_hit": {
+      "k": 24,
+      "n": 28,
+      "rate": 0.857
+    },
+    "top_citation_is_expected": {
+      "k": 12,
+      "n": 28,
+      "rate": 0.429
+    },
+    "language_match": {
+      "k": 20,
+      "n": 21,
+      "rate": 0.952
+    },
+    "correct_refusal": {
+      "k": 0,
+      "n": 0,
+      "rate": null
+    },
+    "false_refusal": {
+      "k": 1,
+      "n": 21,
+      "rate": 0.048
+    },
+    "median_sec": 22.52,
+    "max_sec": 108.55,
+    "errors": 3,
+    "infra_excluded": 7,
+    "questions": 28
+  },
+  "results": [
+    {
+      "id": "nat-001",
+      "tier": "situation",
+      "language": "en",
+      "question": "Nobody runs a proper library in our area and the local trust refuses to; can the State Government open a public library there itself?",
+      "expected_file": "GR1.1.pdf",
+      "expected_page": 7,
+      "answer": "- Yes, the State Government can open a public library in the area itself.\n- According to the Maharashtra Public Libraries Act, 1967, if the local authority, society, or trust is unwilling or incompetent to provide library service to the public, the State Government may establish a library for the use of the public in that area. Specifically, Section 11(2) of the Act states that no such library shall be established without giving an opportunity to the local authority, society, or trust to show cause why the State Government should not establish a library in the said local area.",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ]
+      ],
+      "elapsed_sec": 22.52,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-002",
+      "tier": "detail",
+      "language": "en",
+      "question": "Under the public libraries law, what is the minimum sum the State Government must put into the Library Fund every year?",
+      "expected_file": "GR1.1.pdf",
+      "expected_page": 9,
+      "answer": "- The State Government shall, after due appropriation made by law in this behalf, contribute to the Library Fund every year, a sum not less than twenty-five lakhs of rupees.\n\nThe minimum sum the State Government must put into the Library Fund every year is twenty-five lakhs of rupees.",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ],
+        [
+          "GR1.1.pdf",
+          "3"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ]
+      ],
+      "elapsed_sec": 8.4,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-003",
+      "tier": "detail",
+      "language": "en",
+      "question": "How many times a year must the State Library Council meet at minimum, and how long may pass between two meetings?",
+      "expected_file": "GR1.1.pdf",
+      "expected_page": 6,
+      "answer": "- The State Library Council must meet at least twice a year.\n- Six months shall not intervene between two successive meetings.",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ]
+      ],
+      "elapsed_sec": 6.79,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-004",
+      "tier": "situation",
+      "language": "en",
+      "question": "I only hold a certificate in library science; how much experience do I need to be nominated as librarian on a District Library Committee?",
+      "expected_file": "GR1.2.pdf",
+      "expected_page": 4,
+      "answer": "⚠️ LLM error: Server disconnected without sending a response.. Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 5.9,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-005",
+      "tier": "detail",
+      "language": "en",
+      "question": "Within how many days must the Secretary send the minutes of a State Library Council meeting to the presiding authority for approval?",
+      "expected_file": "GR1.2.pdf",
+      "expected_page": 3,
+      "answer": "- The Secretary shall submit the minutes of the meeting within fifteen days to the Presiding authority for approval.",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ]
+      ],
+      "elapsed_sec": 7.88,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-006",
+      "tier": "detail",
+      "language": "en",
+      "question": "How often, at minimum, is a District Library Committee required to meet under the business procedure rules?",
+      "expected_file": "GR1.2.pdf",
+      "expected_page": 4,
+      "answer": "- Every District Library Committee shall meet at least once in a year on a date to be fixed by the President.",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ]
+      ],
+      "elapsed_sec": 9.46,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-007",
+      "tier": "situation",
+      "language": "mr",
+      "question": "ग्रंथालय परिषदेत नव्याने सहा सदस्य घेतले असे ऐकले; त्यात विधानसभेचे कोणते आमदार समाविष्ट केले आहेत?",
+      "expected_file": "GR1.pdf",
+      "expected_page": 2,
+      "answer": "महाराष्ट्र सार्वजनिक ग्रंथालय अधिनियम 1967 व महाराष्ट्र सार्वजनिक ग्रंथालये (सुधारणा) अधिनियम, 2024 यांना अनुसरून राज्य ग्रंथालय परिषदेची सुधारीत रचना निश्चित करण्यात आली आहे. त्यानुसार, राज्य ग्रंथालय परिषदेवर सदस्यांचा समावेश करण्याबाबत शासन निर्णयात विचार केले आहे.\n\nपरंतु दिलेल्या स्रोतांमधून विशेष तपशील नाही की विधानसभेचे कोणत्याही आमदार समाविष्ट केले आहेत. त्यामुळे ऐकलाने विशिष्ट जाहिर करण्यासाठी विशिष्ट शासन निर्णय व अन्य संदर्भ साहित्यावर वापरले जाऊ शकते.\n\nसामान्यपणे, राज्य ग्रंथालय परिषदेवर सदस्यांचे समावेश विधानसभेचे आमदार, राज्याचे राज्यपाल, राज्य शासनाचे अधिकारी व तंत्र शिक्षण विभागाचे अधिकारी यांच्यामध्ये आहे. त्यांच्यातून विशिष्ट आमदार निर्धारित करण्यासाठी शासन निर्णयातील विविध विवरण आणि अन्य संदर्भ साहित्य अनुसरून वापरले जातात.\n\nत्यामुळे, ऐकलाने विशिष्ट शासन निर्णय व अन्य संदर्भ साहित्यावर वापरले जाऊ शकते.",
+      "citations": [
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR2.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 34.0,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-008",
+      "tier": "detail",
+      "language": "en",
+      "question": "At which numbered meeting of the State Library Council were the four invited members unanimously approved for inclusion?",
+      "expected_file": "GR1.pdf",
+      "expected_page": 2,
+      "answer": "Based on the information provided, it appears the four invited members were approved for inclusion at the 19th meeting of the State Library Council, as indicated in point 19 of the list of members. However, the exact meeting number is not explicitly stated. The document does not provide the meeting number directly, only listing the members and their details.\n\nTo be precise, the question cannot be answered with the given information. The document states that 4 named members were appointed, but it does not specify at which meeting they were approved. If this detail is available elsewhere, it would need to be referenced to provide an accurate answer.",
+      "citations": [
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 12.51,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-009",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "ग्रंथालय परिषदेत सहा सदस्य वाढवणारा निर्णय कोणत्या आधीच्या परिषद-प्रस्थापनेच्या शासन निर्णयावर आधारित आहे?",
+      "expected_file": "GR1.pdf",
+      "expected_page": 1,
+      "answer": "ग्रंथालय परिषदेत सहा सदस्य वाढवणारा निर्णय राज्य ग्रंथालय परिषदेच्या पुनर्रचनेच्या शासन निर्णयावर आधारित आहे.\n\nया निर्णयावर विशेष विवरण दिले आहे [Source 11] मध्ये:\n\n\"राज्य ग्रंथालय परिषदेची पुनर्रचना\n\nमहाराष्ट्र शासन\nउच्च व तंत्र शिक्षण विभाग\nशासन निर्णय क्र. मराग्रं 9005/(994/05)/ साशि-5\nमंत्रालय विस्तार भवन, मुंबई 400 022,\nदिनांक 13 ऑक्टोबर, 2006.\n\n(1) शासन निर्णय,क्रमांक-एलजआयर्दी-2590/1549237/(2044)/साशि-5,\nदिनांक 31 डिसेंबर 1997\n(2) ग्रंथालय संचालनालयाचे जा.क्र. 19/402/4, दि.4.5.20058चे पत्र.\"\n\nत्यामुळे, ग्रंथालय परिषदेत सहा सदस्य वाढवणारा निर्णय राज्य ग्रंथालय परिषदेच्या पुनर्रचनेच्या शासन निर्णयावर आधारित आहे.",
+      "citations": [
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 28.08,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-010",
+      "tier": "situation",
+      "language": "mr",
+      "question": "जुन्या ग्रंथालय परिषदेची मुदत संपल्यावर ती पुन्हा रचली तेव्हा ग्रंथालय संघाने नाशिक विभागासाठी कोणाला प्रतिनिधी नेमले होते?",
+      "expected_file": "GR1.4.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: [WinError 10053] An established connection was aborted by the software in your host machine. Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 5.23,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-011",
+      "tier": "detail",
+      "language": "en",
+      "question": "When the library council was reconstituted after its term expired, which member of the Legislative Council was included as its representative?",
+      "expected_file": "GR1.4.pdf",
+      "expected_page": 1,
+      "answer": "Based on the information provided, it appears that the member of the Legislative Council (MLC) who was included as the representative of the Legislative Council when the library council was reconstituted after its term expired was not explicitly named in the given sources. However, the process for including such a representative is outlined in the guidelines provided.\n\nSpecifically, according to [Source 15: GR1.1.pdf, Page 7], the composition of the Library Committee includes:\n\n- \"one of the Chairman of the Managing Committees of recognised public-libraries functioning in each taluka of the district nominated by the State Government;\"\n- \"five persons nominated by the State Government one of whom shall be a librarian possessing the prescribed qualifications and two shall be persons representing libraries in the areas within the limits of a '[Municipal Council] or municipal corporation in the district;\"\n- \"one of the Presidents of the municipalities in the district nominated by the State Government;\"\n- \"the Education Officer for the time-being of the Zilla Parishad functioning in the district, who shall also be ex-officio Secretary of the Committee.\"\n\nWhile these guidelines do not explicitly mention a specific MLC, the process for including a representative from the Legislative Council would typically follow similar nomination or selection procedures as outlined for other representatives. If an MLC was included, it would likely have been through a nomination process by the State Government.\n\nTo directly answer the question based on the provided sources: The specific MLC included as a representative of the Legislative Council is not explicitly stated. However, the inclusion of such a representative would be in line with the broader guidelines for the composition of the Library Committee, which include nominations by the State Government.",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 22.36,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-012",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "ग्रंथालय परिषदेची ही पुनर्रचना कोणत्या जुन्या शासन निर्णयाने रचलेल्या परिषदेची मुदत संपल्यामुळे केली गेली?",
+      "expected_file": "GR1.4.pdf",
+      "expected_page": 1,
+      "answer": "ही ग्रंथालय परिषदेची पुनररचना 2024 वर्षाच्या महाराष्ट्र सार्वजनिक ग्रंथालये (सुधारणा) अधिनियमानुसार केली गेली.\n\nया माहिती दिलेल्या श्रंखलेत दिलेल्या शासन निर्णयांमध्ये दिलेल्या विविध संदर्भांमुळे निरीक्षण करून पाहिजे:\n\n1. [Source 9] मध्ये यादी करण्यात आलेले शासन निर्णयाचे विवरण दिले आहे: \"महाराष्ट्र सार्वजनिक ग्रंथालय अधिनियम 1967 चे प्रकरण 2 कलम 3 आणि महाराष्ट्र सार्वजनिक ग्रंथालये (सुधारणा) अधिनियम, 2024 अन्वये राज्य ग्रंथालय परिषदेची सुधारीत रचना निश्चित करण्यात आली आहे.\"\n\n2. [Source 11] मध्ये यादी करण्यात आलेले शासन निर्णयाचे विवरण दिले आहे: \"महाराष्ट्र सार्वजनिक ग्रंथालये (सुधारणा) अधिनियम, 2024\"\n\n3. [Source 12] मध्ये यादी करण्यात आलेले शासन निर्णयाचे विवरण दिले आहे: \"महाराष्ट्र सार्वजनिक ग्रंथालये (सुधारणा) अधिनियम, 2024\"\n\nत्यामुळे या शासन निर्णयांमुळे ग्रंथालय परिषदेची पुनररचना केली गेली आहे, ज्यामुळे त्याची मुदत संपल्यामुळे या परिषदेवर सदस्यांचा समावेश करण्यात आला आहे.",
+      "citations": [
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 37.41,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-013",
+      "tier": "situation",
+      "language": "mr",
+      "question": "सुधारणा कायद्यानंतर ग्रंथालय परिषद नव्याने स्थापन झाली; त्यात माहिती तंत्रज्ञान विभागाचे संचालकही सदस्य आहेत का?",
+      "expected_file": "GR1.5.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: [WinError 10053] An established connection was aborted by the software in your host machine. Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR4.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 7.46,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-014",
+      "tier": "detail",
+      "language": "mr",
+      "question": "नव्याने स्थापन केलेल्या राज्य ग्रंथालय परिषदेत वांद्रे येथील चेतना महाविद्यालयाच्या कोणत्या ग्रंथपालांना शासन नामनिर्देशित सदस्य केले आहे?",
+      "expected_file": "GR1.5.pdf",
+      "expected_page": 2,
+      "answer": "प्रश्नावर जवाब देण्यासाठी तयार आलेल्या स्रोतांमधून विश्लेषण करून त्यांच्या अनुसार त्यांना वांद्रे येथील चेतना महाविद्यालयाच्या ग्रंथपालांना शासन नामनिर्देशित सदस्य केले आहे नाही. त्यामुळे उत्तर येईल:\n\nशासन निर्णयात वांद्रे येथील चेतना महाविद्यालयाच्या कोणत्याही ग्रंथपालांना शासन नामनिर्देशित सदस्य केले आहे नाही. त्यानुसार, राज्य ग्रंथालय परिषदेची प्रस्थापना करण्याची बाब शासनाच्या विचाराधीन होती.\n\nस्रोतांमधून जाहीर आहे की राज्य ग्रंथालय परिषदेची प्रस्थापना करण्याची बाब शासनाच्या विचाराधीन आहे आणि त्यात वांद्रे येथील चेतना महाविद्यालयाच्या कोणत्याही ग्रंथपालांना शासन नामनिर्देशित सदस्य केले आहे नाही. त्यामुळे शासन निर्णयात दिलेल्या अटी व शर्तींमुळे वांद्रे येथील चेतना महाविद्यालयाच्या कोणत्याही ग्रंथपालांना शासन नामनिर्देशित सदस्य केले आहे नाही त्यामुळे उत्तर येईल.",
+      "citations": [
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 33.23,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-015",
+      "tier": "relationship",
+      "language": "en",
+      "question": "Besides the Library Directorate's letter, which earlier council order of the Higher and Technical Education department does the revised council's establishment cite?",
+      "expected_file": "GR1.5.pdf",
+      "expected_page": 1,
+      "answer": "- This information was not found in the uploaded documents.",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ]
+      ],
+      "elapsed_sec": 7.84,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": true,
+      "false_refusal": true
+    },
+    {
+      "id": "nat-016",
+      "tier": "situation",
+      "language": "mr",
+      "question": "छत्रपती संभाजीनगरच्या विद्यापीठात नवे कौशल्य केंद्र सुरू होत आहे; तिथे विद्यार्थ्यांसाठी ग्रंथालयात अभ्यासिका द्यावी लागेल का?",
+      "expected_file": "GR2.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: [WinError 10053] An established connection was aborted by the software in your host machine. Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 5.14,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-017",
+      "tier": "detail",
+      "language": "en",
+      "question": "On what funding basis is the new AICTE-approved skill centre at the Marathwada university allowed to start?",
+      "expected_file": "GR2.pdf",
+      "expected_page": 1,
+      "answer": "The document does not provide specific details on the funding basis for starting the new AICTE-approved skill centre at Marathwada University. It only mentions that the State Government is responsible for utilizing funds from the Library Fund for the purposes of this Act, including the establishment, maintenance, and development of public libraries, and providing grants-in-aid to recognized public libraries. For the skill centre, the document lists members of the State Government and other authorities involved in the management and recognition of libraries, but does not specify funding sources for the new skill centre.",
+      "citations": [
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "4"
+        ],
+        [
+          "GR2.pdf",
+          "2"
+        ],
+        [
+          "GR3.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR5.pdf",
+          "2"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 14.59,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-018",
+      "tier": "detail",
+      "language": "mr",
+      "question": "विद्यापीठातील नव्या कौशल्य केंद्राला रॅगिंगबाबत कोणता कायदा कठोरपणे लागू करणे बंधनकारक आहे?",
+      "expected_file": "GR2.pdf",
+      "expected_page": 2,
+      "answer": "",
+      "citations": [],
+      "elapsed_sec": 122.07,
+      "http_status": null,
+      "error": "ReadTimeout: timed out",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-019",
+      "tier": "situation",
+      "language": "mr",
+      "question": "मंत्रालयाच्या उपाहारगृहाच्या स्वयंपाकघरात धूर आणि उष्णता बाहेर काढण्याची सोय नाही; नूतनीकरणासाठी एकूण किती खर्च मंजूर झाला?",
+      "expected_file": "GR3.pdf",
+      "expected_page": 2,
+      "answer": "मंत्रालयाच्या उपाहारगृहाच्या स्वयंपाकघरात धूर आणि उष्णता बाहेर काढण्याची सोय नाही. नूतनीकरणासाठी एकूण 500,000 रुपये मंजूर झाले.",
+      "citations": [
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "2"
+        ],
+        [
+          "GR3.pdf",
+          "3"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "3"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 71.63,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 2,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-020",
+      "tier": "detail",
+      "language": "mr",
+      "question": "उपाहारगृहाच्या स्वयंपाकगृह आधुनिकीकरणाच्या खर्चासाठी आहरण व संवितरण अधिकारी म्हणून कोणाला घोषित केले आहे?",
+      "expected_file": "GR3.pdf",
+      "expected_page": 3,
+      "answer": "प्रश्नावर जवाबदावी येणारे विवरण दिलेल्या स्रोतांमध्ये नाही. दिलेल्या माहितीमधून उपाहारगृहाच्या स्वयंपाकगृह आधुनिकीकरणाच्या खर्चासाठी आहरण व संवितरण अधिकारी म्हणून कोणाला घोषित केले आहे या विषयावर कोणत्याही सूचना नाही. या माहितीमुळे त्यांच्या विभागातील कर्मचारी या कार्यांसाठी प्रशिक्षण आणि पदावरील प्रतिनियुक्ती घोषित केल्याची सूचना मिळाली तर त्यांच्यातून नाही.",
+      "citations": [
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "3"
+        ],
+        [
+          "GR3.pdf",
+          "2"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "aadesh 5.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 22.74,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-021",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "मंत्रालय उपाहारगृहाच्या स्वयंपाकगृह आधुनिकीकरणाचा निर्णय कोणत्या अभियंत्यांच्या पत्रांचा संदर्भ घेतो?",
+      "expected_file": "GR3.pdf",
+      "expected_page": 1,
+      "answer": "मुख्यतः दिलेल्या माहितीमुळे या परिपत्रकात अधिकृत अभियंत्यांचे नाव नाही जो उपाहारगृहाच्या स्वयंपाकगृह आधुनिकीकरणाचा निर्णय घेतो. त्यामुळे या प्रश्नाची उत्तर देण्यासाठी अधिक माहिती आवश्यक आहे.\n\nपरिपत्रकात दिलेल्या विवरणांमुळे या निर्णयाला जुळण्यासाठी अनेक अभियंत्यांचे नाव आणि त्यांच्या विभागांचे नाव आवश्यक आहेत. त्यामुळे तो उपाहारगृहाच्या स्वयंपाकगृह आधुनिकीकरणाच्या कामावर सुरुवात करू शकतात.\n\nत्यामुळे या प्रश्नाची उत्तर देण्यासाठी अधिक माहिती आवश्यक आहे. त्यामुळे तो उपाहारगृहाच्या स्वयंपाकगृह आधुनिकीकरणाच्या कामावर सुरुवात करू शकतात.",
+      "citations": [
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ],
+        [
+          "GR3.pdf",
+          "3"
+        ],
+        [
+          "GR3.pdf",
+          "2"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 27.65,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-022",
+      "tier": "situation",
+      "language": "mr",
+      "question": "माझी मुंबईबाहेर बदली झाली पण अजून शासकीय क्वार्टर सोडले नाही; नव्या कार्यालयात घरभाडे भत्ता मिळेल का?",
+      "expected_file": "GR4.pdf",
+      "expected_page": 1,
+      "answer": "",
+      "citations": [],
+      "elapsed_sec": 122.05,
+      "http_status": null,
+      "error": "ReadTimeout: timed out",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-023",
+      "tier": "detail",
+      "language": "mr",
+      "question": "मुंबईबाहेर बदली झालेल्या कर्मचाऱ्याला निवासस्थान न सोडता घरभाडे भत्ता दिला गेला तर वसुली कोणाकडून करायची?",
+      "expected_file": "GR4.pdf",
+      "expected_page": 1,
+      "answer": "मुंबईबाहेर बदली झालेल्या कर्मचाऱ्याला निवासस्थान न सोडता घरभाडे भत्ता दिला गेला तर वसुली कर्मचारीच्या विभागावर करायची.\n\nहे आदेशात दिसते की:\n\n4. संबंधित अधिकाऱ्यांनी कार्यमुक्त होताना कार्यभार हस्तांतरण प्रमाणपत्र देणे बंधनकारक आहे.\n\nत्यामुळे, कार्यभार हस्तांतरण प्रमाणपत्र देण्याची वसूल कर्मचारीच्या विभागावर करायची असे.\n\nत्यामुळे, वसुली कर्मचारीच्या विभागावर करायची असे.",
+      "citations": [
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "aadesh 3.pdf",
+          "5"
+        ],
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 108.55,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 2,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-024",
+      "tier": "relationship",
+      "language": "en",
+      "question": "Which earlier government decisions does the order on staff who keep Mumbai quarters after being transferred out list as its references?",
+      "expected_file": "GR4.pdf",
+      "expected_page": 1,
+      "answer": "- 2) शासन निर्णय, क्र.शानिवा 1518/प्र.क्र.461/23-अ, दि.07 जानेवारी, 2021\n- 3) शासन निर्णय, वित्त विभाग क्र.सेनिवे 2026/प्र.क्र.35/सेवा-4, दि.03 जून, 2026",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ]
+      ],
+      "elapsed_sec": 12.93,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-025",
+      "tier": "situation",
+      "language": "mr",
+      "question": "मी डिसेंबरमध्ये निवृत्त होणार आहे आणि मुलगा दहावीत आहे; शासकीय निवासस्थानात किती काळ राहता येईल?",
+      "expected_file": "GR5.pdf",
+      "expected_page": 1,
+      "answer": "",
+      "citations": [],
+      "elapsed_sec": 122.09,
+      "http_status": null,
+      "error": "ReadTimeout: timed out",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-026",
+      "tier": "detail",
+      "language": "en",
+      "question": "At what rate is the licence fee charged when a retired employee stays on in government quarters for a child's schooling?",
+      "expected_file": "GR5.pdf",
+      "expected_page": 1,
+      "answer": "The provided sources do not contain any information regarding the rate of licence fee charged when a retired employee stays on in government quarters for a child's schooling. There is no relevant detail in the given texts to answer this specific question.",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "1"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "GR5.pdf",
+          "2"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 65.47,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 2,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-027",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "निवृत्तीनंतर मुलाच्या शाळेसाठी क्वार्टरमध्ये राहू देण्याचा निर्णय वित्त विभागाच्या कोणत्या आधीच्या निर्णयाचा आधार घेतो?",
+      "expected_file": "GR5.pdf",
+      "expected_page": 1,
+      "answer": "निवृत्तीनंतर मुलाच्या शाळेसाठी क्वार्टरमध्ये राहू देण्याचा निर्णय वित्त विभागाच्या शासन निर्णय क्रमांक: सैकवि-2026/प्र.क्र.90/मासैक दिनांक 06 ऑगस्ट, 2026 याचा आधार घेतो. या निर्णयात वाचले आहे की \"शासन निर्णय क्रमांक : सैकवि-2026/प्र.क्र.147/मासैक\" याने निश्चित केलेल्या स्थायी अस्थायी पदांच्या शासन निर्णयावर आधारित \"शासन निर्णय क्रमांक : सैकवि-2026/प्र.क्र.147/मासैक\" याने निश्चित केलेल्या स्थायी अस्थायी पदांच्या शासन निर्णयावर आधारित शासन शुद्धीपत्रक क्रमांक : सैकवि-2026/प्र.क्र.90/मासैक दिलेले आहे.",
+      "citations": [
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "2"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 23.93,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-028",
+      "tier": "situation",
+      "language": "mr",
+      "question": "गृह विभागातील एका अवर सचिवांची वित्त विभागात बदली झाली होती, तरी ते अजून गृह विभागातच काम करत आहेत; असे का?",
+      "expected_file": "aadesh 1.pdf",
+      "expected_page": 1,
+      "answer": "हे प्रश्न वापरलेल्या डाटांपासून निहित नाही. तथापि, या आदेशात दिलेल्या माहितीनुसार त्यांनी गृह विभागातील अधिकारी रुजू केल्यावर विभागातील बदल झाला आहे. त्यांनी विभागातील बाबी वित्त विभागात रुजू केल्यावर त्यांच्या नावावर विभागांची बदली झाली असे आहे. त्यांनी अजून गृह विभागातच काम करत नाही, त्यांनी विभागातील बाबी वित्त विभागात रुजू केल्यावर त्यांच्या नावावर विभागांची बदली झाली आहे. त्यांनी गृह विभागातच काम करत नाही.",
+      "citations": [
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "2"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ],
+        [
+          "aadesh 5.pdf",
+          "2"
+        ],
+        [
+          "aadesh 3.pdf",
+          "3"
+        ],
+        [
+          "aadesh 3.pdf",
+          "5"
+        ]
+      ],
+      "elapsed_sec": 20.99,
+      "http_status": 200,
+      "error": "",
+      "api_success": true,
+      "attempts": 1,
+      "infra_failure": false,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    }
+  ]
+}

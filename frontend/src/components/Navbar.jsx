@@ -4,6 +4,8 @@
 // Shows: logo left, username + role badge right.
 // ─────────────────────────────────────────────────────────
 
+import { Landmark, Network, Table, Search } from 'lucide-react'
+import { NavLink } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 export default function Navbar({ collapsed, onToggleSidebar }) {
@@ -46,7 +48,7 @@ export default function Navbar({ collapsed, onToggleSidebar }) {
         >
           ☰
         </button>
-        <span style={{ fontSize: '1.3rem' }}>🏛️</span>
+        <span style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}><Landmark size={20} color="#FF6B00" /></span>
         <span style={{
           color: '#FF6B00',
           fontWeight: '700',
@@ -56,6 +58,74 @@ export default function Navbar({ collapsed, onToggleSidebar }) {
           Niyamsetu
         </span>
       </div>
+
+      {/* Middle — graph link. The relationship graph is not a document
+          list, so it has no home in the per-document sidebar. */}
+      {user && (
+        <NavLink
+          to="/graph"
+          title="GR relationship graph"
+          style={({ isActive }) => ({
+            display: 'flex',
+            alignItems: 'center',
+            gap: '7px',
+            padding: '5px 12px',
+            borderRadius: '6px',
+            textDecoration: 'none',
+            fontSize: '0.85rem',
+            fontWeight: '600',
+            color: isActive ? '#FF6B00' : '#8A93A6',
+            background: isActive ? '#242840' : 'transparent',
+          })}
+        >
+          <Network size={16} />
+          <span>Graph</span>
+        </NavLink>
+      )}
+
+      {user && (
+        <NavLink
+          to="/registry"
+          title="Document registry"
+          style={({ isActive }) => ({
+            display: 'flex',
+            alignItems: 'center',
+            gap: '7px',
+            padding: '5px 12px',
+            borderRadius: '6px',
+            textDecoration: 'none',
+            fontSize: '0.85rem',
+            fontWeight: '600',
+            color: isActive ? '#FF6B00' : '#8A93A6',
+            background: isActive ? '#242840' : 'transparent',
+          })}
+        >
+          <Table size={16} />
+          <span>Registry</span>
+        </NavLink>
+      )}
+
+      {user && (
+        <NavLink
+          to="/search"
+          title="Retrieval search"
+          style={({ isActive }) => ({
+            display: 'flex',
+            alignItems: 'center',
+            gap: '7px',
+            padding: '5px 12px',
+            borderRadius: '6px',
+            textDecoration: 'none',
+            fontSize: '0.85rem',
+            fontWeight: '600',
+            color: isActive ? '#FF6B00' : '#8A93A6',
+            background: isActive ? '#242840' : 'transparent',
+          })}
+        >
+          <Search size={16} />
+          <span>Search</span>
+        </NavLink>
+      )}
 
       {/* Right — user info */}
       {user && (

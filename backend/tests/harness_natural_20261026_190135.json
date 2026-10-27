@@ -1,0 +1,4199 @@
+{
+  "run_at": "2026-10-26 19:01:35.756719+00:00",
+  "base_url": "http://localhost:8000",
+  "question_file": "tests\\gold_natural.json",
+  "total": 63,
+  "mode": "natural",
+  "tag": "baseline_7b_local",
+  "timeout_sec": 120.0,
+  "retry": "once, after 5s",
+  "page_convention": "citation pages are the API's 1-based display pages (build_citations: metadata page + 1), compared to the gold expected_page (1-based) with no further offset",
+  "refusal_messages": [
+    "हे माहिती दिलेल्या दस्तऐवजात आढळली नाही.",
+    "This information was not found in the uploaded documents."
+  ],
+  "llm_endpoint": "http://10.171.205.190:11434",
+  "graded": false,
+  "aborted": false,
+  "elapsed_sec": 177.59,
+  "completed": 63,
+  "summary": {
+    "citation_file_hit": {
+      "k": 44,
+      "n": 57,
+      "rate": 0.772
+    },
+    "citation_page_hit": {
+      "k": 43,
+      "n": 57,
+      "rate": 0.754
+    },
+    "top_citation_is_expected": {
+      "k": 18,
+      "n": 57,
+      "rate": 0.316
+    },
+    "language_match": {
+      "k": 0,
+      "n": 0,
+      "rate": null
+    },
+    "correct_refusal": {
+      "k": 0,
+      "n": 0,
+      "rate": null
+    },
+    "false_refusal": {
+      "k": 0,
+      "n": 0,
+      "rate": null
+    },
+    "median_sec": null,
+    "max_sec": null,
+    "errors": 0,
+    "infra_excluded": 63,
+    "questions": 63
+  },
+  "results": [
+    {
+      "id": "nat-001",
+      "tier": "situation",
+      "language": "en",
+      "question": "Nobody runs a proper library in our area and the local trust refuses to; can the State Government open a public library there itself?",
+      "expected_file": "GR1.1.pdf",
+      "expected_page": 7,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ]
+      ],
+      "elapsed_sec": 1.61,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-002",
+      "tier": "detail",
+      "language": "en",
+      "question": "Under the public libraries law, what is the minimum sum the State Government must put into the Library Fund every year?",
+      "expected_file": "GR1.1.pdf",
+      "expected_page": 9,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ]
+      ],
+      "elapsed_sec": 1.79,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-003",
+      "tier": "detail",
+      "language": "en",
+      "question": "How many times a year must the State Library Council meet at minimum, and how long may pass between two meetings?",
+      "expected_file": "GR1.1.pdf",
+      "expected_page": 6,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ]
+      ],
+      "elapsed_sec": 1.75,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-004",
+      "tier": "situation",
+      "language": "en",
+      "question": "I only hold a certificate in library science; how much experience do I need to be nominated as librarian on a District Library Committee?",
+      "expected_file": "GR1.2.pdf",
+      "expected_page": 4,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ]
+      ],
+      "elapsed_sec": 1.96,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-005",
+      "tier": "detail",
+      "language": "en",
+      "question": "Within how many days must the Secretary send the minutes of a State Library Council meeting to the presiding authority for approval?",
+      "expected_file": "GR1.2.pdf",
+      "expected_page": 3,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ]
+      ],
+      "elapsed_sec": 1.37,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-006",
+      "tier": "detail",
+      "language": "en",
+      "question": "How often, at minimum, is a District Library Committee required to meet under the business procedure rules?",
+      "expected_file": "GR1.2.pdf",
+      "expected_page": 4,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ]
+      ],
+      "elapsed_sec": 1.57,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-007",
+      "tier": "situation",
+      "language": "mr",
+      "question": "ग्रंथालय परिषदेत नव्याने सहा सदस्य घेतले असे ऐकले; त्यात विधानसभेचे कोणते आमदार समाविष्ट केले आहेत?",
+      "expected_file": "GR1.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.61,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-008",
+      "tier": "detail",
+      "language": "en",
+      "question": "At which numbered meeting of the State Library Council were the four invited members unanimously approved for inclusion?",
+      "expected_file": "GR1.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ]
+      ],
+      "elapsed_sec": 1.75,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-009",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "ग्रंथालय परिषदेत सहा सदस्य वाढवणारा निर्णय कोणत्या आधीच्या परिषद-प्रस्थापनेच्या शासन निर्णयावर आधारित आहे?",
+      "expected_file": "GR1.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 1.58,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-010",
+      "tier": "situation",
+      "language": "mr",
+      "question": "जुन्या ग्रंथालय परिषदेची मुदत संपल्यावर ती पुन्हा रचली तेव्हा ग्रंथालय संघाने नाशिक विभागासाठी कोणाला प्रतिनिधी नेमले होते?",
+      "expected_file": "GR1.4.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "4"
+        ]
+      ],
+      "elapsed_sec": 1.63,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-011",
+      "tier": "detail",
+      "language": "en",
+      "question": "When the library council was reconstituted after its term expired, which member of the Legislative Council was included as its representative?",
+      "expected_file": "GR1.4.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ]
+      ],
+      "elapsed_sec": 1.45,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-012",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "ग्रंथालय परिषदेची ही पुनर्रचना कोणत्या जुन्या शासन निर्णयाने रचलेल्या परिषदेची मुदत संपल्यामुळे केली गेली?",
+      "expected_file": "GR1.4.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.65,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-013",
+      "tier": "situation",
+      "language": "mr",
+      "question": "सुधारणा कायद्यानंतर ग्रंथालय परिषद नव्याने स्थापन झाली; त्यात माहिती तंत्रज्ञान विभागाचे संचालकही सदस्य आहेत का?",
+      "expected_file": "GR1.5.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR4.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.72,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-014",
+      "tier": "detail",
+      "language": "mr",
+      "question": "नव्याने स्थापन केलेल्या राज्य ग्रंथालय परिषदेत वांद्रे येथील चेतना महाविद्यालयाच्या कोणत्या ग्रंथपालांना शासन नामनिर्देशित सदस्य केले आहे?",
+      "expected_file": "GR1.5.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ]
+      ],
+      "elapsed_sec": 1.82,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-015",
+      "tier": "relationship",
+      "language": "en",
+      "question": "Besides the Library Directorate's letter, which earlier council order of the Higher and Technical Education department does the revised council's establishment cite?",
+      "expected_file": "GR1.5.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ]
+      ],
+      "elapsed_sec": 1.47,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-016",
+      "tier": "situation",
+      "language": "mr",
+      "question": "छत्रपती संभाजीनगरच्या विद्यापीठात नवे कौशल्य केंद्र सुरू होत आहे; तिथे विद्यार्थ्यांसाठी ग्रंथालयात अभ्यासिका द्यावी लागेल का?",
+      "expected_file": "GR2.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "2"
+        ],
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 1.64,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-017",
+      "tier": "detail",
+      "language": "en",
+      "question": "On what funding basis is the new AICTE-approved skill centre at the Marathwada university allowed to start?",
+      "expected_file": "GR2.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ]
+      ],
+      "elapsed_sec": 1.53,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-018",
+      "tier": "detail",
+      "language": "mr",
+      "question": "विद्यापीठातील नव्या कौशल्य केंद्राला रॅगिंगबाबत कोणता कायदा कठोरपणे लागू करणे बंधनकारक आहे?",
+      "expected_file": "GR2.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "2"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "2"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "4"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.6,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-019",
+      "tier": "situation",
+      "language": "mr",
+      "question": "मंत्रालयाच्या उपाहारगृहाच्या स्वयंपाकघरात धूर आणि उष्णता बाहेर काढण्याची सोय नाही; नूतनीकरणासाठी एकूण किती खर्च मंजूर झाला?",
+      "expected_file": "GR3.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "GR3.pdf",
+          "3"
+        ],
+        [
+          "GR3.pdf",
+          "2"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 1.48,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-020",
+      "tier": "detail",
+      "language": "mr",
+      "question": "उपाहारगृहाच्या स्वयंपाकगृह आधुनिकीकरणाच्या खर्चासाठी आहरण व संवितरण अधिकारी म्हणून कोणाला घोषित केले आहे?",
+      "expected_file": "GR3.pdf",
+      "expected_page": 3,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "3"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "GR3.pdf",
+          "2"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.74,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-021",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "मंत्रालय उपाहारगृहाच्या स्वयंपाकगृह आधुनिकीकरणाचा निर्णय कोणत्या अभियंत्यांच्या पत्रांचा संदर्भ घेतो?",
+      "expected_file": "GR3.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 1.82,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-022",
+      "tier": "situation",
+      "language": "mr",
+      "question": "माझी मुंबईबाहेर बदली झाली पण अजून शासकीय क्वार्टर सोडले नाही; नव्या कार्यालयात घरभाडे भत्ता मिळेल का?",
+      "expected_file": "GR4.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "2"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.61,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-023",
+      "tier": "detail",
+      "language": "mr",
+      "question": "मुंबईबाहेर बदली झालेल्या कर्मचाऱ्याला निवासस्थान न सोडता घरभाडे भत्ता दिला गेला तर वसुली कोणाकडून करायची?",
+      "expected_file": "GR4.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "3"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 1.78,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-024",
+      "tier": "relationship",
+      "language": "en",
+      "question": "Which earlier government decisions does the order on staff who keep Mumbai quarters after being transferred out list as its references?",
+      "expected_file": "GR4.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ]
+      ],
+      "elapsed_sec": 1.52,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-025",
+      "tier": "situation",
+      "language": "mr",
+      "question": "मी डिसेंबरमध्ये निवृत्त होणार आहे आणि मुलगा दहावीत आहे; शासकीय निवासस्थानात किती काळ राहता येईल?",
+      "expected_file": "GR5.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "4"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "2"
+        ],
+        [
+          "GR4.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 1.72,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-026",
+      "tier": "detail",
+      "language": "en",
+      "question": "At what rate is the licence fee charged when a retired employee stays on in government quarters for a child's schooling?",
+      "expected_file": "GR5.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ]
+      ],
+      "elapsed_sec": 1.33,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-027",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "निवृत्तीनंतर मुलाच्या शाळेसाठी क्वार्टरमध्ये राहू देण्याचा निर्णय वित्त विभागाच्या कोणत्या आधीच्या निर्णयाचा आधार घेतो?",
+      "expected_file": "GR5.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "2"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "2"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.6,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-028",
+      "tier": "situation",
+      "language": "mr",
+      "question": "गृह विभागातील एका अवर सचिवांची वित्त विभागात बदली झाली होती, तरी ते अजून गृह विभागातच काम करत आहेत; असे का?",
+      "expected_file": "aadesh 1.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "2"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.64,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-029",
+      "tier": "detail",
+      "language": "en",
+      "question": "Until when may the under secretary whose move from Home to Finance was stayed continue in the present department?",
+      "expected_file": "aadesh 1.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 1.62,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-030",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "अवर सचिवांच्या बदलीला स्थगिती देणारा आदेश कोणत्या आधीच्या एकतर्फी कार्यमुक्तीच्या आदेशाचा संदर्भ देतो?",
+      "expected_file": "aadesh 1.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "5"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "aadesh 5.pdf",
+          "2"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "5"
+        ]
+      ],
+      "elapsed_sec": 1.45,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-031",
+      "tier": "situation",
+      "language": "mr",
+      "question": "वित्त विभागातील कक्ष अधिकाऱ्याला नागपूर महापालिकेत सहायक आयुक्त म्हणून प्रतिनियुक्तीवर पाठवले आहे; हा कालावधी किती वर्षांचा आहे?",
+      "expected_file": "aadesh 2.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "5"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "2"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "5"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "3"
+        ]
+      ],
+      "elapsed_sec": 1.51,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-032",
+      "tier": "detail",
+      "language": "en",
+      "question": "Over a whole career, how many years of deputation in total are allowed to the officer sent to Nagpur Municipal Corporation as assistant commissioner?",
+      "expected_file": "aadesh 2.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ]
+      ],
+      "elapsed_sec": 1.5,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-033",
+      "tier": "detail",
+      "language": "mr",
+      "question": "नागपूर महापालिकेत सहायक आयुक्त म्हणून प्रतिनियुक्तीवर जाणाऱ्या कक्ष अधिकाऱ्याला कोणता विभाग कार्यमुक्त करणार?",
+      "expected_file": "aadesh 2.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "2"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.55,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-034",
+      "tier": "situation",
+      "language": "mr",
+      "question": "बदली रद्द व्हावी म्हणून एखाद्या कक्ष अधिकाऱ्याने ओळखीने किंवा थेट दबाव आणला तर त्याचे काय परिणाम होतील?",
+      "expected_file": "aadesh 3.pdf",
+      "expected_page": 4,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "2"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "aadesh 3.pdf",
+          "5"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "4"
+        ]
+      ],
+      "elapsed_sec": 1.56,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-035",
+      "tier": "detail",
+      "language": "en",
+      "question": "In the large inter-departmental reshuffle of Mantralaya section officers, which department is Chinmay Ravindra Marathe posted to?",
+      "expected_file": "aadesh 3.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR3.pdf",
+          "2"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 1.57,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-036",
+      "tier": "detail",
+      "language": "mr",
+      "question": "कक्ष अधिकाऱ्यांच्या आंतरविभागीय बदल्या कोणत्या मंडळाच्या शिफारशीनंतर करण्यात आल्या आहेत?",
+      "expected_file": "aadesh 3.pdf",
+      "expected_page": 4,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "3"
+        ],
+        [
+          "aadesh 3.pdf",
+          "5"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "2"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 1.46,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-037",
+      "tier": "situation",
+      "language": "mr",
+      "question": "मागील वर्षी बदलीला मुदतवाढ मिळालेल्या दोन कक्ष अधिकाऱ्यांना आता कार्यमुक्त केले; नियोजन विभागातील अधिकारी कुठे जाणार?",
+      "expected_file": "aadesh 4.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "5"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ],
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.55,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-038",
+      "tier": "detail",
+      "language": "mr",
+      "question": "आता कार्यमुक्त केलेल्या त्या दोन कक्ष अधिकाऱ्यांच्या बदलीला आधी कोणत्या तारखेपर्यंत मुदतवाढ दिली होती?",
+      "expected_file": "aadesh 4.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.67,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-039",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "मुदतवाढ संपलेल्या दोन कक्ष अधिकाऱ्यांना कार्यमुक्त करणारा आदेश कोणत्या आधीच्या आदेशांचा संदर्भ देतो?",
+      "expected_file": "aadesh 4.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "5"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 1.76,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": true,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-040",
+      "tier": "situation",
+      "language": "mr",
+      "question": "नागपूर सुधार प्रन्यासातील मुख्य लेखा व वित्त अधिकाऱ्याला माहिती आयोगात उप सचिव म्हणून पाठवले; त्यांना कार्यमुक्त कोण करणार?",
+      "expected_file": "aadesh 5.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "2"
+        ],
+        [
+          "GR4.pdf",
+          "2"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "2"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.48,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-041",
+      "tier": "detail",
+      "language": "en",
+      "question": "For how long is the Nagpur Improvement Trust finance officer appointed on deputation to the State Information Commission's Nagpur bench?",
+      "expected_file": "aadesh 5.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ]
+      ],
+      "elapsed_sec": 1.49,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-042",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "माहिती आयोगातील उप सचिव पदावरील प्रतिनियुक्तीचा आदेश प्रतिनियुक्ती धोरणाच्या कोणत्या शासन निर्णयांचा आधार घेतो?",
+      "expected_file": "aadesh 5.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "2"
+        ],
+        [
+          "GR4.pdf",
+          "2"
+        ],
+        [
+          "aadesh 3.pdf",
+          "5"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.66,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-043",
+      "tier": "situation",
+      "language": "mr",
+      "question": "आमच्या विभागातील एकाही उप सचिवाला अल्पसंख्यांक संशोधन संस्थेच्या संचालक पदावर जायचे नाही; मग आम्ही काय कळवायचे?",
+      "expected_file": "letter 1.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "2"
+        ],
+        [
+          "GR4.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 1.87,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-044",
+      "tier": "detail",
+      "language": "en",
+      "question": "Once a deputy secretary has been selected for the minority research institute director post, can the department withdraw that officer's name?",
+      "expected_file": "letter 1.pdf",
+      "expected_page": 2,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ],
+        [
+          "GR2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ]
+      ],
+      "elapsed_sec": 1.5,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-045",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "अल्पसंख्यांक संशोधन संस्थेच्या संचालक पदाच्या पत्रानुसार मंत्रालयीन प्रतिनियुक्तीची कार्यपद्धती कोणत्या शासन निर्णयाने ठरवली आहे?",
+      "expected_file": "letter 1.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "2"
+        ],
+        [
+          "aadesh 3.pdf",
+          "5"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "4"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "5"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 1.81,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-046",
+      "tier": "situation",
+      "language": "en",
+      "question": "The order fixing permanent and temporary posts at the Sainik Kalyan office in Pune went out with the wrong reference number; what correction was issued?",
+      "expected_file": "letter 2.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ]
+      ],
+      "elapsed_sec": 1.54,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-047",
+      "tier": "detail",
+      "language": "mr",
+      "question": "सैनिक कल्याण विभागाच्या पुणे कार्यालयातील पदांबाबतच्या शुद्धीपत्रकावर कोणत्या अवर सचिवांची स्वाक्षरी आहे?",
+      "expected_file": "letter 2.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "3"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "2"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "5"
+        ]
+      ],
+      "elapsed_sec": 1.81,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-048",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "सैनिक कल्याण कार्यालयाच्या आकृतीबंधाबाबतचे शुद्धीपत्रक कोणत्या आधीच्या शासन निर्णयात दुरुस्ती करते?",
+      "expected_file": "letter 2.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "3"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "2"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.5,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-049",
+      "tier": "situation",
+      "language": "mr",
+      "question": "मला वसंतराव नाईक कृषी विस्तार प्रशिक्षण संस्थेत सहाय्यक प्राध्यापक (कायदा) म्हणून प्रतिनियुक्तीवर जायचे आहे; अर्ज कोणामार्फत पाठवायचा?",
+      "expected_file": "letter 3.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "paripatrika 1.pdf",
+          "1"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "5"
+        ],
+        [
+          "GR3.pdf",
+          "3"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.91,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-050",
+      "tier": "detail",
+      "language": "en",
+      "question": "Up to how many years can a deputation at the Vasantrao Naik agricultural extension training institute in Nagpur be extended?",
+      "expected_file": "letter 3.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR2.pdf",
+          "4"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ]
+      ],
+      "elapsed_sec": 1.58,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-051",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "वसंतराव नाईक संस्थेतील प्रतिनियुक्तीच्या पदांची भरती कार्यपद्धती कोणत्या शासन निर्णयात विहित आहे असे पत्र सांगते?",
+      "expected_file": "letter 3.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "GR5.pdf",
+          "1"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "2"
+        ],
+        [
+          "GR5.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.61,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-052",
+      "tier": "situation",
+      "language": "mr",
+      "question": "उप सचिव संवर्गाची तात्पुरती ज्येष्ठतासूची अंतिम झाली का, आणि त्यावर कोणी हरकत घेतली होती का?",
+      "expected_file": "paripatrika 1.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "2"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "2"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 1.48,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-053",
+      "tier": "detail",
+      "language": "en",
+      "question": "The final deputy secretary seniority list is subject to which pending Supreme Court petition on reservation in promotion?",
+      "expected_file": "paripatrika 1.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ]
+      ],
+      "elapsed_sec": 1.46,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-054",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "उप सचिव संवर्गाची ज्येष्ठतासूची तयार करताना कोणत्या ज्येष्ठता नियमावलीतील तरतुदींचा अवलंब केला आहे?",
+      "expected_file": "paripatrika 1.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "2"
+        ],
+        [
+          "GR3.pdf",
+          "2"
+        ],
+        [
+          "GR4.pdf",
+          "2"
+        ],
+        [
+          "aadesh 5.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.66,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-055",
+      "tier": "situation",
+      "language": "mr",
+      "question": "आमच्या जिल्हाधिकारी कार्यालयाला कुसुमाग्रजांच्या जन्मदिनी मराठी भाषेचा कार्यक्रम घ्यायचा आहे; त्यासाठी किती निधी मिळतो?",
+      "expected_file": "paripatrika 2.pdf",
+      "expected_page": 5,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "4"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "3"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "5"
+        ],
+        [
+          "aadesh 5.pdf",
+          "2"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 2.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.9,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-056",
+      "tier": "detail",
+      "language": "en",
+      "question": "For the Marathi language pride day programmes, which literary body helps organise events in Kolhapur district?",
+      "expected_file": "paripatrika 2.pdf",
+      "expected_page": 4,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "11"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ]
+      ],
+      "elapsed_sec": 1.92,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": false,
+      "top_citation_is_expected": true,
+      "language_match": true,
+      "refused": false,
+      "false_refusal": false
+    },
+    {
+      "id": "nat-057",
+      "tier": "relationship",
+      "language": "mr",
+      "question": "मराठी भाषा गौरव दिन साजरा करण्याच्या सूचना मुळात कोणत्या आधीच्या शासन निर्णयाने देण्यात आल्या होत्या?",
+      "expected_file": "paripatrika 2.pdf",
+      "expected_page": 1,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "aadesh 4.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "4"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "3"
+        ],
+        [
+          "GR3.pdf",
+          "1"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ]
+      ],
+      "elapsed_sec": 2.22,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": true,
+      "citation_page_hit": true,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "false_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-058",
+      "tier": "negative_trap",
+      "language": "mr",
+      "question": "अंगणवाडी सेविकांच्या मानधनात वाढ करण्याबाबत शासनाने काय निर्णय घेतला आहे?",
+      "expected_file": null,
+      "expected_page": null,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "2"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "4"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.61,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "correct_refusal": false
+    },
+    {
+      "id": "nat-059",
+      "tier": "negative_trap",
+      "language": "mr",
+      "question": "शेतकऱ्यांना पीक कर्जमाफीचा लाभ घेण्यासाठी अर्ज कसा करायचा?",
+      "expected_file": null,
+      "expected_page": null,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "3"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "aadesh 5.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "4"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ],
+        [
+          "aadesh 3.pdf",
+          "3"
+        ],
+        [
+          "aadesh 3.pdf",
+          "1"
+        ],
+        [
+          "letter 2.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.75,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "correct_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-060",
+      "tier": "negative_trap",
+      "language": "en",
+      "question": "How much has the dearness allowance of state government employees been increased?",
+      "expected_file": null,
+      "expected_page": null,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.2.pdf",
+          "3"
+        ],
+        [
+          "GR1.2.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ]
+      ],
+      "elapsed_sec": 2.04,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "correct_refusal": false
+    },
+    {
+      "id": "nat-061",
+      "tier": "negative_trap",
+      "language": "mr",
+      "question": "पवित्र पोर्टलवरून शिक्षक भरतीसाठी नोंदणी करण्याची अंतिम मुदत कोणती आहे?",
+      "expected_file": null,
+      "expected_page": null,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "paripatrika 2.pdf",
+          "1"
+        ],
+        [
+          "GR4.pdf",
+          "1"
+        ],
+        [
+          "letter 1.pdf",
+          "1"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "4"
+        ],
+        [
+          "letter 1.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "letter 3.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "2"
+        ],
+        [
+          "aadesh 3.pdf",
+          "4"
+        ]
+      ],
+      "elapsed_sec": 2.01,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "correct_refusal": false,
+      "breaker_retry": true
+    },
+    {
+      "id": "nat-062",
+      "tier": "negative_trap",
+      "language": "en",
+      "question": "What compensation do farmers get for crops damaged by unseasonal rain or hailstorm?",
+      "expected_file": null,
+      "expected_page": null,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.1.pdf",
+          "1"
+        ],
+        [
+          "GR1.2.pdf",
+          "1"
+        ],
+        [
+          "GR1.1.pdf",
+          "4"
+        ],
+        [
+          "GR1.1.pdf",
+          "7"
+        ],
+        [
+          "GR1.1.pdf",
+          "6"
+        ],
+        [
+          "GR1.2.pdf",
+          "2"
+        ],
+        [
+          "GR1.1.pdf",
+          "10"
+        ],
+        [
+          "GR1.1.pdf",
+          "9"
+        ],
+        [
+          "GR1.1.pdf",
+          "5"
+        ],
+        [
+          "GR1.1.pdf",
+          "8"
+        ]
+      ],
+      "elapsed_sec": 2.12,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 1,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": true,
+      "refused": false,
+      "correct_refusal": false
+    },
+    {
+      "id": "nat-063",
+      "tier": "negative_trap",
+      "language": "mr",
+      "question": "शिधापत्रिकेत कुटुंबातील नवीन सदस्याचे नाव कसे जोडायचे?",
+      "expected_file": null,
+      "expected_page": null,
+      "answer": "⚠️ LLM error: The endpoint viewing-unretired-jazz.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n (status code: 404). Is Ollama running with qwen2.5:7b?",
+      "citations": [
+        [
+          "GR1.5.pdf",
+          "1"
+        ],
+        [
+          "GR1.5.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "2"
+        ],
+        [
+          "GR1.pdf",
+          "1"
+        ],
+        [
+          "GR2.pdf",
+          "1"
+        ],
+        [
+          "GR1.4.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 1.pdf",
+          "2"
+        ],
+        [
+          "paripatrika 2.pdf",
+          "2"
+        ],
+        [
+          "aadesh 1.pdf",
+          "1"
+        ],
+        [
+          "aadesh 4.pdf",
+          "1"
+        ]
+      ],
+      "elapsed_sec": 1.67,
+      "http_status": 200,
+      "error": "",
+      "api_success": false,
+      "attempts": 2,
+      "infra_failure": true,
+      "citation_file_hit": false,
+      "citation_page_hit": false,
+      "top_citation_is_expected": false,
+      "language_match": false,
+      "refused": false,
+      "correct_refusal": false,
+      "breaker_retry": true
+    }
+  ]
+}

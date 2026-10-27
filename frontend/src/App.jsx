@@ -2,18 +2,19 @@
 // ─────────────────────────────────────────────────────────
 // Root component — sets up routing and auth context.
 //
-// Route structure:
-//   /              → redirects to /login
-//   /login         → Login page (public)
-//   /chat          → Chat page (requires login)
-//   /search        → Search page (requires login)
-//   /graph         → GR Graph page (requires login)
-//   /history       → My query history (requires login)
-//   /admin/upload  → Upload GRs (admin only)
-//   /admin/embed   → Build vector store (admin only)
-//   /admin/summary → Generate summaries (admin only)
-//   /admin/logs    → All query logs (admin only)
-//   /admin/users   → User management (admin only)
+// Route structure — every route actually registered below:
+//   /                 → redirects to /login
+//   /login            → Login page (public)
+//   /chat             → Chat page (requires login)
+//   /graph            → GR relationship graph (requires login)
+//   /registry         → Document registry table (requires login)
+//   /search           → Retrieval inspector (requires login)
+//   /summaries        → Generated GR summaries (requires login)
+//   /admin/upload     → Upload GRs (admin only)
+//   /admin/knowledge  → Knowledge base: embed + summarize (admin only)
+//   /admin/analytics  → Query stats and logs (admin only)
+//   /admin/users      → User management (admin only)
+//   *                 → anything else redirects to /login
 // ─────────────────────────────────────────────────────────
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
@@ -25,6 +26,9 @@ import Layout from './components/Layout'
 // Pages
 import Login   from './pages/Login'
 import Chat    from './pages/Chat'
+import Graph   from './pages/Graph'
+import Registry from './pages/Registry'
+import Search   from './pages/Search'
 import Upload   from './pages/Upload'
 import Users    from './pages/Users'
 import Summaries from './pages/Summaries'
@@ -49,6 +53,18 @@ export default function App() {
           {/* ── User routes (login required) ──────────── */}
           <Route path="/chat" element={
             <ProtectedRoute><Layout><Chat /></Layout></ProtectedRoute>
+          } />
+
+          <Route path="/graph" element={
+            <ProtectedRoute><Layout><Graph /></Layout></ProtectedRoute>
+          } />
+
+          <Route path="/registry" element={
+            <ProtectedRoute><Layout><Registry /></Layout></ProtectedRoute>
+          } />
+
+          <Route path="/search" element={
+            <ProtectedRoute><Layout><Search /></Layout></ProtectedRoute>
           } />
 
           <Route path="/summaries" element={

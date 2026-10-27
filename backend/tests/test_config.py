@@ -44,18 +44,22 @@ class TestSettingsDefaults(unittest.TestCase):
         self.assertEqual(s.OLLAMA_BASE_URL, "http://localhost:11434")
 
     def test_embedding_model_default(self):
+        # bge-m3, not nomic-embed-text: multilingual and 1024-dimensional
+        # against English-first and 768, which matters on a Marathi corpus.
         s = self.Settings(_env_file=None)
-        self.assertEqual(s.EMBEDDING_MODEL, "nomic-embed-text")
+        self.assertEqual(s.EMBEDDING_MODEL, "bge-m3")
 
     def test_llm_model_default(self):
+        # qwen2.5:7b, not phi4-mini. Note it is qwen2.5 and NOT
+        # qwen2.5-coder, which is code-specialised.
         s = self.Settings(_env_file=None)
-        self.assertEqual(s.LLM_MODEL, "phi4-mini")
+        self.assertEqual(s.LLM_MODEL, "qwen2.5:7b")
 
     def test_rag_defaults(self):
         s = self.Settings(_env_file=None)
         self.assertEqual(s.CHUNK_SIZE, 800)
         self.assertEqual(s.CHUNK_OVERLAP, 150)
-        self.assertEqual(s.TOP_K, 4)
+        self.assertEqual(s.TOP_K, 12)
         self.assertEqual(s.CONTEXT_WINDOW, 6)
 
     def test_required_fields_are_read_correctly(self):

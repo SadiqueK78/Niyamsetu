@@ -17,7 +17,7 @@
 
 import sys
 import os
-
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -33,9 +33,41 @@ from api.upload  import router as upload_router
 from api.embed   import router as embed_router
 from api.query   import router as query_router
 from api.graph   import router as graph_router
+from api.meta    import router as meta_router
+from api.files   import router as files_router
 from api.summary import router as summary_router
 from api.logs     import router as logs_router
 from api.sessions import router as sessions_router
+
+# ── Startup and shutdown ──────────────────────────────
+# A single lifespan context manager replaces the deprecated @app.on_event
+# handlers: everything before the yield runs once at startup, everything
+# after it runs once at shutdown. FastAPI takes it as a constructor
+# argument, so it has to be defined above the app.
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """
+    Startup runs before the first request is served, shutdown after the
+    last one. Order matters — connect DB before seeding users.
+    """
+    print("\n[Niyamsetu API starting...]")
+
+    # Connect to MongoDB Atlas
+    await connect_db()
+
+    # Create default admin and user accounts if DB is empty
+    await seed_default_users()
+
+    print("[OK] Niyamsetu API ready\n")
+
+    yield
+
+    # Runs once when the server shuts down (Ctrl+C).
+    # Cleanly closes MongoDB connection.
+    await close_db()
+    print("👋 Niyamsetu API shut down.")
+
 
 # ── Create FastAPI app ────────────────────────────────────
 app = FastAPI(
@@ -45,6 +77,7 @@ app = FastAPI(
     # Docs available at /docs — useful during development
     docs_url="/docs",
     redoc_url="/redoc",
+    lifespan=lifespan,
 )
 
 # ── CORS Middleware ───────────────────────────────────────
@@ -73,38 +106,11 @@ app.include_router(upload_router)
 app.include_router(embed_router)
 app.include_router(query_router)
 app.include_router(graph_router)
+app.include_router(meta_router)
+app.include_router(files_router)
 app.include_router(summary_router)
 app.include_router(logs_router)
 app.include_router(sessions_router)
-
-
-# ── Startup and shutdown events ───────────────────────────
-
-@app.on_event("startup")
-async def on_startup():
-    """
-    Runs once when the server starts.
-    Order matters — connect DB before seeding users.
-    """
-    print("\n🚀 Niyamsetu API starting...")
-
-    # Connect to MongoDB Atlas
-    await connect_db()
-
-    # Create default admin and user accounts if DB is empty
-    await seed_default_users()
-
-    print("✅ Niyamsetu API ready\n")
-
-
-@app.on_event("shutdown")
-async def on_shutdown():
-    """
-    Runs once when the server shuts down (Ctrl+C).
-    Cleanly closes MongoDB connection.
-    """
-    await close_db()
-    print("👋 Niyamsetu API shut down.")
 
 
 # ── Root endpoint ─────────────────────────────────────────

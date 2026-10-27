@@ -24,7 +24,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from auth.router import get_current_user
 from core.rag import query as rag_query
 from core.trace import trace
-from core.vectorstore import cosine_search_with_scores, is_ready
+from core.hybrid_search import hybrid_search_explained
+from core.vectorstore import is_ready
 from db.logs import save_query_log
 from config import settings
 
@@ -47,11 +48,16 @@ class ChatRequest(BaseModel):
     history      : previous turns for context (can be empty list)
     language     : force language, or omit for auto-detect
     top_k        : how many chunks to retrieve (optional)
+    focus_file   : document the question is about (optional)
     """
     query:    str
     history:  list[ChatMessage] = []
     language: Optional[str]     = None
     top_k:    Optional[int]     = None
+    # Optional hint naming the document the question is about. Used only
+    # by the metadata fast path, which needs to know WHICH document's
+    # header to read; retrieval ignores it entirely.
+    focus_file: Optional[str]   = None
 
 
 class SearchRequest(BaseModel):
@@ -105,6 +111,7 @@ async def chat(
         chat_history=history_dicts,
         top_k=request.top_k,
         language=request.language,
+        focus_file=request.focus_file,
     )
 
     # ── Save to query log ─────────────────────────────────
@@ -135,14 +142,43 @@ async def similarity_search(
     current_user: dict = Depends(get_current_user),
 ):
     """
-    Cosine similarity search endpoint.
-    Returns ranked results with similarity scores — no LLM involved.
+    Hybrid search endpoint. No LLM involved.
     Used on the Search page.
 
-    Different from /chat because:
-        - No LLM call — just vector similarity
-        - Returns multiple results with scores
-        - User can see exactly which chunks matched and how well
+    Returns the same ranking /chat retrieves on — dense and BM25 fused by
+    RRF — with the per-retriever ranks exposed, so a result that looks
+    wrong can be attributed: a chunk BM25 alone found is a keyword match, a
+    chunk only the dense side found shares no wording with the question,
+    and a chunk both ranked highly is a real match. Cosine scores could not
+    express that, because they only exist on one of the two sides.
+
+    Response shape:
+        {
+            "success": true,
+            "query": "...",
+            "results": [
+                {
+                    "score":   0.82,            <- kept: now the fused relevance
+                    "file":    "GR1.pdf",
+                    "page":    "4",             <- kept: 1-based for display
+                    "preview": "...",
+                    "section_type":  "शासन निर्णय",
+                    "dense_rank":    2,         <- or null
+                    "lexical_rank":  1,         <- or null
+                    "fused_rank":    1,
+                    "rrf_score":     0.0163,
+                    "relevance":     0.82
+                },
+                ...
+            ],
+            "total": 5,
+            "dense_ok": true          <- false means the embedding endpoint
+                                         is down and these are BM25 only
+        }
+
+    Every pre-existing key is still present and still means what it meant;
+    "score" now carries the fused relevance rather than a cosine distance,
+    which is the number the page was already displaying as a percentage.
     """
     if not is_ready():
         raise HTTPException(
@@ -150,42 +186,50 @@ async def similarity_search(
             detail="Vector store not ready. Ask admin to embed documents first.",
         )
 
-    # Get results with similarity scores.
-    # cosine_search_with_scores() is synchronous — it embeds the query via a
+    # hybrid_search_explained() is synchronous — it embeds the query via a
     # blocking Ollama HTTP call (and loads the FAISS index from disk on the
-    # first call), which pins the event loop and stalls every other request.
-    # Same offload as core/rag.py:194; search behaviour is unchanged.
-    results_with_scores = await asyncio.to_thread(
-        cosine_search_with_scores,
-        query=request.query,
+    # first call), which pins the event loop and stalls every other
+    # request. Same offload as the chat path uses.
+    results, info = await asyncio.to_thread(
+        hybrid_search_explained,
+        request.query,
         top_k=request.top_k,
     )
 
     # Filter by filename if requested
     if request.filter_file:
-        results_with_scores = [
-            (doc, score) for doc, score in results_with_scores
-            if doc.metadata.get("source_file", "") == request.filter_file
+        results = [
+            r for r in results
+            if r.get("source_file", "") == request.filter_file
         ]
 
     # Format results for frontend
     formatted = []
-    for doc, score in results_with_scores:
-        raw_page = doc.metadata.get("page", None)
+    for row in results:
+        raw_page = row.get("page", None)
         page_display = str(int(raw_page) + 1) if raw_page is not None else "?"
 
         formatted.append({
-            "score":   score,
-            "file":    doc.metadata.get("source_file", "Unknown"),
-            "page":    page_display,
-            "preview": doc.page_content[:400].strip(),
+            # Pre-existing keys, unchanged in name and meaning.
+            "score":        row["relevance"],
+            "file":         row.get("source_file", "Unknown"),
+            "page":         page_display,
+            "preview":      row.get("preview", ""),
+            # Added: where each retriever put this chunk.
+            "section_type": row.get("section_type"),
+            "dense_rank":   row.get("dense_rank"),
+            "lexical_rank": row.get("lexical_rank"),
+            "fused_rank":   row.get("fused_rank"),
+            "rrf_score":    row.get("rrf_score"),
+            "relevance":    row.get("relevance"),
         })
 
     return {
-        "success": True,
-        "query":   request.query,
-        "results": formatted,
-        "total":   len(formatted),
+        "success":  True,
+        "query":    request.query,
+        "results":  formatted,
+        "total":    len(formatted),
+        "dense_ok": info.get("dense_ok", False),
     }
 
 

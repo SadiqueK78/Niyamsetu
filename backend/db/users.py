@@ -15,6 +15,7 @@ from datetime import datetime, timezone
 from passlib.context import CryptContext
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from config import settings
 from db.mongo import get_db
 
 # ── Password hashing setup ────────────────────────────────
@@ -162,7 +163,17 @@ async def seed_default_users():
     Default credentials:
         admin / admin123  (role: admin)
         user1 / user123   (role: user)
+
+    Does nothing when settings.SEED_DEFAULT_USERS is false — see that
+    setting in config.py for why a deployment would want that off. The
+    check lives HERE rather than at the call site in main.py so that any
+    future caller is covered by it too; a gate that only guards one call
+    is one refactor away from being bypassed.
     """
+    if not settings.SEED_DEFAULT_USERS:
+        print("⏭️  SEED_DEFAULT_USERS is false — skipping default user seeding")
+        return
+
     database = get_db()
     count = await database.users.count_documents({})
 
@@ -185,6 +196,6 @@ async def seed_default_users():
             },
         ]
         await database.users.insert_many(defaults)
-        print("✅ Default users seeded — admin/admin123 and user1/user123")
+        print("[OK] Default users seeded - admin/admin123 and user1/user123")
     else:
-        print(f"✅ Users collection has {count} existing user(s) — skipping seed")
+        print(f"[OK] Users collection has {count} existing user(s) - skipping seed")

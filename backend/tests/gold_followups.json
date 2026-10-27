@@ -1,0 +1,116 @@
+{
+  "gold_version": "1.0",
+  "description": "Two-turn follow-up conversations. turn2_question depends on turn 1 (pronoun, ellipsis or reference) and cannot be answered alone. expected_page is the 1-based display page of the turn-2 evidence.",
+  "conversations": [
+    {
+      "id": "fu-001",
+      "language": "mr",
+      "turn1_question": "राज्य ग्रंथालय परिषदेवर नवीन सदस्य समाविष्ट करण्याबाबतचा शासन निर्णय कशाबद्दल आहे?",
+      "turn1_expected_file": "GR1.pdf",
+      "turn2_question": "त्यात विधानपरिषदेच्या कोणत्या सदस्यांचा समावेश केला आहे?",
+      "expected_file": "GR1.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "मा.श्री.राजहंस सिह, विधानपरिषद सदस्य सदस्य",
+      "review_status": "draft"
+    },
+    {
+      "id": "fu-002",
+      "language": "mr",
+      "turn1_question": "मंत्रालय उपाहारगृहाच्या स्वयंपाकगृहाचे आधुनिकीकरण करण्याबाबतचा निर्णय काय आहे?",
+      "turn1_expected_file": "GR3.pdf",
+      "turn2_question": "त्यासाठी एकूण किती खर्च मंजूर झाला?",
+      "expected_file": "GR3.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "तीन कोटी एक लक्ष एकाहत्तर हजार नव्याण्णव फक्त) इतक्या अंदाजित खर्चास खालील अटीच्या अधीन राहून",
+      "review_status": "draft"
+    },
+    {
+      "id": "fu-003",
+      "language": "mr",
+      "turn1_question": "मुंबईबाहेर बदली झाल्यावर शासकीय निवासस्थान न सोडणाऱ्या कर्मचाऱ्यांबाबत शासन निर्णय काय सांगतो?",
+      "turn1_expected_file": "GR4.pdf",
+      "turn2_question": "अशा कर्मचाऱ्यांना नव्या कार्यालयात कोणते भत्ते दिले जाणार नाहीत?",
+      "expected_file": "GR4.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "कार्यालयाच्या आहरण व संवितरण अधिकाऱ्यांकडून घरभाडे भत्ता आणि बदली झाल्यानंतर",
+      "review_status": "draft"
+    },
+    {
+      "id": "fu-004",
+      "language": "mr",
+      "turn1_question": "नागपूर महानगरपालिकेत सहायक आयुक्त पदावर प्रतिनियुक्तीने नियुक्ती करण्याबाबतचा आदेश काय आहे?",
+      "turn1_expected_file": "aadesh 2.pdf",
+      "turn2_question": "मुदतीपूर्वी मूळ विभागात परत जायचे असल्यास त्यांना किती महिन्यांची नोटीस द्यावी लागेल?",
+      "expected_file": "aadesh 2.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "कारण स्पष्ट करुन त्यासाठी किमान तीन महिन्यांची पूर्वसूचना (नोटीस) दोन्ही प्रशासकीय",
+      "review_status": "draft"
+    },
+    {
+      "id": "fu-005",
+      "language": "mr",
+      "turn1_question": "वसंतराव नाईक कृषी विस्तार प्रशिक्षण संस्थेतील पदे प्रतिनियुक्तीने भरण्याबाबतचे पत्र कशाबद्दल आहे?",
+      "turn1_expected_file": "letter 3.pdf",
+      "turn2_question": "त्यासाठी अर्ज कोणत्या तारखेपर्यंत पाठवायचे आहेत?",
+      "expected_file": "letter 3.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "त्यांच्या प्रशासकीय विभागामार्फत निम्न स्वाक्षरीतांकडे दिनांक 25/08/2026 पर्यंत",
+      "review_status": "draft"
+    },
+    {
+      "id": "fu-006",
+      "language": "en",
+      "turn1_question": "What is the government decision about adding new members to the State Library Council?",
+      "turn1_expected_file": "GR1.pdf",
+      "turn2_question": "At which meeting of the council were its four invited members approved?",
+      "expected_file": "GR1.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "आलेल्या 39 व्या बैठकीमध्ये सर्वानुमते मंजूरी मिळाल्यानुसार खाळील चार निमंत्रित",
+      "review_status": "draft"
+    },
+    {
+      "id": "fu-007",
+      "language": "en",
+      "turn1_question": "What is the decision about modernising the kitchens of the Mantralaya canteens?",
+      "turn1_expected_file": "GR3.pdf",
+      "turn2_question": "Who was appointed as the technical consultant for that work?",
+      "expected_file": "GR3.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "कार्यालयातील डॉ.प्रशांत विरखरे, विभागप्रमुख (पर्यटन) यांची तांत्रिक सल्लागार म्हणून नेमणूक करण्यात आली.",
+      "review_status": "draft"
+    },
+    {
+      "id": "fu-008",
+      "language": "en",
+      "turn1_question": "What does the order say about employees who keep government quarters after being transferred outside Mumbai?",
+      "turn1_expected_file": "GR4.pdf",
+      "turn2_question": "In such cases, which department must issue the certificate that the quarters were vacated?",
+      "expected_file": "GR4.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "केल्याबाबतचे प्रमाणपत्र या विभागाकडून (सामान्य प्रशासन विभाग) प्राप्त करून घ्यावे आणि हे",
+      "review_status": "draft"
+    },
+    {
+      "id": "fu-009",
+      "language": "en",
+      "turn1_question": "What is the order about the section officer sent on deputation to Nagpur Municipal Corporation as assistant commissioner?",
+      "turn1_expected_file": "aadesh 2.pdf",
+      "turn2_question": "Which department will handle the officer's other administrative matters meanwhile?",
+      "expected_file": "aadesh 2.pdf",
+      "expected_page": 2,
+      "evidence_snippet": "3. श्री. अनुज प्रकाश कोपुलवार, कक्ष अधिकारी यांच्या इतर सर्व प्रशासकीय बाबी वित्त",
+      "review_status": "draft"
+    },
+    {
+      "id": "fu-010",
+      "language": "en",
+      "turn1_question": "What is the letter about filling posts at the Vasantrao Naik agricultural extension training institute in Nagpur by deputation?",
+      "turn1_expected_file": "letter 3.pdf",
+      "turn2_question": "What is the pay scale of the project officer post there?",
+      "expected_file": "letter 3.pdf",
+      "expected_page": 1,
+      "evidence_snippet": "(एस-15 : 41800-132300)",
+      "review_status": "draft"
+    }
+  ]
+}

@@ -54,6 +54,35 @@ DEVANAGARI_END   = 0x097F
 # and संकेतांक in ASCII, so the stored text has to match that to be findable.
 DEVANAGARI_DIGITS = str.maketrans("०१२३४५६७८९", "0123456789")
 
+# Confirmed, repeatable Tesseract misreadings — NOT general spell-correction.
+#
+# The Marathi model reads श as डा in some ligature contexts, so "समावेश"
+# ("inclusion") comes back as "समावेडा". Measured on the current corpus:
+# समावेडा appears 4 times (all GR1.pdf) against 3 correct समावेश, i.e. the
+# misreading is more common than the correct form in the one document where
+# the word decides the answer.
+#
+# Why this matters beyond tidiness: GR1.pdf states the answer to "how many
+# members were added" as "सहा सदस्यांचा समावेडा" (six), 489 characters before
+# an unrelated, correctly-spelled "39 व्या बैठकीमध्ये ... सदस्यांचा समावेश"
+# (the 39th meeting). Models reading that chunk pattern-match to the clean
+# collocation and answer 39. Repairing the spelling removes the asymmetry
+# that makes the wrong number the better-formed match.
+#
+# Keyed by whole token on purpose. डा is a perfectly normal syllable —
+# मराठवाडा, क्रीडा, भांडार, बुलडाणा and भंडारा all occur in this corpus — so a
+# blanket डा -> श rule would corrupt real words. Only add an entry here when
+# the misreading has been observed in actual output AND the corrected token
+# is unambiguous.
+#
+# Same pattern, seen in this corpus but deliberately NOT fixed yet — each
+# needs the same confirm-before-adding treatment: आदेडा (आदेश, 3),
+# आकाडावाणी (आकाशवाणी, 2), जयप्रकाडा (जयप्रकाश), अंकुडा (अंकुश),
+# गितेडा (गितेश), केडाव (केशव).
+OCR_SUBSTITUTIONS = {
+    "समावेडा": "समावेश",
+}
+
 # Tesseract language codes: eng = English, mar = Marathi (Devanagari)
 # Requires the Marathi language pack installed alongside Tesseract itself
 OCR_LANGUAGES = "eng+mar"
@@ -141,6 +170,25 @@ def _normalize_devanagari_digits(text: str) -> str:
     return text.translate(DEVANAGARI_DIGITS)
 
 
+def _apply_ocr_substitutions(text: str) -> str:
+    """
+    Repairs known, specific Tesseract misreadings listed in
+    OCR_SUBSTITUTIONS.
+
+    Applied to OCR output only, in the same place and for the same reason
+    as _normalize_devanagari_digits: every downstream consumer (chunking,
+    embedding, retrieval, citations, summaries) should see one spelling of
+    a word, and it should be the one the document actually says and the
+    user would type.
+
+    Plain substring replacement, keyed by whole token — see the note on
+    OCR_SUBSTITUTIONS for why this is not a character-level rule.
+    """
+    for wrong, right in OCR_SUBSTITUTIONS.items():
+        text = text.replace(wrong, right)
+    return text
+
+
 def _page_needs_ocr(text: str) -> tuple[bool, str]:
     """
     Decides whether a page must be re-read with OCR.
@@ -193,8 +241,11 @@ def _ocr_single_page(pdf_path: str, page_number: int) -> str:
         )
         # ASCII-ise numerals before the text goes anywhere else, so every
         # consumer (chunking, embedding, citations, summaries) sees the same
-        # digit form the user will type.
-        return _normalize_devanagari_digits(text.strip())
+        # digit form the user will type, then repair the known misread
+        # tokens for the same reason.
+        return _apply_ocr_substitutions(
+            _normalize_devanagari_digits(text.strip())
+        )
 
     except PDFPopplerTimeoutError:
         # Reported separately from every other OCR failure, and before the

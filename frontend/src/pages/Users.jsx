@@ -2,7 +2,8 @@
 // Admin-only user management — list, create, and delete accounts.
 // Real-world use case: GAD officer creates accounts for department officials.
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
+import { Trash2 } from 'lucide-react'
 import client from '../api/client'
 import { useAuth } from '../context/AuthContext'
 
@@ -18,11 +19,7 @@ export default function Users() {
   const [formError, setFormError] = useState('')
   const [creating, setCreating] = useState(false)
 
-  useEffect(() => {
-    loadUsers()
-  }, [])
-
-  const loadUsers = async () => {
+  const loadUsers = useCallback(async () => {
     setLoading(true)
     setError('')
     try {
@@ -33,7 +30,11 @@ export default function Users() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [])
+
+  useEffect(() => {
+    loadUsers()
+  }, [loadUsers])
 
   const handleCreate = async (e) => {
     e.preventDefault()
@@ -87,7 +88,7 @@ export default function Users() {
       }}>
         <div>
           <h1 style={{ color: '#E8EAF0', fontSize: '1.4rem', margin: '0 0 4px', fontWeight: '700' }}>
-            👥 Users
+            Users
           </h1>
           <p style={{ color: '#555', fontSize: '0.85rem', margin: 0 }}>
             Manage accounts for department officials.
@@ -113,7 +114,7 @@ export default function Users() {
           background: '#2A0F0F', border: '1px solid #EF4444', borderRadius: '8px',
           padding: '12px 16px', color: '#EF4444', fontSize: '0.85rem', marginBottom: '20px',
         }}>
-          ❌ {error}
+          {error}
         </div>
       )}
 
@@ -165,7 +166,7 @@ export default function Users() {
 
           {formError && (
             <div style={{ color: '#EF4444', fontSize: '0.8rem', marginBottom: '12px' }}>
-              ❌ {formError}
+              {formError}
             </div>
           )}
 
@@ -241,7 +242,7 @@ export default function Users() {
                     }}
                     title="Delete user"
                   >
-                    🗑️
+                    <Trash2 size={14} />
                   </button>
                 )}
               </div>

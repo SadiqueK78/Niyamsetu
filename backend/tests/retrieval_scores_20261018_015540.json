@@ -1,0 +1,1546 @@
+{
+  "run_at": "2026-10-18 01:55:40.346215+00:00",
+  "questions": 21,
+  "top_k": 12,
+  "settings": {
+    "ROUTE_POOL_K": 30,
+    "ROUTE_TOP_DOCS": 3,
+    "ROUTE_MAX_CHUNKS": 8
+  },
+  "unavailable": [],
+  "note": "Questions that do not name a document are inherently ambiguous, so these metrics are a lower bound.",
+  "overall": {
+    "dense_only": {
+      "hit@1": 0.0,
+      "hit@3": 0.0,
+      "hit@5": 0.0,
+      "hit@12": 0.0,
+      "mrr": 0.0,
+      "mean_files": 0.0,
+      "questions": 21
+    },
+    "bm25_only": {
+      "hit@1": 0.429,
+      "hit@3": 0.571,
+      "hit@5": 0.667,
+      "hit@12": 0.81,
+      "mrr": 0.546,
+      "mean_files": 8.86,
+      "questions": 21
+    },
+    "hybrid": {
+      "hit@1": 0.429,
+      "hit@3": 0.571,
+      "hit@5": 0.667,
+      "hit@12": 0.81,
+      "mrr": 0.546,
+      "mean_files": 8.86,
+      "questions": 21
+    },
+    "hybrid_routed": {
+      "hit@1": 0.286,
+      "hit@3": 0.333,
+      "hit@5": 0.333,
+      "hit@12": 0.333,
+      "mrr": 0.302,
+      "mean_files": 2.9,
+      "questions": 21
+    },
+    "hybrid_routed_graph": {
+      "hit@1": 0.286,
+      "hit@3": 0.333,
+      "hit@5": 0.381,
+      "hit@12": 0.381,
+      "mrr": 0.313,
+      "mean_files": 4.05,
+      "questions": 21
+    }
+  },
+  "per_tier": {
+    "cross_reference": {
+      "dense_only": {
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "hit@12": 0.0,
+        "mrr": 0.0,
+        "mean_files": 0.0,
+        "questions": 5
+      },
+      "bm25_only": {
+        "hit@1": 0.4,
+        "hit@3": 0.6,
+        "hit@5": 0.6,
+        "hit@12": 0.8,
+        "mrr": 0.533,
+        "mean_files": 8.6,
+        "questions": 5
+      },
+      "hybrid": {
+        "hit@1": 0.4,
+        "hit@3": 0.6,
+        "hit@5": 0.6,
+        "hit@12": 0.8,
+        "mrr": 0.533,
+        "mean_files": 8.6,
+        "questions": 5
+      },
+      "hybrid_routed": {
+        "hit@1": 0.4,
+        "hit@3": 0.4,
+        "hit@5": 0.4,
+        "hit@12": 0.4,
+        "mrr": 0.4,
+        "mean_files": 3.0,
+        "questions": 5
+      },
+      "hybrid_routed_graph": {
+        "hit@1": 0.4,
+        "hit@3": 0.4,
+        "hit@5": 0.4,
+        "hit@12": 0.4,
+        "mrr": 0.4,
+        "mean_files": 3.8,
+        "questions": 5
+      }
+    },
+    "direct_lookup": {
+      "dense_only": {
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "hit@12": 0.0,
+        "mrr": 0.0,
+        "mean_files": 0.0,
+        "questions": 6
+      },
+      "bm25_only": {
+        "hit@1": 0.333,
+        "hit@3": 0.333,
+        "hit@5": 0.5,
+        "hit@12": 0.667,
+        "mrr": 0.403,
+        "mean_files": 9.83,
+        "questions": 6
+      },
+      "hybrid": {
+        "hit@1": 0.333,
+        "hit@3": 0.333,
+        "hit@5": 0.5,
+        "hit@12": 0.667,
+        "mrr": 0.403,
+        "mean_files": 9.83,
+        "questions": 6
+      },
+      "hybrid_routed": {
+        "hit@1": 0.167,
+        "hit@3": 0.167,
+        "hit@5": 0.167,
+        "hit@12": 0.167,
+        "mrr": 0.167,
+        "mean_files": 3.0,
+        "questions": 6
+      },
+      "hybrid_routed_graph": {
+        "hit@1": 0.167,
+        "hit@3": 0.167,
+        "hit@5": 0.167,
+        "hit@12": 0.167,
+        "mrr": 0.167,
+        "mean_files": 4.0,
+        "questions": 6
+      }
+    },
+    "negative_trap": {
+      "dense_only": {
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "hit@12": 0.0,
+        "mrr": 0.0,
+        "mean_files": 0.0,
+        "questions": 5
+      },
+      "bm25_only": {
+        "hit@1": 0.2,
+        "hit@3": 0.6,
+        "hit@5": 0.6,
+        "hit@12": 0.8,
+        "mrr": 0.429,
+        "mean_files": 9.4,
+        "questions": 5
+      },
+      "hybrid": {
+        "hit@1": 0.2,
+        "hit@3": 0.6,
+        "hit@5": 0.6,
+        "hit@12": 0.8,
+        "mrr": 0.429,
+        "mean_files": 9.4,
+        "questions": 5
+      },
+      "hybrid_routed": {
+        "hit@1": 0.0,
+        "hit@3": 0.2,
+        "hit@5": 0.2,
+        "hit@12": 0.2,
+        "mrr": 0.067,
+        "mean_files": 2.6,
+        "questions": 5
+      },
+      "hybrid_routed_graph": {
+        "hit@1": 0.0,
+        "hit@3": 0.2,
+        "hit@5": 0.4,
+        "hit@12": 0.4,
+        "mrr": 0.117,
+        "mean_files": 3.8,
+        "questions": 5
+      }
+    },
+    "synthesis": {
+      "dense_only": {
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "hit@12": 0.0,
+        "mrr": 0.0,
+        "mean_files": 0.0,
+        "questions": 5
+      },
+      "bm25_only": {
+        "hit@1": 0.8,
+        "hit@3": 0.8,
+        "hit@5": 1.0,
+        "hit@12": 1.0,
+        "mrr": 0.85,
+        "mean_files": 7.4,
+        "questions": 5
+      },
+      "hybrid": {
+        "hit@1": 0.8,
+        "hit@3": 0.8,
+        "hit@5": 1.0,
+        "hit@12": 1.0,
+        "mrr": 0.85,
+        "mean_files": 7.4,
+        "questions": 5
+      },
+      "hybrid_routed": {
+        "hit@1": 0.6,
+        "hit@3": 0.6,
+        "hit@5": 0.6,
+        "hit@12": 0.6,
+        "mrr": 0.6,
+        "mean_files": 3.0,
+        "questions": 5
+      },
+      "hybrid_routed_graph": {
+        "hit@1": 0.6,
+        "hit@3": 0.6,
+        "hit@5": 0.6,
+        "hit@12": 0.6,
+        "mrr": 0.6,
+        "mean_files": 4.6,
+        "questions": 5
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "GR1-T1",
+      "tier": "direct_lookup",
+      "question": "शासन निर्णयाचा दिनांक काय आहे?",
+      "expected": "GR1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 6,
+          "files": 12,
+          "ranked": [
+            "letter 2.pdf",
+            "aadesh 4.pdf",
+            "letter 1.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 3.pdf",
+            "GR1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 1.pdf",
+            "GR4.pdf",
+            "GR3.pdf",
+            "GR1.5.pdf",
+            "GR5.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 6,
+          "files": 12,
+          "ranked": [
+            "letter 2.pdf",
+            "aadesh 4.pdf",
+            "letter 1.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 3.pdf",
+            "GR1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 1.pdf",
+            "GR4.pdf",
+            "GR3.pdf",
+            "GR1.5.pdf",
+            "GR5.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "aadesh 4.pdf",
+            "paripatrika 2.pdf",
+            "GR2.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "aadesh 4.pdf",
+            "paripatrika 2.pdf",
+            "GR2.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR1-T1b",
+      "tier": "direct_lookup",
+      "question": "हा शासन निर्णय कोणत्या विभागाने जारी केला आहे?",
+      "expected": "GR1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 10,
+          "ranked": [
+            "GR4.pdf",
+            "GR5.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf",
+            "letter 3.pdf",
+            "aadesh 2.pdf",
+            "GR2.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "letter 2.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 10,
+          "ranked": [
+            "GR4.pdf",
+            "GR5.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf",
+            "letter 3.pdf",
+            "aadesh 2.pdf",
+            "GR2.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "letter 2.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR2.pdf",
+            "paripatrika 2.pdf",
+            "GR3.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR2.pdf",
+            "paripatrika 2.pdf",
+            "GR3.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR1-T2",
+      "tier": "synthesis",
+      "question": "राज्य ग्रंथालय परिषदेत किती नवीन सदस्यांचा समावेश करण्यात आला, आणि ते कोणत्या प्रकारचे सदस्य आहेत?",
+      "expected": "GR1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "GR3.pdf",
+            "GR5.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "GR3.pdf",
+            "GR5.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "paripatrika 2.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "paripatrika 2.pdf",
+            "GR1.4.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR1-T3",
+      "tier": "cross_reference",
+      "question": "संदर्भ क्र. 5 नुसार पूर्वी किती सदस्यांची राज्य ग्रंथालय परिषद स्थापन करण्यात आली होती?",
+      "expected": "GR1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "aadesh 5.pdf",
+            "GR1.4.pdf",
+            "paripatrika 2.pdf",
+            "letter 1.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "aadesh 5.pdf",
+            "GR1.4.pdf",
+            "paripatrika 2.pdf",
+            "letter 1.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR1-T4",
+      "tier": "negative_trap",
+      "question": "या शासन निर्णयानुसार परिषदेच्या अध्यक्षपदी कोणाची नियुक्ती करण्यात आली आहे?",
+      "expected": "GR1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 2,
+          "files": 10,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.pdf",
+            "aadesh 5.pdf",
+            "GR1.5.pdf",
+            "letter 1.pdf",
+            "GR5.pdf",
+            "GR2.pdf",
+            "aadesh 1.pdf",
+            "GR3.pdf",
+            "paripatrika 1.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 2,
+          "files": 10,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.pdf",
+            "aadesh 5.pdf",
+            "GR1.5.pdf",
+            "letter 1.pdf",
+            "GR5.pdf",
+            "GR2.pdf",
+            "aadesh 1.pdf",
+            "GR3.pdf",
+            "paripatrika 1.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "aadesh 5.pdf",
+            "GR1.5.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": 4,
+          "files": 5,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "aadesh 5.pdf",
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR1.4.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR2-T1",
+      "tier": "direct_lookup",
+      "question": "या शासन निर्णयाचा दिनांक व विभाग काय आहे?",
+      "expected": "GR2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 11,
+          "ranked": [
+            "letter 1.pdf",
+            "paripatrika 2.pdf",
+            "GR4.pdf",
+            "aadesh 5.pdf",
+            "letter 2.pdf",
+            "aadesh 4.pdf",
+            "aadesh 1.pdf",
+            "GR1.5.pdf",
+            "GR3.pdf",
+            "letter 3.pdf",
+            "aadesh 2.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 11,
+          "ranked": [
+            "letter 1.pdf",
+            "paripatrika 2.pdf",
+            "GR4.pdf",
+            "aadesh 5.pdf",
+            "letter 2.pdf",
+            "aadesh 4.pdf",
+            "aadesh 1.pdf",
+            "GR1.5.pdf",
+            "GR3.pdf",
+            "letter 3.pdf",
+            "aadesh 2.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "letter 1.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 5.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 5,
+          "ranked": [
+            "letter 1.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 5.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR2-T2",
+      "tier": "synthesis",
+      "question": "कोणत्या विद्यापीठात, कोणता अभ्यासक्रम, किती विद्यार्थी क्षमतेसह मंजूर करण्यात आला?",
+      "expected": "GR2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 4,
+          "files": 8,
+          "ranked": [
+            "GR1.pdf",
+            "GR3.pdf",
+            "GR1.5.pdf",
+            "GR2.pdf",
+            "aadesh 3.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 1.pdf",
+            "letter 1.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 4,
+          "files": 8,
+          "ranked": [
+            "GR1.pdf",
+            "GR3.pdf",
+            "GR1.5.pdf",
+            "GR2.pdf",
+            "aadesh 3.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 1.pdf",
+            "letter 1.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR3.pdf",
+            "GR1.5.pdf",
+            "aadesh 3.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 5,
+          "ranked": [
+            "GR3.pdf",
+            "GR1.5.pdf",
+            "aadesh 3.pdf",
+            "GR1.pdf",
+            "GR1.4.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR2-T3",
+      "tier": "cross_reference",
+      "question": "हा शासन निर्णय कोणत्या पत्राच्या आधारे घेण्यात आला?",
+      "expected": "GR2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 10,
+          "ranked": [
+            "GR3.pdf",
+            "letter 1.pdf",
+            "letter 2.pdf",
+            "GR4.pdf",
+            "GR1.pdf",
+            "aadesh 3.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 5.pdf",
+            "GR1.5.pdf",
+            "GR5.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 10,
+          "ranked": [
+            "GR3.pdf",
+            "letter 1.pdf",
+            "letter 2.pdf",
+            "GR4.pdf",
+            "GR1.pdf",
+            "aadesh 3.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 5.pdf",
+            "GR1.5.pdf",
+            "GR5.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR1.pdf",
+            "paripatrika 2.pdf",
+            "GR1.5.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 4,
+          "ranked": [
+            "GR1.pdf",
+            "paripatrika 2.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR2-T4",
+      "tier": "negative_trap",
+      "question": "या अभ्यासक्रमासाठी विद्यार्थ्यांचे शुल्क किती निश्चित करण्यात आले आहे?",
+      "expected": "GR2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 7,
+          "files": 11,
+          "ranked": [
+            "GR4.pdf",
+            "letter 1.pdf",
+            "GR1.pdf",
+            "letter 2.pdf",
+            "GR1.5.pdf",
+            "aadesh 5.pdf",
+            "GR2.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 1.pdf",
+            "GR3.pdf",
+            "aadesh 3.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 7,
+          "files": 11,
+          "ranked": [
+            "GR4.pdf",
+            "letter 1.pdf",
+            "GR1.pdf",
+            "letter 2.pdf",
+            "GR1.5.pdf",
+            "aadesh 5.pdf",
+            "GR2.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 1.pdf",
+            "GR3.pdf",
+            "aadesh 3.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR1.5.pdf",
+            "paripatrika 2.pdf",
+            "GR3.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 5,
+          "ranked": [
+            "GR1.5.pdf",
+            "paripatrika 2.pdf",
+            "GR3.pdf",
+            "GR1.pdf",
+            "GR1.4.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR3-T1",
+      "tier": "direct_lookup",
+      "question": "स्वयंपाकगृह आधुनिकीकरणासाठी एकूण किती खर्चास मंजुरी देण्यात आली?",
+      "expected": "GR3.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR3.pdf",
+            "GR1.pdf",
+            "aadesh 1.pdf",
+            "paripatrika 2.pdf",
+            "GR1.5.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR3.pdf",
+            "GR1.pdf",
+            "aadesh 1.pdf",
+            "paripatrika 2.pdf",
+            "GR1.5.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR3.pdf",
+            "GR1.pdf",
+            "paripatrika 2.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "GR3.pdf",
+            "GR1.pdf",
+            "paripatrika 2.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR3-T2",
+      "tier": "synthesis",
+      "question": "स्थापत्य कामे व विद्युत कामे यांचे स्वतंत्र खर्च किती आहेत?",
+      "expected": "GR3.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR3.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 3.pdf",
+            "GR1.pdf",
+            "aadesh 5.pdf",
+            "GR2.pdf",
+            "GR1.5.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR3.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 3.pdf",
+            "GR1.pdf",
+            "aadesh 5.pdf",
+            "GR2.pdf",
+            "GR1.5.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR3.pdf",
+            "paripatrika 2.pdf",
+            "GR1.5.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "GR3.pdf",
+            "paripatrika 2.pdf",
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR1.4.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR3-T3",
+      "tier": "cross_reference",
+      "question": "या कामाच्या पाहणी अहवालाची शिफारस कोणी केली?",
+      "expected": "GR3.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR3.pdf",
+            "letter 3.pdf",
+            "GR2.pdf",
+            "GR1.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "GR4.pdf",
+            "paripatrika 2.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR3.pdf",
+            "letter 3.pdf",
+            "GR2.pdf",
+            "GR1.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "GR4.pdf",
+            "paripatrika 2.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR3.pdf",
+            "letter 3.pdf",
+            "paripatrika 2.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR3.pdf",
+            "letter 3.pdf",
+            "paripatrika 2.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR3-T4",
+      "tier": "negative_trap",
+      "question": "हे काम कोणत्या कंत्राटदाराला (contractor) देण्यात आले आहे?",
+      "expected": "GR3.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 10,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "aadesh 1.pdf",
+            "GR1.pdf",
+            "paripatrika 1.pdf",
+            "GR4.pdf",
+            "GR2.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "letter 1.pdf",
+            "aadesh 2.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 10,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "aadesh 1.pdf",
+            "GR1.pdf",
+            "paripatrika 1.pdf",
+            "GR4.pdf",
+            "GR2.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "letter 1.pdf",
+            "aadesh 2.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": 3,
+          "files": 3,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "letter 1.pdf",
+            "GR3.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": 3,
+          "files": 5,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "letter 1.pdf",
+            "GR3.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR4-T1",
+      "tier": "direct_lookup",
+      "question": "हा शासन आदेश कोणत्या विभागाने व कधी जारी केला?",
+      "expected": "GR4.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 4,
+          "files": 9,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 2.pdf",
+            "aadesh 4.pdf",
+            "GR4.pdf",
+            "aadesh 5.pdf",
+            "GR5.pdf",
+            "letter 3.pdf",
+            "GR2.pdf",
+            "paripatrika 2.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 4,
+          "files": 9,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 2.pdf",
+            "aadesh 4.pdf",
+            "GR4.pdf",
+            "aadesh 5.pdf",
+            "GR5.pdf",
+            "letter 3.pdf",
+            "GR2.pdf",
+            "paripatrika 2.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "aadesh 5.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "aadesh 5.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR4-T2",
+      "tier": "synthesis",
+      "question": "मुंबईबाहेर बदली झालेल्या कर्मचाऱ्याने निवासस्थान रिक्त न केल्यास कोणती कार्यवाही करण्याची तरतूद आहे?",
+      "expected": "GR4.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "GR5.pdf",
+            "GR1.pdf",
+            "letter 3.pdf",
+            "GR1.5.pdf",
+            "letter 1.pdf",
+            "paripatrika 1.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "GR5.pdf",
+            "GR1.pdf",
+            "letter 3.pdf",
+            "GR1.5.pdf",
+            "letter 1.pdf",
+            "paripatrika 1.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR3.pdf",
+            "paripatrika 2.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 5,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR3.pdf",
+            "paripatrika 2.pdf",
+            "GR1.pdf",
+            "GR1.4.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR4-T3",
+      "tier": "cross_reference",
+      "question": "संदर्भ क्र. 3 येथील शासन निर्णय कोणत्या दिनांकाचा आहे व त्याचा या आदेशाशी काय संबंध आहे?",
+      "expected": "GR4.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 6,
+          "files": 9,
+          "ranked": [
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "letter 2.pdf",
+            "GR1.pdf",
+            "GR4.pdf",
+            "GR5.pdf",
+            "letter 3.pdf",
+            "GR3.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 6,
+          "files": 9,
+          "ranked": [
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "letter 2.pdf",
+            "GR1.pdf",
+            "GR4.pdf",
+            "GR5.pdf",
+            "letter 3.pdf",
+            "GR3.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "aadesh 5.pdf",
+            "GR1.pdf",
+            "GR1.5.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 4,
+          "ranked": [
+            "aadesh 5.pdf",
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR4-T4",
+      "tier": "negative_trap",
+      "question": "निवासस्थान रिक्त न केल्यास कर्मचाऱ्यावर किती दंड आकारला जाईल?",
+      "expected": "GR4.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 2,
+          "files": 9,
+          "ranked": [
+            "GR5.pdf",
+            "GR4.pdf",
+            "letter 3.pdf",
+            "aadesh 3.pdf",
+            "letter 1.pdf",
+            "paripatrika 2.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 1.pdf",
+            "aadesh 2.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 2,
+          "files": 9,
+          "ranked": [
+            "GR5.pdf",
+            "GR4.pdf",
+            "letter 3.pdf",
+            "aadesh 3.pdf",
+            "letter 1.pdf",
+            "paripatrika 2.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 1.pdf",
+            "aadesh 2.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 4.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 4.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR5-T1",
+      "tier": "direct_lookup",
+      "question": "ही सवलत कोणत्या इयत्तांसाठी लागू आहे?",
+      "expected": "GR5.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 9,
+          "ranked": [
+            "GR5.pdf",
+            "GR1.pdf",
+            "GR4.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 2.pdf",
+            "aadesh 3.pdf",
+            "GR3.pdf",
+            "GR2.pdf",
+            "paripatrika 1.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 9,
+          "ranked": [
+            "GR5.pdf",
+            "GR1.pdf",
+            "GR4.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 2.pdf",
+            "aadesh 3.pdf",
+            "GR3.pdf",
+            "GR2.pdf",
+            "paripatrika 1.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR2.pdf",
+            "letter 1.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 5,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR2.pdf",
+            "letter 1.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR5-T2",
+      "tier": "synthesis",
+      "question": "जानेवारी ते जून दरम्यान सेवानिवृत्त होणाऱ्या व जुलै ते डिसेंबर दरम्यान सेवानिवृत्त होणाऱ्या कर्मचाऱ्यांना किती कालावधीची मुभा मिळते, आणि यात फरक काय?",
+      "expected": "GR5.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR5.pdf",
+            "aadesh 3.pdf",
+            "GR4.pdf",
+            "aadesh 5.pdf",
+            "aadesh 1.pdf",
+            "paripatrika 1.pdf",
+            "paripatrika 2.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR5.pdf",
+            "aadesh 3.pdf",
+            "GR4.pdf",
+            "aadesh 5.pdf",
+            "aadesh 1.pdf",
+            "paripatrika 1.pdf",
+            "paripatrika 2.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR5.pdf",
+            "paripatrika 1.pdf",
+            "paripatrika 2.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR5.pdf",
+            "paripatrika 1.pdf",
+            "paripatrika 2.pdf",
+            "letter 1.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR5-T3",
+      "tier": "cross_reference",
+      "question": "ही सवलत कोणत्या केंद्रीय नियमाच्या धर्तीवर देण्यात आली आहे?",
+      "expected": "GR5.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 2,
+          "files": 10,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR5.pdf",
+            "aadesh 1.pdf",
+            "GR1.pdf",
+            "GR4.pdf",
+            "GR2.pdf",
+            "aadesh 4.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 3.pdf",
+            "letter 1.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 2,
+          "files": 10,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR5.pdf",
+            "aadesh 1.pdf",
+            "GR1.pdf",
+            "GR4.pdf",
+            "GR2.pdf",
+            "aadesh 4.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 3.pdf",
+            "letter 1.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR2.pdf",
+            "letter 1.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 5,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR2.pdf",
+            "letter 1.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GR5-T4",
+      "tier": "negative_trap",
+      "question": "एकापेक्षा अधिक पाल्य असल्यास मुभेचा कालावधी कसा बदलतो?",
+      "expected": "GR5.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 0,
+          "ranked": []
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR5.pdf",
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "paripatrika 2.pdf",
+            "letter 3.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf"
+          ]
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR5.pdf",
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "paripatrika 2.pdf",
+            "letter 3.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf"
+          ]
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 4.pdf"
+          ]
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 4.pdf"
+          ]
+        }
+      }
+    }
+  ]
+}

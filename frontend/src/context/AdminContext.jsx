@@ -3,11 +3,20 @@
 // Sidebar reads this to show a live badge from ANY page.
 // KnowledgeBase reads/writes this to trigger and display the batch job.
 
-import { createContext, useContext, useState, useEffect, useRef } from 'react'
+import { createContext, useContext, useState, useEffect, useRef, useCallback } from 'react'
 import client from '../api/client'
 import { useAuth } from './AuthContext'
 
 const AdminContext = createContext(null)
+
+// 60s, not 15s. This timer runs for the whole session on every admin
+// page, so it is the only poller that hits the backend continuously —
+// the embed and batch pollers only run while their job is active. At 15s
+// it produced four access-log lines a minute forever, drowning the
+// server terminal. The value it fetches is a badge count that changes
+// only when a summary finishes, and the batch poller already refreshes
+// that count on completion, so a slower tick loses nothing.
+const PENDING_POLL_MS = 60000
 
 export function AdminProvider({ children }) {
   const { isAdmin } = useAuth()
@@ -23,55 +32,30 @@ export function AdminProvider({ children }) {
     batchRunningRef.current = !!batchState?.running
   }, [batchState])
 
-  useEffect(() => {
-    if (!isAdmin) {
-      setPendingCount(0)
-      setBatchState(null)
-      return
-    }
-    loadPending()
-    checkBatchStatus()
-    startPendingPolling()
-    return () => { stopPendingPolling(); stopBatchPolling() }
-  }, [isAdmin])
-
-  const loadPending = async () => {
+  const loadPending = useCallback(async () => {
     try {
       const res = await client.get('/summary/pending')
       setPendingCount(res.data.total ?? (res.data.pending || []).length)
     } catch { /* silent — badge just won't show */ }
-  }
+  }, [])
 
-  // 60s, not 15s. This timer runs for the whole session on every admin
-  // page, so it is the only poller that hits the backend continuously —
-  // the embed and batch pollers only run while their job is active. At 15s
-  // it produced four access-log lines a minute forever, drowning the
-  // server terminal. The value it fetches is a badge count that changes
-  // only when a summary finishes, and the batch poller already refreshes
-  // that count on completion, so a slower tick loses nothing.
-  const PENDING_POLL_MS = 60000
-
-  const startPendingPolling = () => {
+  const startPendingPolling = useCallback(() => {
     if (pendingPollRef.current) return
     pendingPollRef.current = setInterval(() => {
       // Skip while a batch job is running — batch polling already keeps count fresh then
       if (!batchRunningRef.current) loadPending()
     }, PENDING_POLL_MS)
-  }
+  }, [loadPending])
 
-  const stopPendingPolling = () => {
+  const stopPendingPolling = useCallback(() => {
     if (pendingPollRef.current) { clearInterval(pendingPollRef.current); pendingPollRef.current = null }
-  }
+  }, [])
 
-  const checkBatchStatus = async () => {
-    try {
-      const res = await client.get('/summary/batch-status')
-      setBatchState(res.data.state)
-      if (res.data.state?.running) startBatchPolling()
-    } catch { /* silent */ }
-  }
+  const stopBatchPolling = useCallback(() => {
+    if (batchPollRef.current) { clearInterval(batchPollRef.current); batchPollRef.current = null }
+  }, [])
 
-  const startBatchPolling = () => {
+  const startBatchPolling = useCallback(() => {
     if (batchPollRef.current) return
     batchPollRef.current = setInterval(async () => {
       try {
@@ -83,11 +67,30 @@ export function AdminProvider({ children }) {
         }
       } catch { /* silent */ }
     }, 3000)
-  }
+  }, [stopBatchPolling, loadPending])
 
-  const stopBatchPolling = () => {
-    if (batchPollRef.current) { clearInterval(batchPollRef.current); batchPollRef.current = null }
-  }
+  const checkBatchStatus = useCallback(async () => {
+    try {
+      const res = await client.get('/summary/batch-status')
+      setBatchState(res.data.state)
+      if (res.data.state?.running) startBatchPolling()
+    } catch { /* silent */ }
+  }, [startBatchPolling])
+
+  // Every callback named here is memoised with stable deps, so this still
+  // reacts to isAdmin alone.
+  useEffect(() => {
+    if (!isAdmin) {
+      setPendingCount(0)
+      setBatchState(null)
+      return
+    }
+    loadPending()
+    checkBatchStatus()
+    startPendingPolling()
+    return () => { stopPendingPolling(); stopBatchPolling() }
+  }, [isAdmin, loadPending, checkBatchStatus, startPendingPolling,
+      stopPendingPolling, stopBatchPolling])
 
   /**
    * Starts batch summarization.

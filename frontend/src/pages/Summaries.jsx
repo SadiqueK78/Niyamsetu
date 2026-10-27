@@ -4,7 +4,8 @@
 // Search bar filters by filename/subject/department/gr_number.
 // Click a card → modal with full summary text + download button.
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
+import { FileText, Inbox, Download } from 'lucide-react'
 import client from '../api/client'
 
 export default function Summaries() {
@@ -14,11 +15,7 @@ export default function Summaries() {
   const [search,    setSearch]    = useState('')
   const [selected,  setSelected]  = useState(null) // full summary object for modal
 
-  useEffect(() => {
-    loadSummaries()
-  }, [])
-
-  const loadSummaries = async () => {
+  const loadSummaries = useCallback(async () => {
     setLoading(true)
     setError('')
     try {
@@ -29,7 +26,11 @@ export default function Summaries() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [])
+
+  useEffect(() => {
+    loadSummaries()
+  }, [loadSummaries])
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase()
@@ -95,7 +96,7 @@ export default function Summaries() {
       {/* Header */}
       <div style={{ marginBottom: '24px' }}>
         <h1 style={{ color: '#E8EAF0', fontSize: '1.4rem', margin: '0 0 4px', fontWeight: '700' }}>
-          📋 GR Summaries
+          GR Summaries
         </h1>
         <p style={{ color: '#555', fontSize: '0.85rem', margin: 0 }}>
           Browse AI-generated summaries of embedded Government Resolutions.
@@ -107,7 +108,7 @@ export default function Summaries() {
         <input
           value={search}
           onChange={e => setSearch(e.target.value)}
-          placeholder="🔍 Search by filename, subject, department, GR number…"
+          placeholder="Search by filename, subject, department, GR number…"
           style={{
             width: '100%', background: '#1A1D2E', border: '1px solid #2A2D3E',
             borderRadius: '10px', padding: '11px 16px', color: '#E8EAF0',
@@ -125,7 +126,7 @@ export default function Summaries() {
           background: '#2A0F0F', border: '1px solid #EF4444', borderRadius: '8px',
           padding: '12px 16px', color: '#EF4444', fontSize: '0.85rem', marginBottom: '20px',
         }}>
-          ❌ {error}
+          {error}
         </div>
       )}
 
@@ -139,7 +140,7 @@ export default function Summaries() {
       {/* Empty state */}
       {!loading && !error && filtered.length === 0 && (
         <div style={{ textAlign: 'center', padding: '60px 24px' }}>
-          <div style={{ fontSize: '2.2rem', marginBottom: '10px' }}>📭</div>
+          <div style={{ fontSize: '2.2rem', marginBottom: '10px' }}><Inbox size={34} /></div>
           <p style={{ color: '#555', fontSize: '0.9rem' }}>
             {summaries.length === 0
               ? 'No summaries generated yet. Ask an admin to generate one.'
@@ -168,7 +169,7 @@ export default function Summaries() {
               onMouseLeave={e => { e.currentTarget.style.borderColor = '#2A2D3E' }}
             >
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '10px' }}>
-                <div style={{ fontSize: '1.4rem', flexShrink: 0 }}>📄</div>
+                <div style={{ fontSize: '1.4rem', flexShrink: 0 }}><FileText size={20} /></div>
                 <div style={{ overflow: 'hidden' }}>
                   <div style={{
                     color: '#E8EAF0', fontSize: '0.88rem', fontWeight: '600',
@@ -199,7 +200,7 @@ export default function Summaries() {
               <div style={{
                 color: '#444', fontSize: '0.72rem', marginTop: '12px', fontFamily: 'monospace',
               }}>
-                🕒 {formatDate(item.processed_at)}
+                {formatDate(item.processed_at)}
               </div>
             </div>
           ))}
@@ -231,7 +232,7 @@ export default function Summaries() {
             }}>
               <div style={{ overflow: 'hidden' }}>
                 <div style={{ color: '#E8EAF0', fontSize: '1rem', fontWeight: '700' }}>
-                  📄 {selected.filename}
+                  {selected.filename}
                 </div>
                 <div style={{ color: '#555', fontSize: '0.78rem', marginTop: '4px' }}>
                   {formatDate(selected.processed_at)}
@@ -286,7 +287,7 @@ export default function Summaries() {
                   fontWeight: '600', cursor: 'pointer', fontFamily: 'Inter, sans-serif',
                 }}
               >
-                ⬇ Download .txt
+                <Download size={14} /> Download .txt
               </button>
             </div>
           </div>

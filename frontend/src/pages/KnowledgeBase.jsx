@@ -9,7 +9,8 @@
 //   Delete action appears. Selection is the only thing that changes what
 //   the buttons target; there is no separate "scoped mode" to toggle.
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
+import { FileText, Trash2 } from 'lucide-react'
 import client from '../api/client'
 import { useAdmin } from '../context/AdminContext'
 
@@ -26,13 +27,7 @@ export default function KnowledgeBase() {
 
   const { pendingCount, batchState, startBatchSummarize, refreshPending } = useAdmin()
 
-  useEffect(() => {
-    loadFiles()
-    checkStatus()
-    return () => stopPolling()
-  }, [])
-
-  const loadFiles = async () => {
+  const loadFiles = useCallback(async () => {
     setLoading(true)
     setError('')
     try {
@@ -48,17 +43,13 @@ export default function KnowledgeBase() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [])
 
-  const checkStatus = async () => {
-    try {
-      const res = await client.get('/embed/status')
-      setEmbedState(res.data)
-      if (res.data.state?.running) startPolling()
-    } catch { /* silent */ }
-  }
+  const stopPolling = useCallback(() => {
+    if (pollRef.current) { clearInterval(pollRef.current); pollRef.current = null }
+  }, [])
 
-  const startPolling = () => {
+  const startPolling = useCallback(() => {
     if (pollRef.current) return
     pollRef.current = setInterval(async () => {
       try {
@@ -70,11 +61,23 @@ export default function KnowledgeBase() {
         }
       } catch { /* silent */ }
     }, 3000)
-  }
+  }, [stopPolling, loadFiles])
 
-  const stopPolling = () => {
-    if (pollRef.current) { clearInterval(pollRef.current); pollRef.current = null }
-  }
+  const checkStatus = useCallback(async () => {
+    try {
+      const res = await client.get('/embed/status')
+      setEmbedState(res.data)
+      if (res.data.state?.running) startPolling()
+    } catch { /* silent */ }
+  }, [startPolling])
+
+  // Each callback above is memoised with stable deps, so this still runs
+  // once on mount and cleans up once on unmount.
+  useEffect(() => {
+    loadFiles()
+    checkStatus()
+    return () => stopPolling()
+  }, [loadFiles, checkStatus, stopPolling])
 
   // ── Selection helpers ───────────────────────────────────
   const toggleOne = (filename) => {
@@ -190,8 +193,8 @@ export default function KnowledgeBase() {
   // rebuild of an already-complete index, so say that rather than implying
   // there is new work to do.
   const embedLabel = hasSelection
-    ? `⚙️ Embed ${selected.length} Selected`
-    : (notEmbeddedCount === 0 ? '⚙️ Rebuild Vector Store' : '⚙️ Build Vector Store')
+    ? `Embed ${selected.length} Selected`
+    : (notEmbeddedCount === 0 ? 'Rebuild Vector Store' : 'Build Vector Store')
 
   const btn = (enabled, bg, fg) => ({
     background: enabled ? bg : '#2A2D3E',
@@ -211,7 +214,7 @@ export default function KnowledgeBase() {
       {/* Header */}
       <div style={{ marginBottom: '20px' }}>
         <h1 style={{ color: '#E8EAF0', fontSize: '1.4rem', margin: '0 0 4px', fontWeight: '700' }}>
-          🗄️ Knowledge Base
+          Knowledge Base
         </h1>
         <p style={{ color: '#555', fontSize: '0.85rem', margin: 0 }}>
           Manage which GR documents are indexed and searchable by the AI.
@@ -224,7 +227,7 @@ export default function KnowledgeBase() {
           padding: '12px 16px', color: '#EF4444', fontSize: '0.85rem', marginBottom: '20px',
           whiteSpace: 'pre-wrap',
         }}>
-          ❌ {error}
+          {error}
         </div>
       )}
 
@@ -280,7 +283,7 @@ export default function KnowledgeBase() {
               disabled={embedDisabled}
               style={btn(!embedDisabled, '#FF6B00', 'white')}
             >
-              {isRunning ? '⏳ Embedding…' : embedLabel}
+              {isRunning ? 'Embedding…' : embedLabel}
             </button>
 
             <button
@@ -289,10 +292,10 @@ export default function KnowledgeBase() {
               style={btn(!summarizeDisabled, '#FACC15', '#1A1D2E')}
             >
               {isBatchRunning
-                ? '⏳ Summarizing…'
+                ? 'Summarizing…'
                 : hasSelection
-                  ? `📋 Summarize ${selected.length} Selected`
-                  : '📋 Summarize All'}
+                  ? `Summarize ${selected.length} Selected`
+                  : 'Summarize All'}
             </button>
 
             {hasSelection && (
@@ -301,7 +304,7 @@ export default function KnowledgeBase() {
                 disabled={busy}
                 style={btn(!busy, '#EF4444', 'white')}
               >
-                🗑 Delete {selected.length} Selected
+                Delete {selected.length} Selected
               </button>
             )}
           </div>
@@ -355,10 +358,7 @@ export default function KnowledgeBase() {
             ref={el => { if (el) el.indeterminate = someSelected }}
             onChange={toggleAll}
             aria-label="Select all documents"
-            style={{
-              width: '16px', height: '16px', accentColor: '#FF6B00',
-              cursor: 'pointer', flexShrink: 0,
-            }}
+            className="gr-checkbox"
           />
         )}
         <div style={{ color: '#B0B4C8', fontSize: '0.9rem', fontWeight: '600' }}>
@@ -400,12 +400,9 @@ export default function KnowledgeBase() {
                     checked={isSel}
                     onChange={() => toggleOne(f.filename)}
                     aria-label={`Select ${f.filename}`}
-                    style={{
-                      width: '16px', height: '16px', accentColor: '#FF6B00',
-                      cursor: 'pointer', flexShrink: 0,
-                    }}
+                    className="gr-checkbox"
                   />
-                  <span style={{ fontSize: '1.2rem', flexShrink: 0 }}>📄</span>
+                  <span style={{ display: 'flex', alignItems: 'center', flexShrink: 0, color: '#6FB3FF' }}><FileText size={18} /></span>
                   <div style={{ overflow: 'hidden' }}>
                     <div style={{
                       color: '#E8EAF0', fontSize: '0.85rem', fontWeight: '600',
@@ -445,7 +442,7 @@ export default function KnowledgeBase() {
                       cursor: busy ? 'not-allowed' : 'pointer',
                       fontSize: '0.75rem', fontFamily: 'Inter, sans-serif',
                     }}
-                  >🗑</button>
+                  ><Trash2 size={15} /></button>
                 </div>
               </div>
             )

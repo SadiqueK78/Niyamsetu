@@ -2,7 +2,8 @@
 // Admin dashboard — query stats + recent query log table.
 // Doubles as benchmark data source for the copyright application.
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
+import { MessageSquare, Users, Timer } from 'lucide-react'
 import client from '../api/client'
 
 export default function Analytics() {
@@ -11,11 +12,7 @@ export default function Analytics() {
   const [loading, setLoading] = useState(true)
   const [error,   setError]   = useState('')
 
-  useEffect(() => {
-    loadData()
-  }, [])
-
-  const loadData = async () => {
+  const loadData = useCallback(async () => {
     setLoading(true)
     setError('')
     try {
@@ -30,7 +27,11 @@ export default function Analytics() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [])
+
+  useEffect(() => {
+    loadData()
+  }, [loadData])
 
   const formatDate = (iso) => {
     if (!iso) return '—'
@@ -56,7 +57,7 @@ export default function Analytics() {
       {/* Header */}
       <div style={{ marginBottom: '20px' }}>
         <h1 style={{ color: '#E8EAF0', fontSize: '1.4rem', margin: '0 0 4px', fontWeight: '700' }}>
-          📊 Analytics
+          Analytics
         </h1>
         <p style={{ color: '#555', fontSize: '0.85rem', margin: 0 }}>
           Query volume, performance, and language breakdown across all users.
@@ -68,7 +69,7 @@ export default function Analytics() {
           background: '#2A0F0F', border: '1px solid #EF4444', borderRadius: '8px',
           padding: '12px 16px', color: '#EF4444', fontSize: '0.85rem', marginBottom: '20px',
         }}>
-          ❌ {error}
+          {error}
         </div>
       )}
 
@@ -83,9 +84,9 @@ export default function Analytics() {
             display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
             gap: '14px', marginBottom: '24px',
           }}>
-            <StatCard label="Total Queries" value={stats.total_queries ?? 0} color="#FF6B00" icon="💬" />
-            <StatCard label="Unique Users" value={stats.unique_users ?? 0} color="#6FB3FF" icon="👥" />
-            <StatCard label="Avg Response Time" value={`${(stats.avg_elapsed ?? 0).toFixed(2)}s`} color="#FACC15" icon="⏱️" />
+            <StatCard label="Total Queries" value={stats.total_queries ?? 0} color="#FF6B00" icon={<MessageSquare size={18} />} />
+            <StatCard label="Unique Users" value={stats.unique_users ?? 0} color="#6FB3FF" icon={<Users size={18} />} />
+            <StatCard label="Avg Response Time" value={`${(stats.avg_elapsed ?? 0).toFixed(2)}s`} color="#FACC15" icon={<Timer size={18} />} />
             <StatCard label="Success Rate" value={`${Math.round(stats.success_rate ?? 0)}%`} color="#4ADE80" icon="✓" />
           </div>
 
@@ -98,8 +99,8 @@ export default function Analytics() {
               Language Breakdown
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <LangBar label="🇬🇧 English" count={stats.languages?.english ?? 0} pct={languagePct('english')} color="#6FB3FF" />
-              <LangBar label="🇮🇳 Marathi" count={stats.languages?.marathi ?? 0} pct={languagePct('marathi')} color="#FF6B00" />
+              <LangBar label="English" count={stats.languages?.english ?? 0} pct={languagePct('english')} color="#6FB3FF" />
+              <LangBar label="Marathi" count={stats.languages?.marathi ?? 0} pct={languagePct('marathi')} color="#FF6B00" />
             </div>
           </div>
         </>
@@ -160,7 +161,7 @@ export default function Analytics() {
                   {log.query}
                 </div>
                 <div style={{ color: '#7A7F94', fontSize: '0.75rem' }}>
-                  {log.language === 'marathi' ? '🇮🇳 MR' : '🇬🇧 EN'}
+                  {log.language === 'marathi' ? 'MR' : 'EN'}
                 </div>
                 <div style={{ color: '#7A7F94', fontSize: '0.75rem', fontFamily: 'monospace' }}>
                   {log.elapsed_sec != null ? `${log.elapsed_sec.toFixed(1)}s` : '—'}

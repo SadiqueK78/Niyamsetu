@@ -48,3 +48,7 @@ aiofiles==24.1.0
 
 # Sparse lexical scoring for hybrid retrieval (core/hybrid_search.py).
 rank_bm25==0.2.2
+
+# Cross-encoder reranking (core/reranker.py, RERANK_ENABLED). Pulls in
+# torch and transformers; loaded only when the reranker is enabled.
+sentence-transformers==3.3.1

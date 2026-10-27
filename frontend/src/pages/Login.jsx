@@ -3,10 +3,17 @@
 // Login page — first thing every user sees.
 // Calls AuthContext.login() which hits POST /api/auth/login.
 // On success → admin goes to /admin/dashboard, user goes to /chat
+//
+// Local dev accounts are seeded by backend/db/users.py :: seed_default_users()
+// and only when the users collection is empty — see that function's docstring
+// for the usernames. They are deliberately NOT shown on this screen: printing
+// working credentials on a login form hands them to anyone who opens the page,
+// including in a demo or a screenshot.
 // ─────────────────────────────────────────────────────────
 
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Landmark } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 
 export default function Login() {
@@ -56,7 +63,7 @@ export default function Login() {
 
         {/* Logo and title */}
         <div style={{ textAlign: 'center', marginBottom: '36px' }}>
-          <div style={{ fontSize: '2.8rem', marginBottom: '8px' }}>🏛️</div>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}><Landmark size={44} color="#FF6B00" /></div>
           <h1 style={{
             color: '#FF6B00',
             fontSize: '1.5rem',
@@ -163,7 +170,7 @@ export default function Login() {
               fontSize: '0.85rem',
               marginBottom: '16px',
             }}>
-              ❌ {error}
+              {error}
             </div>
           )}
 
@@ -188,17 +195,6 @@ export default function Login() {
           </button>
 
         </form>
-
-        {/* Default credentials hint */}
-        <div style={{
-          textAlign: 'center',
-          color: '#333',
-          fontSize: '0.78rem',
-          marginTop: '24px',
-          fontFamily: 'monospace',
-        }}>
-          admin / admin123 &nbsp;·&nbsp; user1 / user123
-        </div>
 
       </div>
     </div>

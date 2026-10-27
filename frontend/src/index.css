@@ -1,3 +1,65 @@
 /* index.css */
 /* This single line enables all Tailwind utility classes */
 @import "tailwindcss";
+
+/* ── Checkbox ──────────────────────────────────────────────
+   Knowledge Base row + select-all control.
+
+   accent-color alone was not enough: it tints the CHECKED fill, but the
+   unchecked box keeps the browser's default light control, and no
+   color-scheme is declared anywhere, so it rendered as a pale square on
+   a dark #1A1D2E row. appearance:none hands the whole control over, so
+   the resting state matches the panels around it and the checked state
+   uses the same brand orange as the row border it sits in.
+
+   The tick and the indeterminate dash are drawn geometrically, so no
+   glyph, icon font, or emoji is involved. */
+.gr-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin: 0;
+  border: 1px solid #2A2D3E;
+  border-radius: 4px;
+  background: #0F1117;
+  cursor: pointer;
+  display: inline-grid;
+  place-content: center;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.gr-checkbox:hover {
+  border-color: #FF6B00;
+}
+
+.gr-checkbox:focus-visible {
+  outline: 2px solid #FF6B00;
+  outline-offset: 2px;
+}
+
+.gr-checkbox:checked,
+.gr-checkbox:indeterminate {
+  background: #FF6B00;
+  border-color: #FF6B00;
+}
+
+/* Tick: two borders of an empty box, rotated. */
+.gr-checkbox:checked::after {
+  content: '';
+  width: 4px;
+  height: 8px;
+  border: solid #FFFFFF;
+  border-width: 0 2px 2px 0;
+  transform: translateY(-1px) rotate(45deg);
+}
+
+/* Indeterminate (some but not all rows selected): a bar, not a tick. */
+.gr-checkbox:indeterminate::after {
+  content: '';
+  width: 8px;
+  height: 2px;
+  border-radius: 1px;
+  background: #FFFFFF;
+}

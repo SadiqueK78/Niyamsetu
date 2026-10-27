@@ -24,6 +24,7 @@ from pydantic import BaseModel
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from auth.router import get_admin_user, get_current_user
 from core.summarizer import process_gr, list_summaries
+from core.summary_v2 import process_gr_v2
 from core.trace import trace
 from db.gr_meta import get_all_gr_metadata
 from config import settings
@@ -137,10 +138,19 @@ async def _run_summary_job(pdf_path: str, filename: str):
         _summary_state["current_step"] = step
         _summary_state["last_message"] = step
 
-    result = await process_gr(
-        pdf_path=pdf_path,
-        progress_callback=on_progress,
-    )
+    # SUMMARY_V2_ENABLED switches to the map-reduce pipeline, which returns
+    # the same keys plus header and faithfulness. Off, this is the original
+    # call, unchanged.
+    if settings.SUMMARY_V2_ENABLED:
+        result = await process_gr_v2(
+            pdf_path=pdf_path,
+            progress_callback=on_progress,
+        )
+    else:
+        result = await process_gr(
+            pdf_path=pdf_path,
+            progress_callback=on_progress,
+        )
 
     if result["success"]:
         _summary_state["running"]      = False
@@ -151,6 +161,10 @@ async def _run_summary_job(pdf_path: str, filename: str):
             "summary":  result["summary"],
             "txt_path": result.get("txt_path", ""),
         }
+        # New fields, present only when the v2 pipeline produced them.
+        for key in ("header", "faithfulness"):
+            if key in result:
+                _summary_state["result"][key] = result[key]
     else:
         _summary_state["running"]      = False
         _summary_state["last_status"]  = "failed"
@@ -279,7 +293,10 @@ async def _run_batch_summary_job(filenames: list):
         print(f"\n─── batch {i}/{len(filenames)}: {filename} ───", flush=True)
 
         try:
-            result = await process_gr(str(pdf_path))
+            if settings.SUMMARY_V2_ENABLED:
+                result = await process_gr_v2(str(pdf_path))
+            else:
+                result = await process_gr(str(pdf_path))
             if not result["success"]:
                 # process_gr caught the exception itself and collapsed it
                 # into a message — this, not the except below, is the normal

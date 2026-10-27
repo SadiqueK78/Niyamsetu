@@ -1,0 +1,4799 @@
+{
+  "run_at": "2026-10-25 15:41:48.432535+00:00",
+  "questions": 57,
+  "top_k": 12,
+  "settings": {
+    "ROUTE_POOL_K": 30,
+    "ROUTE_TOP_DOCS": 3,
+    "ROUTE_MAX_CHUNKS": 8
+  },
+  "unavailable": [],
+  "note": "Each question is written to be answerable from exactly one document, so a miss here is a retrieval miss rather than an ambiguous question. page_hit@12 counts a chunk by the page it starts on. negative_trap entries (6) have no answer in the corpus and are excluded from every metric.",
+  "overall": {
+    "dense_only": {
+      "hit@1": 0.842,
+      "hit@1_count": 48,
+      "hit@3": 0.982,
+      "hit@3_count": 56,
+      "hit@12": 0.982,
+      "hit@12_count": 56,
+      "page_hit@12": 0.982,
+      "page_hit@12_count": 56,
+      "mrr": 0.909,
+      "mean_files": 4.93,
+      "questions": 57
+    },
+    "bm25_only": {
+      "hit@1": 0.702,
+      "hit@1_count": 40,
+      "hit@3": 0.754,
+      "hit@3_count": 43,
+      "hit@12": 0.772,
+      "hit@12_count": 44,
+      "page_hit@12": 0.737,
+      "page_hit@12_count": 42,
+      "mrr": 0.731,
+      "mean_files": 5.58,
+      "questions": 57
+    },
+    "hybrid": {
+      "hit@1": 0.772,
+      "hit@1_count": 44,
+      "hit@3": 0.825,
+      "hit@3_count": 47,
+      "hit@12": 0.825,
+      "hit@12_count": 47,
+      "page_hit@12": 0.789,
+      "page_hit@12_count": 45,
+      "mrr": 0.789,
+      "mean_files": 4.93,
+      "questions": 57
+    },
+    "hybrid_routed": {
+      "hit@1": 0.614,
+      "hit@1_count": 35,
+      "hit@3": 0.614,
+      "hit@3_count": 35,
+      "hit@12": 0.614,
+      "hit@12_count": 35,
+      "page_hit@12": 0.579,
+      "page_hit@12_count": 33,
+      "mrr": 0.614,
+      "mean_files": 2.4,
+      "questions": 57
+    },
+    "hybrid_routed_graph": {
+      "hit@1": 0.614,
+      "hit@1_count": 35,
+      "hit@3": 0.649,
+      "hit@3_count": 37,
+      "hit@12": 0.667,
+      "hit@12_count": 38,
+      "page_hit@12": 0.632,
+      "page_hit@12_count": 36,
+      "mrr": 0.63,
+      "mean_files": 2.79,
+      "questions": 57
+    },
+    "hybrid_graph": {
+      "hit@1": 0.772,
+      "hit@1_count": 44,
+      "hit@3": 0.825,
+      "hit@3_count": 47,
+      "hit@12": 0.825,
+      "hit@12_count": 47,
+      "page_hit@12": 0.789,
+      "page_hit@12_count": 45,
+      "mrr": 0.789,
+      "mean_files": 5.09,
+      "questions": 57
+    }
+  },
+  "per_tier": {
+    "detail": {
+      "dense_only": {
+        "hit@1": 0.875,
+        "hit@1_count": 21,
+        "hit@3": 1.0,
+        "hit@3_count": 24,
+        "hit@12": 1.0,
+        "hit@12_count": 24,
+        "page_hit@12": 1.0,
+        "page_hit@12_count": 24,
+        "mrr": 0.931,
+        "mean_files": 4.54,
+        "questions": 24
+      },
+      "bm25_only": {
+        "hit@1": 0.542,
+        "hit@1_count": 13,
+        "hit@3": 0.583,
+        "hit@3_count": 14,
+        "hit@12": 0.583,
+        "hit@12_count": 14,
+        "page_hit@12": 0.5,
+        "page_hit@12_count": 12,
+        "mrr": 0.562,
+        "mean_files": 4.25,
+        "questions": 24
+      },
+      "hybrid": {
+        "hit@1": 0.583,
+        "hit@1_count": 14,
+        "hit@3": 0.667,
+        "hit@3_count": 16,
+        "hit@12": 0.667,
+        "hit@12_count": 16,
+        "page_hit@12": 0.583,
+        "page_hit@12_count": 14,
+        "mrr": 0.611,
+        "mean_files": 3.83,
+        "questions": 24
+      },
+      "hybrid_routed": {
+        "hit@1": 0.5,
+        "hit@1_count": 12,
+        "hit@3": 0.5,
+        "hit@3_count": 12,
+        "hit@12": 0.5,
+        "hit@12_count": 12,
+        "page_hit@12": 0.417,
+        "page_hit@12_count": 10,
+        "mrr": 0.5,
+        "mean_files": 2.25,
+        "questions": 24
+      },
+      "hybrid_routed_graph": {
+        "hit@1": 0.5,
+        "hit@1_count": 12,
+        "hit@3": 0.5,
+        "hit@3_count": 12,
+        "hit@12": 0.542,
+        "hit@12_count": 13,
+        "page_hit@12": 0.458,
+        "page_hit@12_count": 11,
+        "mrr": 0.51,
+        "mean_files": 2.38,
+        "questions": 24
+      },
+      "hybrid_graph": {
+        "hit@1": 0.583,
+        "hit@1_count": 14,
+        "hit@3": 0.667,
+        "hit@3_count": 16,
+        "hit@12": 0.667,
+        "hit@12_count": 16,
+        "page_hit@12": 0.583,
+        "page_hit@12_count": 14,
+        "mrr": 0.611,
+        "mean_files": 3.83,
+        "questions": 24
+      }
+    },
+    "relationship": {
+      "dense_only": {
+        "hit@1": 0.714,
+        "hit@1_count": 10,
+        "hit@3": 0.929,
+        "hit@3_count": 13,
+        "hit@12": 0.929,
+        "hit@12_count": 13,
+        "page_hit@12": 0.929,
+        "page_hit@12_count": 13,
+        "mrr": 0.821,
+        "mean_files": 5.43,
+        "questions": 14
+      },
+      "bm25_only": {
+        "hit@1": 0.786,
+        "hit@1_count": 11,
+        "hit@3": 0.786,
+        "hit@3_count": 11,
+        "hit@12": 0.857,
+        "hit@12_count": 12,
+        "page_hit@12": 0.857,
+        "page_hit@12_count": 12,
+        "mrr": 0.798,
+        "mean_files": 6.14,
+        "questions": 14
+      },
+      "hybrid": {
+        "hit@1": 0.857,
+        "hit@1_count": 12,
+        "hit@3": 0.857,
+        "hit@3_count": 12,
+        "hit@12": 0.857,
+        "hit@12_count": 12,
+        "page_hit@12": 0.857,
+        "page_hit@12_count": 12,
+        "mrr": 0.857,
+        "mean_files": 5.43,
+        "questions": 14
+      },
+      "hybrid_routed": {
+        "hit@1": 0.571,
+        "hit@1_count": 8,
+        "hit@3": 0.571,
+        "hit@3_count": 8,
+        "hit@12": 0.571,
+        "hit@12_count": 8,
+        "page_hit@12": 0.571,
+        "page_hit@12_count": 8,
+        "mrr": 0.571,
+        "mean_files": 2.5,
+        "questions": 14
+      },
+      "hybrid_routed_graph": {
+        "hit@1": 0.571,
+        "hit@1_count": 8,
+        "hit@3": 0.643,
+        "hit@3_count": 9,
+        "hit@12": 0.643,
+        "hit@12_count": 9,
+        "page_hit@12": 0.643,
+        "page_hit@12_count": 9,
+        "mrr": 0.595,
+        "mean_files": 3.29,
+        "questions": 14
+      },
+      "hybrid_graph": {
+        "hit@1": 0.857,
+        "hit@1_count": 12,
+        "hit@3": 0.857,
+        "hit@3_count": 12,
+        "hit@12": 0.857,
+        "hit@12_count": 12,
+        "page_hit@12": 0.857,
+        "page_hit@12_count": 12,
+        "mrr": 0.857,
+        "mean_files": 5.86,
+        "questions": 14
+      }
+    },
+    "situation": {
+      "dense_only": {
+        "hit@1": 0.895,
+        "hit@1_count": 17,
+        "hit@3": 1.0,
+        "hit@3_count": 19,
+        "hit@12": 1.0,
+        "hit@12_count": 19,
+        "page_hit@12": 1.0,
+        "page_hit@12_count": 19,
+        "mrr": 0.947,
+        "mean_files": 5.05,
+        "questions": 19
+      },
+      "bm25_only": {
+        "hit@1": 0.842,
+        "hit@1_count": 16,
+        "hit@3": 0.947,
+        "hit@3_count": 18,
+        "hit@12": 0.947,
+        "hit@12_count": 18,
+        "page_hit@12": 0.947,
+        "page_hit@12_count": 18,
+        "mrr": 0.895,
+        "mean_files": 6.84,
+        "questions": 19
+      },
+      "hybrid": {
+        "hit@1": 0.947,
+        "hit@1_count": 18,
+        "hit@3": 1.0,
+        "hit@3_count": 19,
+        "hit@12": 1.0,
+        "hit@12_count": 19,
+        "page_hit@12": 1.0,
+        "page_hit@12_count": 19,
+        "mrr": 0.965,
+        "mean_files": 5.95,
+        "questions": 19
+      },
+      "hybrid_routed": {
+        "hit@1": 0.789,
+        "hit@1_count": 15,
+        "hit@3": 0.789,
+        "hit@3_count": 15,
+        "hit@12": 0.789,
+        "hit@12_count": 15,
+        "page_hit@12": 0.789,
+        "page_hit@12_count": 15,
+        "mrr": 0.789,
+        "mean_files": 2.53,
+        "questions": 19
+      },
+      "hybrid_routed_graph": {
+        "hit@1": 0.789,
+        "hit@1_count": 15,
+        "hit@3": 0.842,
+        "hit@3_count": 16,
+        "hit@12": 0.842,
+        "hit@12_count": 16,
+        "page_hit@12": 0.842,
+        "page_hit@12_count": 16,
+        "mrr": 0.807,
+        "mean_files": 2.95,
+        "questions": 19
+      },
+      "hybrid_graph": {
+        "hit@1": 0.947,
+        "hit@1_count": 18,
+        "hit@3": 1.0,
+        "hit@3_count": 19,
+        "hit@12": 1.0,
+        "hit@12_count": 19,
+        "page_hit@12": 1.0,
+        "page_hit@12_count": 19,
+        "mrr": 0.965,
+        "mean_files": 6.11,
+        "questions": 19
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "nat-001",
+      "tier": "situation",
+      "question": "Nobody runs a proper library in our area and the local trust refuses to; can the State Government open a public library there itself?",
+      "expected": "GR1.1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 1,
+          "ranked": [
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 1,
+          "ranked": [
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 7,
+      "language": "en"
+    },
+    {
+      "id": "nat-002",
+      "tier": "detail",
+      "question": "Under the public libraries law, what is the minimum sum the State Government must put into the Library Fund every year?",
+      "expected": "GR1.1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 1,
+          "ranked": [
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 1,
+          "ranked": [
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 1,
+          "ranked": [
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 1,
+          "ranked": [
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 1,
+          "ranked": [
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 1,
+          "ranked": [
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 9,
+      "language": "en"
+    },
+    {
+      "id": "nat-003",
+      "tier": "detail",
+      "question": "How many times a year must the State Library Council meet at minimum, and how long may pass between two meetings?",
+      "expected": "GR1.1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 6,
+      "language": "en"
+    },
+    {
+      "id": "nat-004",
+      "tier": "situation",
+      "question": "I only hold a certificate in library science; how much experience do I need to be nominated as librarian on a District Library Committee?",
+      "expected": "GR1.2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 4,
+      "language": "en"
+    },
+    {
+      "id": "nat-005",
+      "tier": "detail",
+      "question": "Within how many days must the Secretary send the minutes of a State Library Council meeting to the presiding authority for approval?",
+      "expected": "GR1.2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 3,
+      "language": "en"
+    },
+    {
+      "id": "nat-006",
+      "tier": "detail",
+      "question": "How often, at minimum, is a District Library Committee required to meet under the business procedure rules?",
+      "expected": "GR1.2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 2,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 4,
+      "language": "en"
+    },
+    {
+      "id": "nat-007",
+      "tier": "situation",
+      "question": "ग्रंथालय परिषदेत नव्याने सहा सदस्य घेतले असे ऐकले; त्यात विधानसभेचे कोणते आमदार समाविष्ट केले आहेत?",
+      "expected": "GR1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf",
+            "paripatrika 2.pdf",
+            "GR3.pdf",
+            "aadesh 3.pdf",
+            "letter 2.pdf",
+            "letter 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 2,
+      "language": "mr"
+    },
+    {
+      "id": "nat-008",
+      "tier": "detail",
+      "question": "At which numbered meeting of the State Library Council were the four invited members unanimously approved for inclusion?",
+      "expected": "GR1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.1.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 1,
+          "ranked": [
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 1,
+          "ranked": [
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        }
+      },
+      "expected_page": 2,
+      "language": "en"
+    },
+    {
+      "id": "nat-009",
+      "tier": "relationship",
+      "question": "ग्रंथालय परिषदेत सहा सदस्य वाढवणारा निर्णय कोणत्या आधीच्या परिषद-प्रस्थापनेच्या शासन निर्णयावर आधारित आहे?",
+      "expected": "GR1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 2,
+          "files": 4,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR1.4.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.4.pdf",
+            "GR1.5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-010",
+      "tier": "situation",
+      "question": "जुन्या ग्रंथालय परिषदेची मुदत संपल्यावर ती पुन्हा रचली तेव्हा ग्रंथालय संघाने नाशिक विभागासाठी कोणाला प्रतिनिधी नेमले होते?",
+      "expected": "GR1.4.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "GR1.4.pdf",
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR1.1.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR1.4.pdf",
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "paripatrika 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "GR1.4.pdf",
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 2.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": 3,
+          "files": 3,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR1.4.pdf",
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "paripatrika 2.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 2,
+      "language": "mr"
+    },
+    {
+      "id": "nat-011",
+      "tier": "detail",
+      "question": "When the library council was reconstituted after its term expired, which member of the Legislative Council was included as its representative?",
+      "expected": "GR1.4.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 2,
+          "files": 3,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.4.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        }
+      },
+      "expected_page": 1,
+      "language": "en"
+    },
+    {
+      "id": "nat-012",
+      "tier": "relationship",
+      "question": "ग्रंथालय परिषदेची ही पुनर्रचना कोणत्या जुन्या शासन निर्णयाने रचलेल्या परिषदेची मुदत संपल्यामुळे केली गेली?",
+      "expected": "GR1.4.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR1.4.pdf",
+            "GR1.5.pdf",
+            "GR1.1.pdf",
+            "GR1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR1.4.pdf",
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.4.pdf",
+            "GR1.5.pdf",
+            "GR1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": 3,
+          "files": 3,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.4.pdf",
+            "GR1.5.pdf",
+            "GR1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-013",
+      "tier": "situation",
+      "question": "सुधारणा कायद्यानंतर ग्रंथालय परिषद नव्याने स्थापन झाली; त्यात माहिती तंत्रज्ञान विभागाचे संचालकही सदस्य आहेत का?",
+      "expected": "GR1.5.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 2,
+          "files": 4,
+          "ranked": [
+            "GR1.4.pdf",
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR1.5.pdf",
+            "aadesh 5.pdf",
+            "GR1.4.pdf",
+            "GR1.pdf",
+            "aadesh 3.pdf",
+            "GR4.pdf",
+            "paripatrika 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.4.pdf",
+            "GR1.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.4.pdf",
+            "GR1.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 2,
+      "language": "mr"
+    },
+    {
+      "id": "nat-014",
+      "tier": "detail",
+      "question": "नव्याने स्थापन केलेल्या राज्य ग्रंथालय परिषदेत वांद्रे येथील चेतना महाविद्यालयाच्या कोणत्या ग्रंथपालांना शासन नामनिर्देशित सदस्य केले आहे?",
+      "expected": "GR1.5.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 3,
+          "files": 4,
+          "ranked": [
+            "GR1.4.pdf",
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR1.4.pdf",
+            "GR2.pdf",
+            "aadesh 4.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR1.4.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR2.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR1.4.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 2,
+      "language": "mr"
+    },
+    {
+      "id": "nat-015",
+      "tier": "relationship",
+      "question": "Besides the Library Directorate's letter, which earlier council order of the Higher and Technical Education department does the revised council's establishment cite?",
+      "expected": "GR1.5.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.4.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        }
+      },
+      "expected_page": 1,
+      "language": "en"
+    },
+    {
+      "id": "nat-016",
+      "tier": "situation",
+      "question": "छत्रपती संभाजीनगरच्या विद्यापीठात नवे कौशल्य केंद्र सुरू होत आहे; तिथे विद्यार्थ्यांसाठी ग्रंथालयात अभ्यासिका द्यावी लागेल का?",
+      "expected": "GR2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "GR2.pdf",
+            "letter 1.pdf",
+            "GR1.4.pdf",
+            "GR1.5.pdf",
+            "letter 3.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 9,
+          "ranked": [
+            "GR2.pdf",
+            "GR3.pdf",
+            "GR1.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "GR4.pdf",
+            "paripatrika 2.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR2.pdf",
+            "GR1.pdf",
+            "letter 1.pdf",
+            "letter 3.pdf",
+            "GR1.5.pdf",
+            "GR5.pdf",
+            "GR3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR2.pdf",
+            "GR1.5.pdf",
+            "GR3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "GR2.pdf",
+            "GR1.5.pdf",
+            "GR3.pdf",
+            "GR1.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR2.pdf",
+            "GR1.pdf",
+            "letter 1.pdf",
+            "letter 3.pdf",
+            "GR1.5.pdf",
+            "GR5.pdf",
+            "GR3.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 2,
+      "language": "mr"
+    },
+    {
+      "id": "nat-017",
+      "tier": "detail",
+      "question": "On what funding basis is the new AICTE-approved skill centre at the Marathwada university allowed to start?",
+      "expected": "GR2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR2.pdf",
+            "GR3.pdf",
+            "GR1.1.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR2.pdf",
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR2.pdf",
+            "GR1.1.pdf",
+            "GR3.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR2.pdf",
+            "GR1.1.pdf",
+            "GR3.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        }
+      },
+      "expected_page": 1,
+      "language": "en"
+    },
+    {
+      "id": "nat-018",
+      "tier": "detail",
+      "question": "विद्यापीठातील नव्या कौशल्य केंद्राला रॅगिंगबाबत कोणता कायदा कठोरपणे लागू करणे बंधनकारक आहे?",
+      "expected": "GR2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "GR2.pdf",
+            "GR1.1.pdf",
+            "GR4.pdf",
+            "GR5.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 9,
+          "ranked": [
+            "GR2.pdf",
+            "GR4.pdf",
+            "GR5.pdf",
+            "aadesh 3.pdf",
+            "GR3.pdf",
+            "GR1.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 2.pdf",
+            "aadesh 4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR2.pdf",
+            "GR5.pdf",
+            "aadesh 3.pdf",
+            "GR3.pdf",
+            "GR4.pdf",
+            "letter 3.pdf",
+            "GR1.1.pdf",
+            "aadesh 4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR2.pdf",
+            "GR1.1.pdf",
+            "GR1.5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR2.pdf",
+            "GR1.1.pdf",
+            "GR1.5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR2.pdf",
+            "GR5.pdf",
+            "aadesh 3.pdf",
+            "GR3.pdf",
+            "GR4.pdf",
+            "letter 3.pdf",
+            "GR1.1.pdf",
+            "aadesh 4.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 2,
+      "language": "mr"
+    },
+    {
+      "id": "nat-019",
+      "tier": "situation",
+      "question": "मंत्रालयाच्या उपाहारगृहाच्या स्वयंपाकघरात धूर आणि उष्णता बाहेर काढण्याची सोय नाही; नूतनीकरणासाठी एकूण किती खर्च मंजूर झाला?",
+      "expected": "GR3.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR3.pdf",
+            "aadesh 3.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 2,
+          "files": 8,
+          "ranked": [
+            "GR4.pdf",
+            "GR3.pdf",
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "aadesh 5.pdf",
+            "GR2.pdf",
+            "aadesh 2.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "GR3.pdf",
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "letter 1.pdf",
+            "letter 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR3.pdf",
+            "GR4.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR3.pdf",
+            "GR4.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "GR3.pdf",
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "letter 1.pdf",
+            "letter 3.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 2,
+      "language": "mr"
+    },
+    {
+      "id": "nat-020",
+      "tier": "detail",
+      "question": "उपाहारगृहाच्या स्वयंपाकगृह आधुनिकीकरणाच्या खर्चासाठी आहरण व संवितरण अधिकारी म्हणून कोणाला घोषित केले आहे?",
+      "expected": "GR3.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR3.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 3.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR3.pdf",
+            "GR4.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 2.pdf",
+            "GR1.pdf",
+            "letter 3.pdf",
+            "paripatrika 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "GR3.pdf",
+            "aadesh 2.pdf",
+            "letter 3.pdf",
+            "aadesh 4.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR3.pdf",
+            "aadesh 2.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR3.pdf",
+            "aadesh 2.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "GR3.pdf",
+            "aadesh 2.pdf",
+            "letter 3.pdf",
+            "aadesh 4.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 3,
+      "language": "mr"
+    },
+    {
+      "id": "nat-021",
+      "tier": "relationship",
+      "question": "मंत्रालय उपाहारगृहाच्या स्वयंपाकगृह आधुनिकीकरणाचा निर्णय कोणत्या अभियंत्यांच्या पत्रांचा संदर्भ घेतो?",
+      "expected": "GR3.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR3.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 3.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 6,
+          "files": 11,
+          "ranked": [
+            "letter 1.pdf",
+            "GR2.pdf",
+            "GR5.pdf",
+            "GR1.5.pdf",
+            "GR1.pdf",
+            "GR3.pdf",
+            "GR4.pdf",
+            "aadesh 4.pdf",
+            "aadesh 5.pdf",
+            "letter 2.pdf",
+            "letter 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR3.pdf",
+            "letter 1.pdf",
+            "letter 3.pdf",
+            "GR5.pdf",
+            "letter 2.pdf",
+            "GR4.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "GR3.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "GR3.pdf",
+            "letter 1.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR3.pdf",
+            "letter 1.pdf",
+            "letter 3.pdf",
+            "GR5.pdf",
+            "letter 2.pdf",
+            "GR4.pdf",
+            "GR2.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-022",
+      "tier": "situation",
+      "question": "माझी मुंबईबाहेर बदली झाली पण अजून शासकीय क्वार्टर सोडले नाही; नव्या कार्यालयात घरभाडे भत्ता मिळेल का?",
+      "expected": "GR4.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "GR4.pdf",
+            "GR5.pdf",
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "aadesh 2.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 10,
+          "ranked": [
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "GR3.pdf",
+            "aadesh 4.pdf",
+            "aadesh 5.pdf",
+            "GR5.pdf",
+            "paripatrika 2.pdf",
+            "GR1.4.pdf",
+            "letter 1.pdf",
+            "letter 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 10,
+          "ranked": [
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "GR5.pdf",
+            "aadesh 4.pdf",
+            "letter 1.pdf",
+            "letter 2.pdf",
+            "aadesh 5.pdf",
+            "letter 3.pdf",
+            "GR3.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 10,
+          "ranked": [
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "GR5.pdf",
+            "aadesh 4.pdf",
+            "letter 1.pdf",
+            "letter 2.pdf",
+            "aadesh 5.pdf",
+            "letter 3.pdf",
+            "GR3.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-023",
+      "tier": "detail",
+      "question": "मुंबईबाहेर बदली झालेल्या कर्मचाऱ्याला निवासस्थान न सोडता घरभाडे भत्ता दिला गेला तर वसुली कोणाकडून करायची?",
+      "expected": "GR4.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "GR5.pdf",
+            "aadesh 4.pdf",
+            "aadesh 2.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 11,
+          "ranked": [
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "GR5.pdf",
+            "paripatrika 1.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 5.pdf",
+            "aadesh 2.pdf",
+            "GR2.pdf",
+            "GR1.pdf",
+            "GR1.5.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "GR5.pdf",
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "aadesh 1.pdf",
+            "aadesh 4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "GR5.pdf",
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "aadesh 1.pdf",
+            "aadesh 4.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-024",
+      "tier": "relationship",
+      "question": "Which earlier government decisions does the order on staff who keep Mumbai quarters after being transferred out list as its references?",
+      "expected": "GR4.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 2,
+          "files": 3,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR4.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        }
+      },
+      "expected_page": 1,
+      "language": "en"
+    },
+    {
+      "id": "nat-025",
+      "tier": "situation",
+      "question": "मी डिसेंबरमध्ये निवृत्त होणार आहे आणि मुलगा दहावीत आहे; शासकीय निवासस्थानात किती काळ राहता येईल?",
+      "expected": "GR5.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "GR5.pdf",
+            "aadesh 2.pdf",
+            "GR4.pdf",
+            "letter 3.pdf",
+            "paripatrika 1.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 2,
+          "files": 8,
+          "ranked": [
+            "aadesh 3.pdf",
+            "GR5.pdf",
+            "GR2.pdf",
+            "GR4.pdf",
+            "aadesh 4.pdf",
+            "paripatrika 2.pdf",
+            "GR3.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 9,
+          "ranked": [
+            "GR5.pdf",
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "GR2.pdf",
+            "aadesh 4.pdf",
+            "letter 3.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 2.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR5.pdf",
+            "GR4.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR5.pdf",
+            "GR4.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 9,
+          "ranked": [
+            "GR5.pdf",
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "GR2.pdf",
+            "aadesh 4.pdf",
+            "letter 3.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 2.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-026",
+      "tier": "detail",
+      "question": "At what rate is the licence fee charged when a retired employee stays on in government quarters for a child's schooling?",
+      "expected": "GR5.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "GR5.pdf",
+            "GR1.2.pdf",
+            "paripatrika 1.pdf",
+            "GR1.1.pdf",
+            "GR4.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": 3,
+          "files": 3,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": 3,
+          "files": 3,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "en"
+    },
+    {
+      "id": "nat-027",
+      "tier": "relationship",
+      "question": "निवृत्तीनंतर मुलाच्या शाळेसाठी क्वार्टरमध्ये राहू देण्याचा निर्णय वित्त विभागाच्या कोणत्या आधीच्या निर्णयाचा आधार घेतो?",
+      "expected": "GR5.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "GR5.pdf",
+            "GR4.pdf",
+            "GR3.pdf",
+            "aadesh 2.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "GR5.pdf",
+            "GR4.pdf",
+            "aadesh 2.pdf",
+            "GR3.pdf",
+            "letter 1.pdf",
+            "GR2.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR5.pdf",
+            "GR4.pdf",
+            "aadesh 2.pdf",
+            "GR3.pdf",
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "letter 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR5.pdf",
+            "GR3.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "GR5.pdf",
+            "GR3.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "GR5.pdf",
+            "GR4.pdf",
+            "aadesh 2.pdf",
+            "GR3.pdf",
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "letter 2.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-028",
+      "tier": "situation",
+      "question": "गृह विभागातील एका अवर सचिवांची वित्त विभागात बदली झाली होती, तरी ते अजून गृह विभागातच काम करत आहेत; असे का?",
+      "expected": "aadesh 1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 2,
+          "files": 5,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "aadesh 4.pdf",
+            "GR4.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 10,
+          "ranked": [
+            "aadesh 1.pdf",
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "GR5.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 2.pdf",
+            "GR3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "aadesh 1.pdf",
+            "aadesh 3.pdf",
+            "GR4.pdf",
+            "aadesh 5.pdf",
+            "aadesh 4.pdf",
+            "paripatrika 1.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 5.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 5.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "aadesh 1.pdf",
+            "aadesh 3.pdf",
+            "GR4.pdf",
+            "aadesh 5.pdf",
+            "aadesh 4.pdf",
+            "paripatrika 1.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-029",
+      "tier": "detail",
+      "question": "Until when may the under secretary whose move from Home to Finance was stayed continue in the present department?",
+      "expected": "aadesh 1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "aadesh 1.pdf",
+            "aadesh 3.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 5.pdf",
+            "GR4.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": 3,
+          "files": 4,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf",
+            "aadesh 1.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": 3,
+          "files": 4,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf",
+            "aadesh 1.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "en"
+    },
+    {
+      "id": "nat-030",
+      "tier": "relationship",
+      "question": "अवर सचिवांच्या बदलीला स्थगिती देणारा आदेश कोणत्या आधीच्या एकतर्फी कार्यमुक्तीच्या आदेशाचा संदर्भ देतो?",
+      "expected": "aadesh 1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "aadesh 1.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "GR4.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "aadesh 1.pdf",
+            "aadesh 4.pdf",
+            "letter 2.pdf",
+            "aadesh 3.pdf",
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "paripatrika 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 9,
+          "ranked": [
+            "aadesh 1.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 2.pdf",
+            "GR4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 9,
+          "ranked": [
+            "aadesh 1.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 2.pdf",
+            "GR4.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-031",
+      "tier": "situation",
+      "question": "वित्त विभागातील कक्ष अधिकाऱ्याला नागपूर महापालिकेत सहायक आयुक्त म्हणून प्रतिनियुक्तीवर पाठवले आहे; हा कालावधी किती वर्षांचा आहे?",
+      "expected": "aadesh 2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "letter 3.pdf",
+            "aadesh 3.pdf",
+            "aadesh 4.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "aadesh 2.pdf",
+            "aadesh 3.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "letter 3.pdf",
+            "GR3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf",
+            "letter 3.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf",
+            "letter 3.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-032",
+      "tier": "detail",
+      "question": "Over a whole career, how many years of deputation in total are allowed to the officer sent to Nagpur Municipal Corporation as assistant commissioner?",
+      "expected": "aadesh 2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "aadesh 2.pdf",
+            "GR1.1.pdf",
+            "aadesh 5.pdf",
+            "letter 3.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        }
+      },
+      "expected_page": 1,
+      "language": "en"
+    },
+    {
+      "id": "nat-033",
+      "tier": "detail",
+      "question": "नागपूर महापालिकेत सहायक आयुक्त म्हणून प्रतिनियुक्तीवर जाणाऱ्या कक्ष अधिकाऱ्याला कोणता विभाग कार्यमुक्त करणार?",
+      "expected": "aadesh 2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "aadesh 2.pdf",
+            "aadesh 4.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf",
+            "letter 3.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 9,
+          "ranked": [
+            "aadesh 2.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "GR1.5.pdf",
+            "aadesh 5.pdf",
+            "GR1.4.pdf",
+            "letter 3.pdf",
+            "paripatrika 2.pdf",
+            "GR3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "aadesh 2.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 5.pdf",
+            "letter 3.pdf",
+            "GR1.4.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "aadesh 2.pdf",
+            "aadesh 3.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "aadesh 2.pdf",
+            "aadesh 3.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "aadesh 2.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 5.pdf",
+            "letter 3.pdf",
+            "GR1.4.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 2,
+      "language": "mr"
+    },
+    {
+      "id": "nat-034",
+      "tier": "situation",
+      "question": "बदली रद्द व्हावी म्हणून एखाद्या कक्ष अधिकाऱ्याने ओळखीने किंवा थेट दबाव आणला तर त्याचे काय परिणाम होतील?",
+      "expected": "aadesh 3.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "GR4.pdf",
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "aadesh 1.pdf",
+            "letter 3.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "aadesh 3.pdf",
+            "GR4.pdf",
+            "aadesh 2.pdf",
+            "aadesh 4.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 5.pdf",
+            "GR5.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "aadesh 3.pdf",
+            "GR4.pdf",
+            "aadesh 4.pdf",
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "letter 3.pdf",
+            "letter 1.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "aadesh 3.pdf",
+            "GR4.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "aadesh 3.pdf",
+            "GR4.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "aadesh 3.pdf",
+            "GR4.pdf",
+            "aadesh 4.pdf",
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "letter 3.pdf",
+            "letter 1.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 4,
+      "language": "mr"
+    },
+    {
+      "id": "nat-035",
+      "tier": "detail",
+      "question": "In the large inter-departmental reshuffle of Mantralaya section officers, which department is Chinmay Ravindra Marathe posted to?",
+      "expected": "aadesh 3.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "aadesh 3.pdf",
+            "GR1.1.pdf",
+            "GR1.2.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 4.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR3.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        }
+      },
+      "expected_page": 1,
+      "language": "en"
+    },
+    {
+      "id": "nat-036",
+      "tier": "detail",
+      "question": "कक्ष अधिकाऱ्यांच्या आंतरविभागीय बदल्या कोणत्या मंडळाच्या शिफारशीनंतर करण्यात आल्या आहेत?",
+      "expected": "aadesh 3.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "letter 1.pdf",
+            "GR4.pdf",
+            "GR1.4.pdf",
+            "aadesh 1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "aadesh 1.pdf",
+            "paripatrika 2.pdf",
+            "aadesh 2.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "aadesh 1.pdf",
+            "letter 1.pdf",
+            "letter 3.pdf",
+            "letter 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "aadesh 1.pdf",
+            "letter 1.pdf",
+            "letter 3.pdf",
+            "letter 2.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 4,
+      "language": "mr"
+    },
+    {
+      "id": "nat-037",
+      "tier": "situation",
+      "question": "मागील वर्षी बदलीला मुदतवाढ मिळालेल्या दोन कक्ष अधिकाऱ्यांना आता कार्यमुक्त केले; नियोजन विभागातील अधिकारी कुठे जाणार?",
+      "expected": "aadesh 4.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "GR4.pdf",
+            "letter 2.pdf",
+            "aadesh 2.pdf",
+            "letter 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "letter 1.pdf",
+            "letter 3.pdf",
+            "aadesh 2.pdf",
+            "GR2.pdf",
+            "GR1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "letter 1.pdf",
+            "aadesh 2.pdf",
+            "letter 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "letter 1.pdf",
+            "aadesh 2.pdf",
+            "letter 3.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-038",
+      "tier": "detail",
+      "question": "आता कार्यमुक्त केलेल्या त्या दोन कक्ष अधिकाऱ्यांच्या बदलीला आधी कोणत्या तारखेपर्यंत मुदतवाढ दिली होती?",
+      "expected": "aadesh 4.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "aadesh 2.pdf",
+            "letter 3.pdf",
+            "letter 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 1.pdf",
+            "aadesh 2.pdf",
+            "aadesh 3.pdf",
+            "paripatrika 2.pdf",
+            "GR3.pdf",
+            "aadesh 5.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "aadesh 2.pdf",
+            "letter 1.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "aadesh 2.pdf",
+            "letter 1.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-039",
+      "tier": "relationship",
+      "question": "मुदतवाढ संपलेल्या दोन कक्ष अधिकाऱ्यांना कार्यमुक्त करणारा आदेश कोणत्या आधीच्या आदेशांचा संदर्भ देतो?",
+      "expected": "aadesh 4.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "aadesh 2.pdf",
+            "letter 2.pdf",
+            "GR1.1.pdf",
+            "paripatrika 1.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 2.pdf",
+            "aadesh 1.pdf",
+            "letter 1.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "aadesh 2.pdf",
+            "letter 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "aadesh 3.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "aadesh 4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "aadesh 2.pdf",
+            "letter 2.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-040",
+      "tier": "situation",
+      "question": "नागपूर सुधार प्रन्यासातील मुख्य लेखा व वित्त अधिकाऱ्याला माहिती आयोगात उप सचिव म्हणून पाठवले; त्यांना कार्यमुक्त कोण करणार?",
+      "expected": "aadesh 5.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "aadesh 5.pdf",
+            "aadesh 2.pdf",
+            "letter 1.pdf",
+            "paripatrika 1.pdf",
+            "letter 3.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 9,
+          "ranked": [
+            "aadesh 5.pdf",
+            "GR4.pdf",
+            "GR1.4.pdf",
+            "aadesh 2.pdf",
+            "aadesh 1.pdf",
+            "aadesh 4.pdf",
+            "GR1.5.pdf",
+            "letter 1.pdf",
+            "paripatrika 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "aadesh 5.pdf",
+            "aadesh 2.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "GR4.pdf",
+            "GR1.4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "aadesh 5.pdf",
+            "aadesh 2.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "aadesh 5.pdf",
+            "aadesh 2.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "aadesh 5.pdf",
+            "aadesh 2.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "GR4.pdf",
+            "GR1.4.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 2,
+      "language": "mr"
+    },
+    {
+      "id": "nat-041",
+      "tier": "detail",
+      "question": "For how long is the Nagpur Improvement Trust finance officer appointed on deputation to the State Information Commission's Nagpur bench?",
+      "expected": "aadesh 5.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 2,
+          "files": 5,
+          "ranked": [
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "GR1.1.pdf",
+            "GR1.2.pdf",
+            "letter 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        }
+      },
+      "expected_page": 1,
+      "language": "en"
+    },
+    {
+      "id": "nat-042",
+      "tier": "relationship",
+      "question": "माहिती आयोगातील उप सचिव पदावरील प्रतिनियुक्तीचा आदेश प्रतिनियुक्ती धोरणाच्या कोणत्या शासन निर्णयांचा आधार घेतो?",
+      "expected": "aadesh 5.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 2,
+          "files": 5,
+          "ranked": [
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 2.pdf",
+            "letter 3.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "aadesh 5.pdf",
+            "aadesh 2.pdf",
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "paripatrika 1.pdf",
+            "letter 1.pdf",
+            "GR1.5.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "aadesh 5.pdf",
+            "aadesh 2.pdf",
+            "letter 1.pdf",
+            "paripatrika 1.pdf",
+            "GR4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "aadesh 3.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "aadesh 5.pdf",
+            "aadesh 2.pdf",
+            "letter 1.pdf",
+            "paripatrika 1.pdf",
+            "GR4.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-043",
+      "tier": "situation",
+      "question": "आमच्या विभागातील एकाही उप सचिवाला अल्पसंख्यांक संशोधन संस्थेच्या संचालक पदावर जायचे नाही; मग आम्ही काय कळवायचे?",
+      "expected": "letter 1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf",
+            "GR1.4.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "GR4.pdf",
+            "GR1.5.pdf",
+            "aadesh 2.pdf",
+            "GR1.4.pdf",
+            "letter 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "GR1.4.pdf",
+            "aadesh 2.pdf",
+            "GR4.pdf",
+            "GR1.5.pdf",
+            "letter 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 9,
+          "ranked": [
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "GR1.4.pdf",
+            "aadesh 2.pdf",
+            "GR4.pdf",
+            "GR1.5.pdf",
+            "letter 3.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 2,
+      "language": "mr"
+    },
+    {
+      "id": "nat-044",
+      "tier": "detail",
+      "question": "Once a deputy secretary has been selected for the minority research institute director post, can the department withdraw that officer's name?",
+      "expected": "letter 1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "aadesh 1.pdf",
+            "GR1.2.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": false
+        }
+      },
+      "expected_page": 2,
+      "language": "en"
+    },
+    {
+      "id": "nat-045",
+      "tier": "relationship",
+      "question": "अल्पसंख्यांक संशोधन संस्थेच्या संचालक पदाच्या पत्रानुसार मंत्रालयीन प्रतिनियुक्तीची कार्यपद्धती कोणत्या शासन निर्णयाने ठरवली आहे?",
+      "expected": "letter 1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "letter 1.pdf",
+            "letter 3.pdf",
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "aadesh 5.pdf",
+            "GR4.pdf",
+            "aadesh 2.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "letter 1.pdf",
+            "GR2.pdf",
+            "aadesh 3.pdf",
+            "letter 3.pdf",
+            "GR1.5.pdf",
+            "paripatrika 2.pdf",
+            "GR4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "letter 1.pdf",
+            "letter 3.pdf",
+            "aadesh 3.pdf",
+            "GR4.pdf",
+            "aadesh 4.pdf",
+            "aadesh 1.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "letter 1.pdf",
+            "letter 3.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "letter 1.pdf",
+            "letter 3.pdf",
+            "aadesh 3.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 9,
+          "ranked": [
+            "letter 1.pdf",
+            "letter 3.pdf",
+            "aadesh 3.pdf",
+            "GR4.pdf",
+            "aadesh 4.pdf",
+            "aadesh 1.pdf",
+            "GR2.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-046",
+      "tier": "situation",
+      "question": "The order fixing permanent and temporary posts at the Sainik Kalyan office in Pune went out with the wrong reference number; what correction was issued?",
+      "expected": "letter 2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "letter 2.pdf",
+            "aadesh 4.pdf",
+            "GR1.1.pdf",
+            "letter 3.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": 3,
+          "files": 3,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf",
+            "letter 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": 3,
+          "files": 3,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf",
+            "letter 2.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "en"
+    },
+    {
+      "id": "nat-047",
+      "tier": "detail",
+      "question": "सैनिक कल्याण विभागाच्या पुणे कार्यालयातील पदांबाबतच्या शुद्धीपत्रकावर कोणत्या अवर सचिवांची स्वाक्षरी आहे?",
+      "expected": "letter 2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "letter 2.pdf",
+            "paripatrika 1.pdf",
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "aadesh 4.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "letter 2.pdf",
+            "aadesh 1.pdf",
+            "aadesh 3.pdf",
+            "letter 1.pdf",
+            "GR4.pdf",
+            "GR3.pdf",
+            "GR1.4.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "letter 2.pdf",
+            "letter 1.pdf",
+            "aadesh 1.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 3.pdf",
+            "aadesh 5.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "letter 1.pdf",
+            "aadesh 3.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": 4,
+          "files": 5,
+          "ranked": [
+            "letter 1.pdf",
+            "aadesh 3.pdf",
+            "aadesh 5.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "letter 2.pdf",
+            "letter 1.pdf",
+            "aadesh 1.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 3.pdf",
+            "aadesh 5.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-048",
+      "tier": "relationship",
+      "question": "सैनिक कल्याण कार्यालयाच्या आकृतीबंधाबाबतचे शुद्धीपत्रक कोणत्या आधीच्या शासन निर्णयात दुरुस्ती करते?",
+      "expected": "letter 2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 10,
+          "ranked": [
+            "letter 2.pdf",
+            "GR1.4.pdf",
+            "aadesh 4.pdf",
+            "aadesh 1.pdf",
+            "aadesh 3.pdf",
+            "letter 1.pdf",
+            "GR3.pdf",
+            "paripatrika 1.pdf",
+            "GR4.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "letter 2.pdf",
+            "GR4.pdf",
+            "aadesh 3.pdf",
+            "paripatrika 2.pdf",
+            "GR3.pdf",
+            "aadesh 4.pdf",
+            "GR1.4.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "letter 2.pdf",
+            "GR4.pdf",
+            "GR1.4.pdf",
+            "aadesh 3.pdf",
+            "GR3.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "aadesh 3.pdf",
+            "GR3.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "aadesh 3.pdf",
+            "GR3.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "letter 2.pdf",
+            "GR4.pdf",
+            "GR1.4.pdf",
+            "aadesh 3.pdf",
+            "GR3.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-049",
+      "tier": "situation",
+      "question": "मला वसंतराव नाईक कृषी विस्तार प्रशिक्षण संस्थेत सहाय्यक प्राध्यापक (कायदा) म्हणून प्रतिनियुक्तीवर जायचे आहे; अर्ज कोणामार्फत पाठवायचा?",
+      "expected": "letter 3.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "letter 3.pdf",
+            "letter 1.pdf",
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "letter 3.pdf",
+            "letter 1.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 3.pdf",
+            "GR3.pdf",
+            "GR1.5.pdf",
+            "GR2.pdf",
+            "paripatrika 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "letter 3.pdf",
+            "letter 1.pdf",
+            "aadesh 3.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "GR3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "letter 3.pdf",
+            "aadesh 3.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "letter 3.pdf",
+            "aadesh 3.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "letter 3.pdf",
+            "letter 1.pdf",
+            "aadesh 3.pdf",
+            "paripatrika 1.pdf",
+            "aadesh 2.pdf",
+            "aadesh 5.pdf",
+            "GR3.pdf",
+            "letter 2.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-050",
+      "tier": "detail",
+      "question": "Up to how many years can a deputation at the Vasantrao Naik agricultural extension training institute in Nagpur be extended?",
+      "expected": "letter 3.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "letter 3.pdf",
+            "aadesh 2.pdf",
+            "GR2.pdf",
+            "paripatrika 1.pdf",
+            "GR1.1.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR2.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR2.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR2.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": null,
+          "files": 3,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR2.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        }
+      },
+      "expected_page": 1,
+      "language": "en"
+    },
+    {
+      "id": "nat-051",
+      "tier": "relationship",
+      "question": "वसंतराव नाईक संस्थेतील प्रतिनियुक्तीच्या पदांची भरती कार्यपद्धती कोणत्या शासन निर्णयात विहित आहे असे पत्र सांगते?",
+      "expected": "letter 3.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "letter 3.pdf",
+            "letter 1.pdf",
+            "aadesh 2.pdf",
+            "letter 2.pdf",
+            "GR5.pdf",
+            "aadesh 5.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "letter 3.pdf",
+            "aadesh 5.pdf",
+            "GR5.pdf",
+            "GR1.pdf",
+            "letter 1.pdf",
+            "aadesh 2.pdf",
+            "letter 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "letter 3.pdf",
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 2.pdf",
+            "letter 2.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "letter 3.pdf",
+            "letter 1.pdf",
+            "GR5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "letter 3.pdf",
+            "letter 1.pdf",
+            "GR5.pdf",
+            "letter 2.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "letter 3.pdf",
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 2.pdf",
+            "letter 2.pdf",
+            "GR5.pdf",
+            "paripatrika 1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-052",
+      "tier": "situation",
+      "question": "उप सचिव संवर्गाची तात्पुरती ज्येष्ठतासूची अंतिम झाली का, आणि त्यावर कोणी हरकत घेतली होती का?",
+      "expected": "paripatrika 1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "paripatrika 1.pdf",
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "paripatrika 1.pdf",
+            "GR4.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf",
+            "aadesh 4.pdf",
+            "GR3.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "paripatrika 1.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "paripatrika 1.pdf",
+            "letter 1.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "paripatrika 1.pdf",
+            "letter 1.pdf",
+            "aadesh 3.pdf",
+            "letter 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "paripatrika 1.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "aadesh 4.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-053",
+      "tier": "detail",
+      "question": "The final deputy secretary seniority list is subject to which pending Supreme Court petition on reservation in promotion?",
+      "expected": "paripatrika 1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 5,
+          "ranked": [
+            "paripatrika 1.pdf",
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "letter 3.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": null,
+          "files": 4,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf",
+            "letter 1.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": null,
+          "files": 2,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": null,
+          "files": 4,
+          "ranked": [
+            "GR1.1.pdf",
+            "GR1.2.pdf",
+            "letter 1.pdf",
+            "aadesh 5.pdf"
+          ],
+          "page_hit": false
+        }
+      },
+      "expected_page": 1,
+      "language": "en"
+    },
+    {
+      "id": "nat-054",
+      "tier": "relationship",
+      "question": "उप सचिव संवर्गाची ज्येष्ठतासूची तयार करताना कोणत्या ज्येष्ठता नियमावलीतील तरतुदींचा अवलंब केला आहे?",
+      "expected": "paripatrika 1.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "paripatrika 1.pdf",
+            "letter 1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "paripatrika 1.pdf",
+            "GR3.pdf",
+            "GR4.pdf",
+            "aadesh 5.pdf",
+            "GR1.5.pdf",
+            "letter 1.pdf",
+            "GR2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "paripatrika 1.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "aadesh 1.pdf",
+            "GR4.pdf",
+            "GR1.5.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "paripatrika 1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 4,
+          "ranked": [
+            "paripatrika 1.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf",
+            "letter 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "paripatrika 1.pdf",
+            "aadesh 5.pdf",
+            "letter 1.pdf",
+            "aadesh 1.pdf",
+            "GR4.pdf",
+            "GR1.5.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    },
+    {
+      "id": "nat-055",
+      "tier": "situation",
+      "question": "आमच्या जिल्हाधिकारी कार्यालयाला कुसुमाग्रजांच्या जन्मदिनी मराठी भाषेचा कार्यक्रम घ्यायचा आहे; त्यासाठी किती निधी मिळतो?",
+      "expected": "paripatrika 2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "paripatrika 1.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR3.pdf",
+            "aadesh 5.pdf",
+            "aadesh 3.pdf",
+            "letter 3.pdf",
+            "aadesh 2.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.4.pdf",
+            "GR3.pdf",
+            "letter 3.pdf",
+            "GR1.5.pdf",
+            "aadesh 3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR3.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 7,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.4.pdf",
+            "GR3.pdf",
+            "letter 3.pdf",
+            "GR1.5.pdf",
+            "aadesh 3.pdf",
+            "GR1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 5,
+      "language": "mr"
+    },
+    {
+      "id": "nat-056",
+      "tier": "detail",
+      "question": "For the Marathi language pride day programmes, which literary body helps organise events in Kolhapur district?",
+      "expected": "paripatrika 2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": false
+        }
+      },
+      "expected_page": 4,
+      "language": "en"
+    },
+    {
+      "id": "nat-057",
+      "tier": "relationship",
+      "question": "मराठी भाषा गौरव दिन साजरा करण्याच्या सूचना मुळात कोणत्या आधीच्या शासन निर्णयाने देण्यात आल्या होत्या?",
+      "expected": "paripatrika 2.pdf",
+      "configurations": {
+        "dense_only": {
+          "rank": 1,
+          "files": 3,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.1.pdf",
+            "GR1.2.pdf"
+          ],
+          "page_hit": true
+        },
+        "bm25_only": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "aadesh 4.pdf",
+            "GR3.pdf",
+            "aadesh 3.pdf",
+            "aadesh 1.pdf",
+            "GR1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid": {
+          "rank": 1,
+          "files": 6,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.4.pdf",
+            "GR3.pdf",
+            "paripatrika 1.pdf",
+            "GR1.1.pdf",
+            "aadesh 1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_routed_graph": {
+          "rank": 1,
+          "files": 2,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.1.pdf"
+          ],
+          "page_hit": true
+        },
+        "hybrid_graph": {
+          "rank": 1,
+          "files": 8,
+          "ranked": [
+            "paripatrika 2.pdf",
+            "GR1.4.pdf",
+            "GR3.pdf",
+            "paripatrika 1.pdf",
+            "GR1.1.pdf",
+            "aadesh 1.pdf",
+            "GR1.5.pdf",
+            "GR1.pdf"
+          ],
+          "page_hit": true
+        }
+      },
+      "expected_page": 1,
+      "language": "mr"
+    }
+  ],
+  "gold": "gold_natural.json",
+  "excluded": [
+    {
+      "id": "nat-058",
+      "tier": "negative_trap",
+      "question": "अंगणवाडी सेविकांच्या मानधनात वाढ करण्याबाबत शासनाने काय निर्णय घेतला आहे?"
+    },
+    {
+      "id": "nat-059",
+      "tier": "negative_trap",
+      "question": "शेतकऱ्यांना पीक कर्जमाफीचा लाभ घेण्यासाठी अर्ज कसा करायचा?"
+    },
+    {
+      "id": "nat-060",
+      "tier": "negative_trap",
+      "question": "How much has the dearness allowance of state government employees been increased?"
+    },
+    {
+      "id": "nat-061",
+      "tier": "negative_trap",
+      "question": "पवित्र पोर्टलवरून शिक्षक भरतीसाठी नोंदणी करण्याची अंतिम मुदत कोणती आहे?"
+    },
+    {
+      "id": "nat-062",
+      "tier": "negative_trap",
+      "question": "What compensation do farmers get for crops damaged by unseasonal rain or hailstorm?"
+    },
+    {
+      "id": "nat-063",
+      "tier": "negative_trap",
+      "question": "शिधापत्रिकेत कुटुंबातील नवीन सदस्याचे नाव कसे जोडायचे?"
+    }
+  ]
+}

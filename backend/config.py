@@ -140,6 +140,40 @@ class Settings(BaseSettings):
     # fused exactly as before.
     SCRIPT_AWARE_FUSION: bool = False
 
+    # Document summaries via map-reduce over the indexed chunks, with a
+    # numeric faithfulness check and one repair pass (core/summary_v2.py).
+    # Off keeps the original single-prompt summarizer.
+    SUMMARY_V2_ENABLED: bool = False
+    # Characters of chunk text per MAP call.
+    SUMMARY_BATCH_CHARS: int = 5000
+    # Ceiling on MAP calls per document; excess text joins the last batch.
+    SUMMARY_MAX_BATCHES: int = 12
+
+    # Condense a follow-up and the recent chat history into one standalone
+    # question, used ONLY for retrieval (core/condense.py). The prompt and
+    # the logged question are unchanged. One extra LLM call per follow-up.
+    HISTORY_REWRITE: bool = False
+    # How many recent exchanges (user + assistant) the condenser reads.
+    HISTORY_REWRITE_TURNS: int = 2
+    # Ceiling on the condense call, in seconds; on timeout the original
+    # question is used.
+    HISTORY_REWRITE_TIMEOUT: int = 60
+
+    # Output token ceiling for chat answer generation only (a copy of
+    # core.rag.get_llm()'s client with num_predict set; summary, condense
+    # and rewrite calls are unaffected). 0 or less means no ceiling, the
+    # behaviour before this setting existed.
+    LLM_NUM_PREDICT: int = 800
+
+    # Cross-encoder reranking of retrieved chunks (core/reranker.py): the
+    # hybrid search returns RERANK_CANDIDATES chunks, the cross-encoder
+    # scores them against the user's question, and the best RERANK_TOP_N
+    # become the prompt context and the citations.
+    RERANK_ENABLED: bool = False
+    RERANK_MODEL: str = "BAAI/bge-reranker-v2-m3"
+    RERANK_CANDIDATES: int = 20
+    RERANK_TOP_N: int = 5
+
     # ── CORS ──────────────────────────────────────────────
     # Browser origins allowed to call this API, comma-separated.
     #

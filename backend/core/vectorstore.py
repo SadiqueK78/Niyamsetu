@@ -47,6 +47,9 @@ from core.keyword_match import (
     normalize,
     SECTION_KEYWORDS,
     FOOTER_KEYWORD,
+    BOILERPLATE_LABELS,
+    is_boilerplate_line,
+    strip_boilerplate_label,
 )
 
 
@@ -75,7 +78,21 @@ EMBED_TIMEOUT_SECONDS = 180.0
 # resulting index is the same as a single call would have produced.
 #
 # The timeout above applies per request, so it is now a per-batch budget.
-EMBED_BATCH_SIZE = 25
+#
+# Sized for the SLOWEST embedding model this is expected to run, not the
+# fastest, because the budget is per batch and a batch that overruns it
+# aborts the whole job. Measured on this machine, CPU only:
+#
+#     nomic-embed-text (137M)   ~900 chars/sec   25 chunks ≈  35s
+#     bge-m3           (566M)   ~183 chars/sec   25 chunks ≈ 170s
+#
+# At 25, bge-m3 left no margin at all — a 29k-char batch took 171.7s of
+# the 180s budget and a 34k-char batch timed out, losing the whole run.
+# 10 keeps the largest observed batch near 80s, which still leaves the
+# timeout doing its real job of catching a genuine hang rather than
+# firing on ordinary slowness. The cost is more HTTP round-trips; total
+# wall-clock is dominated by the model, not the request count.
+EMBED_BATCH_SIZE = 10
 
 
 def _ts() -> str:
@@ -705,6 +722,157 @@ def _page_index_for_offset(offsets: list, pos: int) -> int:
     return idx
 
 
+# ── Embedding-input shaping ───────────────────────────────
+# WHAT GETS EMBEDDED IS NOT WHAT GETS STORED
+#
+# Everything below builds the string handed to the embedding model. It
+# does NOT change the chunk: page_content is untouched, so citation
+# previews (core/rag.py) and the text put in the LLM prompt are exactly
+# what they were. Chunk boundaries, section detection and TOP_K are
+# likewise untouched — only the vector changes.
+#
+# ── WHY ──────────────────────────────────────────────────
+# Two defects, both measured on the 2026-08-25 harness run, both in the
+# text rather than in the retrieval logic:
+#
+#   1. Shared boilerplate dominates. The letterhead and closing block are
+#      the largest chunk of text every GR has in common, so the vectors
+#      cluster on the formatting instead of on the decision. GR1-T1 asked
+#      for GR1's date and was answered from GR2's letterhead — a
+#      different document whose header block happens to carry the same
+#      date in the same words.
+#   2. Nothing anchors a chunk to its document. A body chunk is just
+#      administrative Marathi; a "which GR is this" question has nothing
+#      document-specific to match on. GR4.pdf and GR5.pdf were retrieved
+#      once each across 21 questions.
+#
+# So: strip the boilerplate out of the embedding input, and prepend a
+# short identity line (filename, GR number, subject) to every chunk of a
+# document.
+
+# How far into a document to look for its identity. The letterhead block
+# is the first thing on page 1; anything past this is body text.
+IDENTITY_SCAN_CHARS = 1500
+
+# Cap on the subject carried in the identity line. The subject is the
+# most discriminating thing about a GR, but it is prepended to EVERY
+# chunk of the document — left uncapped, a long title would crowd out the
+# body text of the very chunks it is meant to label.
+IDENTITY_SUBJECT_CHARS = 240
+
+# Fields of the identity line, joined so the model sees them as one
+# short header rather than as prose.
+IDENTITY_SEPARATOR = " | "
+
+# Safety valve on boilerplate stripping.
+#
+# A chunk that is ALL letterhead — a header section, mostly — would strip
+# down to almost nothing and embed as a near-empty vector, which is worse
+# than the boilerplate problem being fixed. If stripping leaves less than
+# this much of the original, the original body is embedded instead and
+# the identity prefix alone does the work.
+EMBED_MIN_RETAINED_RATIO = 0.25
+EMBED_MIN_RETAINED_CHARS = 40
+
+# Every label except the date one, for pulling the GR number out of the
+# letterhead. दिनांक introduces a value too, but that value is the date,
+# not the number, and the two must not be confused.
+_NUMBER_LABELS = tuple(l for l in BOILERPLATE_LABELS if l != "दिनांक")
+
+
+def _document_identity(text: str, source_file: str) -> str:
+    """
+    Builds the one-line document anchor prepended to every chunk's
+    embedding input.
+
+    Reads the letterhead, which is uniformly laid out across this corpus:
+
+        <subject lines>          <- what this GR is about
+        महाराष्ट्र शासन           <- first boilerplate line
+        <department>
+        शासन निर्णय क्रमांक ...   <- the number
+        <address block>
+        दिनांक : ...
+
+    The first boilerplate line is what separates the subject from the
+    rest — everything above it is the title block, and the number is
+    found below it.
+
+    Args:
+        text        : the whole document's extracted text
+        source_file : filename, e.g. "GR1.pdf"
+
+    Returns:
+        e.g. "GR1 | मराग्रं-2025/प्र.क्र.58/... | राज्य ग्रंथालय
+        परिषदेवर सदस्यांचा समावेश करण्याबाबत.."
+
+        Degrades field by field: a document whose letterhead cannot be
+        read still gets its filename, which is a weak anchor but a real
+        one. Never raises.
+    """
+    # The extension is identical across every document in the corpus, so
+    # it is pure noise in a vector. The stem is the part that identifies.
+    stem = Path(source_file).stem
+    subject_lines, number = [], ""
+    seen_boilerplate = False
+
+    for raw in text[:IDENTITY_SCAN_CHARS].splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+
+        if is_boilerplate_line(line):
+            # The letterhead has started; the title block above it is done.
+            seen_boilerplate = True
+            continue
+
+        if not number:
+            value = strip_boilerplate_label(line, labels=_NUMBER_LABELS)
+            if value != line:
+                # A number label was removed — what is left is the number.
+                number = value
+                continue
+
+        if not seen_boilerplate:
+            subject_lines.append(line)
+
+    subject = " ".join(subject_lines)[:IDENTITY_SUBJECT_CHARS].strip()
+    fields = [f for f in (stem, number, subject) if f]
+    return IDENTITY_SEPARATOR.join(fields)
+
+
+def build_embedding_text(chunk: Document) -> str:
+    """
+    The text actually sent to the embedding model for one chunk.
+
+    Identity line, then the chunk body with administrative boilerplate
+    removed and recurring labels reduced to their values.
+
+    The chunk itself is not modified and is not read back from this —
+    embed_all_pdfs() stores the original page_content alongside the
+    vector this text produces.
+    """
+    kept = []
+    for raw in chunk.page_content.splitlines():
+        line = raw.strip()
+        if not line or is_boilerplate_line(line):
+            continue
+        line = strip_boilerplate_label(line)
+        if line:
+            kept.append(line)
+
+    body     = "\n".join(kept)
+    original = chunk.page_content.strip()
+
+    # Stripped too far — embed the original rather than a husk.
+    if (len(body) < EMBED_MIN_RETAINED_CHARS
+            or len(body) < EMBED_MIN_RETAINED_RATIO * len(original)):
+        body = original
+
+    identity = chunk.metadata.get("doc_identity", "")
+    return f"{identity}\n{body}" if identity else body
+
+
 def _split_document_into_sections(pages: list, splitter, source_file: str) -> list:
     """
     Chunks one PDF's pages by structural section.
@@ -734,6 +902,11 @@ def _split_document_into_sections(pages: list, splitter, source_file: str) -> li
 
     if not text.strip():
         return []
+
+    # Derived once per document from the letterhead, then stamped on every
+    # chunk below. Metadata only — it is read at embed time to build the
+    # embedding input and never becomes part of page_content.
+    identity = _document_identity(text, source_file)
 
     report = match_keywords(text, SECTION_KEYWORDS)
 
@@ -766,6 +939,7 @@ def _split_document_into_sections(pages: list, splitter, source_file: str) -> li
         for c in chunks:
             c.metadata["section_type"] = "__none__"
             c.metadata["chunking"]     = "fallback"
+            c.metadata["doc_identity"] = identity
         print(f"  [{_ts()}]    section: {source_file} — NO markers detected, "
               f"fixed-size fallback ({len(chunks)} chunks)", flush=True)
         return chunks
@@ -802,6 +976,7 @@ def _split_document_into_sections(pages: list, splitter, source_file: str) -> li
             "section_index": index,
             "chunking":      "section",
             "section_chars": len(body),
+            "doc_identity":  identity,
         })
 
         if len(body) <= SECTION_MAX_CHARS:
@@ -835,6 +1010,7 @@ def _split_document_into_sections(pages: list, splitter, source_file: str) -> li
                 "chunking":      "section_split",
                 "section_part":  n,
                 "section_parts": len(parts),
+                "doc_identity":  identity,
             })
             chunks.append(Document(page_content=part, metadata=meta))
 
@@ -872,9 +1048,20 @@ def split_documents_by_section(all_documents: list, splitter) -> list:
             print(f"  [{_ts()}]    section: {source_file} — sectioning FAILED "
                   f"({type(e).__name__}: {e}); fixed-size fallback", flush=True)
             fallback = splitter.split_documents(pages)
+            # Identity is derived independently of sectioning, so a
+            # document that failed to section still gets its anchor.
+            # Guarded: this is the path that exists so a document cannot
+            # be lost, and it must not become a second way to lose one.
+            try:
+                identity = _document_identity(
+                    _PAGE_JOIN.join(p.page_content for p in pages), source_file
+                )
+            except Exception:
+                identity = Path(source_file).stem
             for c in fallback:
                 c.metadata["section_type"] = "__error__"
                 c.metadata["chunking"]     = "fallback"
+                c.metadata["doc_identity"] = identity
             chunks.extend(fallback)
 
     return chunks
@@ -1044,11 +1231,24 @@ async def embed_all_pdfs(progress_callback=None, filenames: Optional[list] = Non
         # batching here is what bounds the request size. Each batch is a
         # separate HTTP call and therefore gets its own EMBED_TIMEOUT_SECONDS
         # budget rather than sharing one across the entire job.
-        texts     = [c.page_content for c in chunks]
-        metadatas = [c.metadata for c in chunks]
-        n_batches = (len(chunks) + EMBED_BATCH_SIZE - 1) // EMBED_BATCH_SIZE
+        # `texts` is what gets STORED against each vector — the untouched
+        # chunk, which is what citation previews and the LLM prompt read.
+        # `embed_texts` is what gets EMBEDDED: same chunk with the shared
+        # administrative boilerplate removed and a document-identity line
+        # prepended. See "Embedding-input shaping" above for why they
+        # differ. The two lists stay index-aligned; vector i is built from
+        # embed_texts[i] and filed under texts[i].
+        texts       = [c.page_content for c in chunks]
+        embed_texts = [build_embedding_text(c) for c in chunks]
+        metadatas   = [c.metadata for c in chunks]
+        n_batches   = (len(chunks) + EMBED_BATCH_SIZE - 1) // EMBED_BATCH_SIZE
 
-        print(f"  [{_ts()}] 🔄 EMBED START — {len(chunks)} chunks, {total_chars} chars "
+        # Report the EMBEDDED size, not the stored size — it is what the
+        # batch timeout is actually spent on, and the gap between the two
+        # is the measure of how much boilerplate was stripped.
+        embed_chars = sum(len(t) for t in embed_texts)
+        print(f"  [{_ts()}] 🔄 EMBED START — {len(chunks)} chunks, {embed_chars} chars "
+              f"(from {total_chars} stored; boilerplate-stripped, identity-prefixed) "
               f"→ model={settings.EMBEDDING_MODEL} at {settings.OLLAMA_BASE_URL}", flush=True)
         print(f"  [{_ts()}]    {n_batches} batch(es) of up to {EMBED_BATCH_SIZE} chunks; "
               f"timeout={EMBED_TIMEOUT_SECONDS:.0f}s per batch", flush=True)
@@ -1059,7 +1259,7 @@ async def embed_all_pdfs(progress_callback=None, filenames: Optional[list] = Non
         for b in range(n_batches):
             lo = b * EMBED_BATCH_SIZE
             hi = min(lo + EMBED_BATCH_SIZE, len(chunks))
-            batch_texts = texts[lo:hi]
+            batch_texts = embed_texts[lo:hi]
             batch_chars = sum(len(t) for t in batch_texts)
 
             print(f"  [{_ts()}]    |- batch {b + 1}/{n_batches} START — "
@@ -1121,7 +1321,7 @@ async def embed_all_pdfs(progress_callback=None, filenames: Optional[list] = Non
                   f"{len(all_embeddings)}/{len(chunks)} total", flush=True)
 
         embed_elapsed = time.time() - embed_started
-        rate = (total_chars / embed_elapsed) if embed_elapsed else 0
+        rate = (embed_chars / embed_elapsed) if embed_elapsed else 0
         print(f"  [{_ts()}] ✅ EMBED DONE — {len(chunks)} chunks in {n_batches} batch(es), "
               f"{embed_elapsed:.1f}s total ({rate:.0f} chars/sec)", flush=True)
 

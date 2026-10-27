@@ -2,10 +2,13 @@
 // Session management handled by ChatContext + Sidebar.
 // This page only handles sending messages and displaying them.
 
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState, useMemo } from 'react'
 import { useChat } from '../context/ChatContext'
+import { Landmark, Network, X } from 'lucide-react'
 import client from '../api/client'
 import CitationPill from '../components/CitationPill'
+import CitationGraph from '../components/CitationGraph'
+import GRViewer from '../components/GRViewer'
 
 export default function Chat() {
   const {
@@ -18,8 +21,14 @@ export default function Chat() {
   const [input,          setInput]          = useState('')
   const [loading,        setLoading]        = useState(false)
   const [error,          setError]          = useState('')
-  const [graphPanel,     setGraphPanel]     = useState(false)
-  const [graphRelations, setGraphRelations] = useState([])
+  // Collapsed state only. Whether the panel has anything to show is
+  // derived from the messages below, not tracked separately, so it can
+  // never disagree with what is on screen.
+  const [panelOpen, setPanelOpen] = useState(true)
+
+  // The document a citation or a graph node asked to open. One viewer for
+  // the whole page rather than one per pill.
+  const [viewer, setViewer] = useState(null)
 
   const bottomRef = useRef(null)
 
@@ -27,22 +36,40 @@ export default function Chat() {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages, loading])
 
-  const fetchGraphRelations = async (citations) => {
-    if (!citations?.length) return
-    const relations = []
-    const seen = new Set()
-    for (const c of citations) {
-      const grId = c.file.replace('.pdf', '')
-      if (seen.has(grId)) continue
-      seen.add(grId)
-      try {
-        const res = await client.get(`/graph/${grId}`)
-        if (res.data.relationships?.length)
-          relations.push(...res.data.relationships)
-      } catch { /* no relations */ }
+  // The panel is hidden below this width rather than squeezed: at 320px
+  // it would take most of a phone screen. Subscribed to, not measured in
+  // a render, so a resize updates it without a layout read on every pass.
+  const [isNarrow, setIsNarrow] = useState(
+    () => typeof window !== 'undefined'
+      && typeof window.matchMedia === 'function'
+      && window.matchMedia('(max-width: 1100px)').matches,
+  )
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return
+    const query = window.matchMedia('(max-width: 1100px)')
+    const onChange = (e) => setIsNarrow(e.matches)
+    query.addEventListener('change', onChange)
+    return () => query.removeEventListener('change', onChange)
+  }, [])
+
+  // The citations of the most recent assistant message that has any.
+  // Derived, so it follows the conversation with no extra state and no
+  // request per message — CitationGraph fetches the graph snapshot once
+  // per page load and caches it in a module-level variable.
+  const latestCitations = useMemo(() => {
+    for (let i = messages.length - 1; i >= 0; i -= 1) {
+      const msg = messages[i]
+      if (msg.role === 'assistant' && !msg.pending && msg.citations?.length) {
+        return msg.citations
+      }
     }
-    if (relations.length) { setGraphRelations(relations); setGraphPanel(true) }
-  }
+    return []
+  }, [messages])
+
+  const showPanel = latestCitations.length > 0 && panelOpen && !isNarrow
+
+  const openDocument = (file, page) => setViewer({ file, page })
 
   const sendMessage = async (e) => {
     e.preventDefault()
@@ -58,7 +85,6 @@ export default function Chat() {
 
     setInput('')
     setError('')
-    setGraphPanel(false)
 
     const userMsg = { role: 'user', content: query }
 
@@ -92,8 +118,6 @@ export default function Chat() {
         if (query.length > 0) updateSessionTitle(sessionId, query.slice(0, 50))
       } catch { /* non-critical */ }
 
-      if (citations?.length) fetchGraphRelations(citations)
-
     } catch (err) {
       // Turn the pending bubble into the error itself. Leaving it pending
       // is what used to strand a placeholder on screen after a failure.
@@ -112,8 +136,6 @@ export default function Chat() {
     'Does this GR supersede any previous order?',
   ]
 
-  const relationColor = { supersedes: '#EF4444', amends: '#FACC15', refers_to: '#6FB3FF' }
-
   return (
     <div style={{
       display: 'flex', height: '100%',
@@ -123,7 +145,7 @@ export default function Chat() {
       {/* ── MAIN CHAT ──────────────────────────────── */}
       <div style={{
         flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden',
-        marginRight: graphPanel ? '320px' : '0',
+        marginRight: showPanel ? '320px' : '0',
         transition: 'margin-right 0.25s ease',
       }}>
 
@@ -137,7 +159,7 @@ export default function Chat() {
           {/* Empty state */}
           {messages.length === 0 && (
             <div style={{ textAlign: 'center', padding: '48px 24px' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>🏛️</div>
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '12px' }}><Landmark size={40} color="#FF6B00" /></div>
               <h2 style={{ color: '#FF6B00', fontSize: '1.4rem', margin: '0 0 8px' }}>
                 नमस्कार! Hello!
               </h2>
@@ -189,8 +211,8 @@ export default function Chat() {
                   <div style={{
                     width: '36px', height: '36px', background: '#1E3A5F',
                     borderRadius: '50%', display: 'flex', alignItems: 'center',
-                    justifyContent: 'center', fontSize: '1rem', flexShrink: 0, marginTop: '2px',
-                  }}>🏛️</div>
+                    justifyContent: 'center', flexShrink: 0, marginTop: '2px',
+                  }}><Landmark size={18} color="#FF6B00" /></div>
                   <div style={{ maxWidth: '75%' }}>
                     <div style={{
                       background: '#1A1D2E',
@@ -204,25 +226,34 @@ export default function Chat() {
                       {/* Same bubble in all three states — the content is
                           swapped, so the answer never stacks under a
                           leftover loading bubble. */}
+                      {msg.error && (
+                        <div style={{
+                          fontSize: '0.72rem', fontWeight: '700',
+                          letterSpacing: '0.5px', textTransform: 'uppercase',
+                          marginBottom: '6px',
+                        }}>
+                          Error
+                        </div>
+                      )}
                       {msg.pending
                         ? 'Searching GR documents…'
-                        : (msg.error ? `❌ ${msg.content}` : msg.content)}
+                        : msg.content}
                     </div>
                     {msg.citations?.length > 0 && (
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '8px' }}>
                         {msg.citations.map((c, ci) => (
-                          <CitationPill key={ci} file={c.file} page={c.page} />
+                          <CitationPill key={ci} citation={c} onOpen={openDocument} />
                         ))}
                       </div>
                     )}
                     {/* Timing only means something once an answer exists —
-                        it used to render "⏱ undefineds" on the placeholder. */}
+                        it used to render "undefineds" on the placeholder. */}
                     {!msg.pending && !msg.error && (
                       <div style={{ color: '#444', fontSize: '0.72rem', marginTop: '6px', fontFamily: 'monospace' }}>
-                        ⏱ {msg.elapsed_sec}s
+                        {msg.elapsed_sec}s
                         {msg.language && (
                           <span style={{ marginLeft: '8px' }}>
-                            · {msg.language === 'marathi' ? '🇮🇳 Marathi' : '🇬🇧 English'}
+                            · {msg.language === 'marathi' ? 'Marathi' : 'English'}
                           </span>
                         )}
                       </div>
@@ -243,7 +274,7 @@ export default function Chat() {
               borderRadius: '8px', padding: '12px 16px',
               color: '#EF4444', fontSize: '0.85rem',
             }}>
-              ❌ {error}
+              {error}
             </div>
           )}
 
@@ -282,8 +313,11 @@ export default function Chat() {
         </div>
       </div>
 
-      {/* ── GR GRAPH PANEL ─────────────────────────── */}
-      {graphPanel && (
+      {/* ── CITATION GRAPH PANEL ───────────────────── */}
+      {/* Shown only when the latest answer cited something. Collapsing it
+          leaves the toggle below, so it can be brought back without
+          sending another message. */}
+      {showPanel && (
         <div style={{
           position: 'fixed', right: 0, top: '56px',
           width: '320px', height: 'calc(100vh - 56px)',
@@ -292,59 +326,71 @@ export default function Chat() {
         }}>
           <div style={{
             display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-            padding: '16px 18px', borderBottom: '1px solid #2A2D3E',
+            padding: '14px 16px', borderBottom: '1px solid #2A2D3E', flexShrink: 0,
           }}>
-            <div>
-              <div style={{ color: '#E8EAF0', fontWeight: '600', fontSize: '0.95rem' }}>
-                🕸️ GR Relationships
+            <div style={{ minWidth: 0 }}>
+              <div style={{
+                color: '#E8EAF0', fontWeight: '600', fontSize: '0.92rem',
+                display: 'flex', alignItems: 'center', gap: '8px',
+              }}>
+                <Network size={15} color="#FF6B00" />
+                Citation graph
               </div>
-              <div style={{ color: '#555', fontSize: '0.75rem', fontFamily: 'monospace' }}>
-                {graphRelations.length} connection{graphRelations.length !== 1 ? 's' : ''} found
+              <div style={{ color: '#6B7280', fontSize: '0.72rem', fontFamily: 'monospace' }}>
+                {latestCitations.length} citation{latestCitations.length !== 1 ? 's' : ''} in this answer
               </div>
             </div>
-            <button onClick={() => setGraphPanel(false)} style={{
-              background: 'none', border: 'none', color: '#555', cursor: 'pointer', fontSize: '1.1rem',
-            }}>✕</button>
+            <button
+              onClick={() => setPanelOpen(false)}
+              title="Hide the citation graph"
+              style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                width: '26px', height: '26px', flexShrink: 0,
+                background: 'transparent', border: 'none', borderRadius: '6px',
+                color: '#6B7280', cursor: 'pointer',
+              }}
+            >
+              <X size={15} />
+            </button>
           </div>
+
           <div style={{ flex: 1, overflowY: 'auto', padding: '12px' }}>
-            {graphRelations.map((rel, i) => (
-              <div key={i} style={{
-                background: '#13151F', border: '1px solid #2A2D3E',
-                borderRadius: '8px', padding: '12px 14px', marginBottom: '8px',
-              }}>
-                <div style={{
-                  display: 'inline-block',
-                  color: relationColor[rel.relation] || '#888',
-                  border: `1px solid ${relationColor[rel.relation] || '#888'}`,
-                  borderRadius: '12px', padding: '2px 10px',
-                  fontSize: '0.72rem', fontFamily: 'monospace',
-                  fontWeight: '600', marginBottom: '8px', textTransform: 'uppercase',
-                }}>{rel.relation}</div>
-                <div style={{ fontSize: '0.82rem', color: '#E8EAF0', marginBottom: '6px' }}>
-                  <span style={{ color: '#FF6B00', fontFamily: 'monospace' }}>{rel.source}</span>
-                  <span style={{ color: '#555', margin: '0 6px' }}>→</span>
-                  <span style={{ color: rel.target === 'Unknown' ? '#555' : '#6FB3FF', fontFamily: 'monospace' }}>
-                    {rel.target}
-                  </span>
-                </div>
-                {rel.snippet && (
-                  <div style={{
-                    color: '#555', fontSize: '0.75rem', lineHeight: '1.4', fontStyle: 'italic',
-                    borderTop: '1px solid #2A2D3E', paddingTop: '6px', marginTop: '4px',
-                  }}>"{rel.snippet.slice(0, 120)}…"</div>
-                )}
-              </div>
-            ))}
-          </div>
-          <div style={{ padding: '12px 16px', borderTop: '1px solid #2A2D3E', display: 'flex', gap: '12px' }}>
-            {Object.entries(relationColor).map(([type, color]) => (
-              <div key={type} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: color }} />
-                <span style={{ color: '#555', fontSize: '0.7rem', fontFamily: 'monospace' }}>{type}</span>
-              </div>
-            ))}
+            <CitationGraph citations={latestCitations} onOpenFile={openDocument} />
+            <div style={{
+              color: '#5A6478', fontSize: '0.7rem', lineHeight: '1.45',
+              marginTop: '12px', borderTop: '1px solid #2A2D3E', paddingTop: '10px',
+            }}>
+              Orange nodes are the documents this answer cited. Grey nodes are
+              linked to them in the GR graph. Click any node to open the PDF.
+            </div>
           </div>
         </div>
+      )}
+
+      {/* Re-open affordance, so hiding the panel is not one-way. */}
+      {latestCitations.length > 0 && !panelOpen && !isNarrow && (
+        <button
+          onClick={() => setPanelOpen(true)}
+          title="Show the citation graph"
+          style={{
+            position: 'fixed', right: '16px', top: '72px', zIndex: 50,
+            display: 'flex', alignItems: 'center', gap: '7px',
+            background: '#1A1D2E', border: '1px solid #2A2D3E',
+            borderRadius: '8px', color: '#8A93A6', padding: '7px 12px',
+            fontSize: '0.78rem', cursor: 'pointer', fontFamily: 'Inter, sans-serif',
+          }}
+        >
+          <Network size={14} />
+          Citation graph
+        </button>
+      )}
+
+      {viewer && (
+        <GRViewer
+          file={viewer.file}
+          page={viewer.page}
+          onClose={() => setViewer(null)}
+        />
       )}
     </div>
   )

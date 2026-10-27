@@ -20,14 +20,14 @@ async def connect_db():
     client = AsyncIOMotorClient(settings.MONGODB_URL)
     db = client[settings.DATABASE_NAME]
     await client.admin.command("ping")
-    print(f"✅ Connected to MongoDB — database: '{settings.DATABASE_NAME}'")
+    print(f"[OK] Connected to MongoDB - database: '{settings.DATABASE_NAME}'")
 
 
 async def close_db():
     global client
     if client:
         client.close()
-        print("🔌 MongoDB connection closed.")
+        print("[INFO] MongoDB connection closed.")
 
 
 def get_db():

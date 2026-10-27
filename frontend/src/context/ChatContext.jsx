@@ -2,7 +2,7 @@
 // Shared state between Sidebar (session list) and Chat (messages).
 // Both components read from here instead of duplicating state.
 
-import { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useContext, useState, useEffect, useCallback } from 'react'
 import client from '../api/client'
 import { useAuth } from './AuthContext'
 
@@ -17,18 +17,18 @@ export function ChatProvider({ children }) {
   const [history,         setHistory]         = useState([])
   const [sessionLoading,  setSessionLoading]  = useState(false)
 
-  // Load sessions when user logs in
-  useEffect(() => {
-    if (isLoggedIn) loadSessions()
-    else { setSessions([]); setActiveSessionId(null); setMessages([]); setHistory([]) }
-  }, [isLoggedIn])
-
-  const loadSessions = async () => {
+  const loadSessions = useCallback(async () => {
     try {
       const res = await client.get('/sessions/')
       setSessions(res.data.sessions || [])
     } catch { /* silent */ }
-  }
+  }, [])
+
+  // Load sessions when user logs in
+  useEffect(() => {
+    if (isLoggedIn) loadSessions()
+    else { setSessions([]); setActiveSessionId(null); setMessages([]); setHistory([]) }
+  }, [isLoggedIn, loadSessions])
 
   const createSession = async () => {
     try {

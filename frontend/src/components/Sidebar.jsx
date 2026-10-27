@@ -6,13 +6,17 @@ import { useState, useRef, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useChat } from '../context/ChatContext'
+import {
+  Upload, Database, BarChart3, Users, ClipboardList,
+  MessageSquare, Pin, PinOff, Pencil, Trash2, LogOut,
+} from 'lucide-react'
 import { useAdmin } from '../context/AdminContext'
 
 const ADMIN_ITEMS = [
-  { icon: '📤', label: 'Upload GR',      path: '/admin/upload'    },
-  { icon: '🗄️', label: 'Knowledge Base', path: '/admin/knowledge' },
-  { icon: '📊', label: 'Analytics',      path: '/admin/analytics' },
-  { icon: '👥', label: 'Users',          path: '/admin/users'     },
+  { icon: <Upload size={16} />,         label: 'Upload GR',      path: '/admin/upload'    },
+  { icon: <Database size={16} />,       label: 'Knowledge Base', path: '/admin/knowledge' },
+  { icon: <BarChart3 size={16} />,      label: 'Analytics',      path: '/admin/analytics' },
+  { icon: <Users size={16} />,          label: 'Users',          path: '/admin/users'     },
 ]
 
 export default function Sidebar({ collapsed }) {
@@ -121,7 +125,7 @@ export default function Sidebar({ collapsed }) {
 
           {/* ── GR SUMMARIES ───────────────────────── */}
           <NavBtn
-            icon="📋"
+            icon={<ClipboardList size={16} />}
             label="GR Summaries"
             active={location.pathname === '/summaries'}
             onClick={() => navigate('/summaries')}
@@ -152,7 +156,7 @@ export default function Sidebar({ collapsed }) {
             onMouseLeave={e => { if (!isChatActive) e.currentTarget.style.background = 'transparent' }}
           >
             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span>💬</span> Chat
+              <span><MessageSquare size={16} /></span> Chat
             </span>
             <span style={{
               fontSize: '0.7rem', color: '#555',
@@ -277,7 +281,7 @@ export default function Sidebar({ collapsed }) {
                           gap: '4px',
                         }}>
                           {session.pinned && (
-                            <span style={{ color: '#FF6B00', fontSize: '0.65rem', flexShrink: 0 }}>📌</span>
+                            <span style={{ color: '#FF6B00', fontSize: '0.65rem', flexShrink: 0 }}><Pin size={11} /></span>
                           )}
                           {session.title}
                         </div>
@@ -324,9 +328,9 @@ export default function Sidebar({ collapsed }) {
                         }}
                       >
                         {[
-                          { icon: session.pinned ? '📍' : '📌', label: session.pinned ? 'Unpin' : 'Pin to top', action: () => { pinSession(session._id); setOpenMenuId(null) }, danger: false },
-                          { icon: '✏️', label: 'Rename',     action: () => startRename(session),                            danger: false },
-                          { icon: '🗑️', label: 'Delete',     action: () => { deleteSession(session._id); setOpenMenuId(null) }, danger: true  },
+                          { icon: session.pinned ? <PinOff size={14} /> : <Pin size={14} />, label: session.pinned ? 'Unpin' : 'Pin to top', action: () => { pinSession(session._id); setOpenMenuId(null) }, danger: false },
+                          { icon: <Pencil size={14} />, label: 'Rename',     action: () => startRename(session),                            danger: false },
+                          { icon: <Trash2 size={14} />, label: 'Delete',     action: () => { deleteSession(session._id); setOpenMenuId(null) }, danger: true  },
                         ].map(item => (
                           <button
                             key={item.label}
@@ -358,7 +362,7 @@ export default function Sidebar({ collapsed }) {
           <div style={{ flex: 1 }} />
 
           {/* Sign out */}
-          <NavBtn icon="🚪" label="Sign Out" active={false} onClick={handleLogout} />
+          <NavBtn icon={<LogOut size={16} />} label="Sign Out" active={false} onClick={handleLogout} />
         </div>
       </div>
     </>
@@ -431,7 +435,7 @@ function SummaryBadge() {
       gap: '5px',
       whiteSpace: 'nowrap',
     }}>
-      {isRunning ? `⏳ ${completed}/${total} summarized` : `📋 ${pendingCount} pending`}
+      {isRunning ? `${completed}/${total} summarized` : `${pendingCount} pending`}
     </div>
   )
 }

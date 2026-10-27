@@ -77,6 +77,8 @@ from config import settings                      # noqa: E402
 from core.hybrid_search import hybrid_search, lexical_search   # noqa: E402
 from core.rag import expand_with_graph, route_documents        # noqa: E402
 from core.vectorstore import search as dense_search            # noqa: E402
+from core.reranker import rerank, get_model as get_rerank_model  # noqa: E402
+from core.reranker import stats as rerank_stats                # noqa: E402
 
 # Ranks reported in the metric tables.
 _HIT_CUTOFFS = (1, 3, 5, 12)
@@ -92,11 +94,17 @@ _NEGATIVE_TIER = "negative_trap"
 # Marker used when a configuration could not run.
 UNAVAILABLE = "unavailable (embedding endpoint down)"
 
+# The reranked configuration and the metrics reported for it. Its list is
+# RERANK_TOP_N chunks long, so hit@12 is computed over what exists.
+RERANK_CONFIG = "hybrid_script_aware_rerank"
+_RERANK_CUTOFFS = (1, 3, 5, 12)
+_RERANK_PAGE_CHUNKS = 5
+
 # Configurations that need a query embedding, and so are the ones that
 # fail when the embedding endpoint is unreachable.
 _NEEDS_EMBEDDING = ("dense_only", "hybrid", "hybrid_routed",
                     "hybrid_routed_graph", "hybrid_graph",
-                    "hybrid_script_aware")
+                    "hybrid_script_aware", RERANK_CONFIG)
 
 
 @contextmanager
@@ -236,6 +244,19 @@ def run_hybrid_script_aware(question: str, top_k: int) -> list:
         return hybrid_search(question, top_k=top_k)
 
 
+def run_hybrid_script_aware_rerank(question: str, top_k: int) -> list:
+    """
+    hybrid_script_aware, then the cross-encoder: SCRIPT_AWARE_FUSION and
+    RERANK_ENABLED forced on for this call only. Retrieves
+    RERANK_CANDIDATES chunks (not top_k), reranks them against the
+    question, and keeps RERANK_TOP_N — the same steps core.rag.query()
+    takes with both flags on.
+    """
+    with overridden(SCRIPT_AWARE_FUSION=True, RERANK_ENABLED=True):
+        docs = hybrid_search(question, top_k=settings.RERANK_CANDIDATES)
+        return rerank(question, docs, settings.RERANK_TOP_N)
+
+
 # Column labels for the progress lines.
 _SHORT = {
     "dense_only":          "dense",
@@ -245,6 +266,7 @@ _SHORT = {
     "hybrid_routed_graph": "graph",
     "hybrid_graph":        "hyb+g",
     "hybrid_script_aware": "hyb+s",
+    RERANK_CONFIG:         "hyb+s+r",
 }
 
 CONFIGURATIONS = (
@@ -262,6 +284,7 @@ CONFIGURATIONS = (
 # tables keep their columns and order.
 NATURAL_CONFIGURATIONS = CONFIGURATIONS + (
     ("hybrid_script_aware",  run_hybrid_script_aware),
+    (RERANK_CONFIG,          run_hybrid_script_aware_rerank),
 )
 
 
@@ -335,6 +358,49 @@ def summarise_natural(rows: list) -> dict:
     return out
 
 
+def summarise_rerank(rows: list) -> dict:
+    """
+    Metrics for the reranked configuration: hit@1/3/5/12 and MRR by file,
+    page_hit@5, each rate with its count. A list shorter than a cutoff is
+    scored over what it has: the expected file must simply be in it.
+    """
+    total = len(rows)
+    out = {}
+    for cutoff in _RERANK_CUTOFFS:
+        hits = sum(1 for r in rows if r["rank"] is not None and r["rank"] <= cutoff)
+        out[f"hit@{cutoff}"] = round(hits / total, 3) if total else 0.0
+        out[f"hit@{cutoff}_count"] = hits
+    pages = sum(1 for r in rows if r["page_hit_5"])
+    key = f"page_hit@{_RERANK_PAGE_CHUNKS}"
+    out[key] = round(pages / total, 3) if total else 0.0
+    out[f"{key}_count"] = pages
+    out["mrr"] = round(
+        sum((1.0 / r["rank"]) if r["rank"] else 0.0 for r in rows) / total, 3) if total else 0.0
+    out["mean_files"] = round(sum(r["files"] for r in rows) / total, 2) if total else 0.0
+    out["questions"] = total
+    return out
+
+
+def rerank_metric_table(title: str, value) -> list:
+    """One-row natural-style table for the reranked configuration."""
+    page_key = f"page_hit@{_RERANK_PAGE_CHUNKS}"
+    header = (["configuration"] + [f"hit@{k}" for k in _RERANK_CUTOFFS]
+              + ["MRR", page_key, "mean files", "n"])
+    lines = [f"### {title}", "", "| " + " | ".join(header) + " |",
+             "|" + "|".join("---" for _ in header) + "|"]
+    if isinstance(value, str):
+        lines.append(f"| {RERANK_CONFIG} | " + " | ".join([value] + [""] * (len(header) - 2)) + " |")
+    elif value:
+        def rate(key):
+            return f"{value[key] * 100:.1f}% ({value[key + '_count']}/{value['questions']})"
+        cells = [RERANK_CONFIG] + [rate(f"hit@{k}") for k in _RERANK_CUTOFFS]
+        cells += [f"{value['mrr']:.3f}", rate(page_key), f"{value['mean_files']:.2f}",
+                  str(value["questions"])]
+        lines.append("| " + " | ".join(cells) + " |")
+    lines.append("")
+    return lines
+
+
 # ── Reporting ─────────────────────────────────────────────
 
 def metric_table(title: str, per_config: dict, order: list) -> list:
@@ -346,8 +412,8 @@ def metric_table(title: str, per_config: dict, order: list) -> list:
 
     for name in order:
         value = per_config.get(name)
-        if value == UNAVAILABLE:
-            lines.append(f"| {name} | " + " | ".join([UNAVAILABLE] + [""] * (len(header) - 2)) + " |")
+        if isinstance(value, str):
+            lines.append(f"| {name} | " + " | ".join([value] + [""] * (len(header) - 2)) + " |")
             continue
         if not value:
             continue
@@ -377,8 +443,8 @@ def natural_metric_table(title: str, per_config: dict, order: list) -> list:
 
     for name in order:
         value = per_config.get(name)
-        if value == UNAVAILABLE:
-            lines.append(f"| {name} | " + " | ".join([UNAVAILABLE] + [""] * (len(header) - 2)) + " |")
+        if isinstance(value, str):
+            lines.append(f"| {name} | " + " | ".join([value] + [""] * (len(header) - 2)) + " |")
             continue
         if not value:
             continue
@@ -413,7 +479,7 @@ def per_question_table(records: list, order: list, natural: bool = False) -> lis
         cells = [rec["id"], rec["tier"], expected]
         for name in order:
             entry = rec["configurations"].get(name)
-            if entry == UNAVAILABLE:
+            if isinstance(entry, str):
                 cells.append("n/a")
             elif entry is None:
                 cells.append("-")
@@ -492,6 +558,23 @@ def main(argv: list) -> int:
         print("  dense_only, hybrid, hybrid_routed and hybrid_routed_graph "
               "will be reported as unavailable")
         print("  bm25_only needs no embedding and still runs")
+
+    # The reranked configuration needs the cross-encoder. Probed once, so a
+    # missing package or model reports the configuration as unavailable
+    # rather than silently scoring the fallback (unreranked) order.
+    reasons = {}
+    if RERANK_CONFIG in order and RERANK_CONFIG not in unavailable:
+        try:
+            with overridden(RERANK_ENABLED=True):
+                get_rerank_model()
+            print(f"reranker: {settings.RERANK_MODEL} loaded "
+                  f"(candidates={settings.RERANK_CANDIDATES}, top_n={settings.RERANK_TOP_N})")
+        except Exception as e:
+            unavailable.add(RERANK_CONFIG)
+            reasons[RERANK_CONFIG] = (f"unavailable (reranker failed to load: "
+                                      f"{type(e).__name__})")
+            print(f"reranker: FAILED TO LOAD ({type(e).__name__}: {e}) - "
+                  f"{RERANK_CONFIG} will be reported as unavailable")
     print()
 
     records = []
@@ -513,7 +596,7 @@ def main(argv: list) -> int:
 
         for name, runner in configurations:
             if name in unavailable:
-                record["configurations"][name] = UNAVAILABLE
+                record["configurations"][name] = reasons.get(name, UNAVAILABLE)
                 continue
             try:
                 docs = runner(text, args.top_k)
@@ -526,6 +609,9 @@ def main(argv: list) -> int:
                 if natural:
                     record["configurations"][name]["page_hit"] = page_hit(
                         docs, expected, expected_page)
+                if name == RERANK_CONFIG:
+                    record["configurations"][name]["page_hit_5"] = page_hit(
+                        docs, expected, expected_page, limit=_RERANK_PAGE_CHUNKS)
             except Exception as e:
                 # One configuration failing on one question must not lose
                 # the run; it is recorded as a miss with the reason.
@@ -535,6 +621,8 @@ def main(argv: list) -> int:
                 }
                 if natural:
                     record["configurations"][name]["page_hit"] = False
+                if name == RERANK_CONFIG:
+                    record["configurations"][name]["page_hit_5"] = False
 
         records.append(record)
 
@@ -566,6 +654,8 @@ def main(argv: list) -> int:
             row = {"rank": entry["rank"], "files": entry["files"]}
             if natural:
                 row["page_hit"] = entry.get("page_hit", False)
+            if name == RERANK_CONFIG:
+                row["page_hit_5"] = entry.get("page_hit_5", False)
             rows.append(row)
         return rows
 
@@ -575,7 +665,7 @@ def main(argv: list) -> int:
     overall, per_tier = {}, {}
     for name in order:
         if name in unavailable:
-            overall[name] = UNAVAILABLE
+            overall[name] = reasons.get(name, UNAVAILABLE)
             continue
         overall[name] = summary(rows_for(name))
 
@@ -583,7 +673,7 @@ def main(argv: list) -> int:
         per_tier[tier] = {}
         for name in order:
             if name in unavailable:
-                per_tier[tier][name] = UNAVAILABLE
+                per_tier[tier][name] = reasons.get(name, UNAVAILABLE)
                 continue
             per_tier[tier][name] = summary(rows_for(name, tier))
 
@@ -595,9 +685,27 @@ def main(argv: list) -> int:
             per_language[language] = {}
             for name in order:
                 if name in unavailable:
-                    per_language[language][name] = UNAVAILABLE
+                    per_language[language][name] = reasons.get(name, UNAVAILABLE)
                     continue
                 per_language[language][name] = summary(rows_for(name, language=language))
+
+    rerank_report = None
+    if RERANK_CONFIG in order:
+        def rerank_summary(**where):
+            if RERANK_CONFIG in unavailable:
+                return reasons.get(RERANK_CONFIG, UNAVAILABLE)
+            return summarise_rerank(rows_for(RERANK_CONFIG, **where))
+        rerank_report = {
+            "configuration": RERANK_CONFIG,
+            "settings": {"RERANK_MODEL": settings.RERANK_MODEL,
+                         "RERANK_CANDIDATES": settings.RERANK_CANDIDATES,
+                         "RERANK_TOP_N": settings.RERANK_TOP_N},
+            "fallbacks": dict(rerank_stats),
+            "overall": rerank_summary(),
+            "per_tier": {tier: rerank_summary(tier=tier) for tier in tiers},
+            "per_language": {lang: rerank_summary(language=lang)
+                             for lang in sorted({_language_of(r) for r in records})},
+        }
 
     # ── Write and print ───────────────────────────────────
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
@@ -637,6 +745,18 @@ def main(argv: list) -> int:
         lines += ["## By question language", ""]
         for language in per_language:
             lines += table(f"Language: {language}", per_language[language], order)
+    if rerank_report is not None:
+        lines += [f"## Reranked ({RERANK_CONFIG})", "",
+                  f"{settings.RERANK_MODEL}: {settings.RERANK_CANDIDATES} candidates "
+                  f"-> top {settings.RERANK_TOP_N}. hit@12 is over the "
+                  f"{settings.RERANK_TOP_N}-chunk list that exists. Reranker fallbacks "
+                  f"to the original order: {rerank_report['fallbacks']['failures']} of "
+                  f"{rerank_report['fallbacks']['calls']} calls.", ""]
+        lines += rerank_metric_table("Overall", rerank_report["overall"])
+        for tier in tiers:
+            lines += rerank_metric_table(f"Tier: {tier}", rerank_report["per_tier"][tier])
+        for language, value in rerank_report["per_language"].items():
+            lines += rerank_metric_table(f"Language: {language}", value)
     lines += per_question_table(records, order, natural=natural)
 
     report = "\n".join(lines)
@@ -660,6 +780,8 @@ def main(argv: list) -> int:
     }
     if natural:
         payload["per_language"] = per_language
+        if rerank_report is not None:
+            payload["rerank"] = rerank_report
         payload["gold"] = args.questions.name
         payload["excluded"] = [{"id": q.get("id"), "tier": q.get("tier"),
                                 "question": q.get("question")} for q in excluded]

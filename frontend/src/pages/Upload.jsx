@@ -3,6 +3,7 @@
 // Shows list of already uploaded GRs below the drop zone.
 
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { FileText, Download, Trash2 } from 'lucide-react'
 import client from '../api/client'
 
 export default function Upload() {
@@ -122,7 +123,7 @@ export default function Upload() {
       {/* Header */}
       <div style={{ marginBottom: '20px' }}>
         <h1 style={{ color: '#E8EAF0', fontSize: '1.4rem', margin: '0 0 4px', fontWeight: '700' }}>
-          📤 Upload GR Documents
+          Upload GR Documents
         </h1>
         <p style={{ color: '#555', fontSize: '0.85rem', margin: 0 }}>
           Drag and drop PDF files, or click to browse. Multiple files supported.
@@ -144,7 +145,7 @@ export default function Upload() {
           background: '#2A0F0F', border: '1px solid #EF4444', borderRadius: '8px',
           padding: '12px 16px', color: '#EF4444', fontSize: '0.85rem', marginBottom: '20px',
         }}>
-          ❌ {error}
+          {error}
         </div>
       )}
 
@@ -174,7 +175,7 @@ export default function Upload() {
           style={{ display: 'none' }}
         />
         <div style={{ fontSize: '2.4rem', marginBottom: '10px' }}>
-          {dragActive ? '📥' : '📄'}
+          {dragActive ? <Download size={38} /> : <FileText size={38} />}
         </div>
         <div style={{ color: '#E8EAF0', fontSize: '0.95rem', fontWeight: '600', marginBottom: '4px' }}>
           {dragActive ? 'Drop PDFs here' : 'Drag & drop GR PDFs here'}
@@ -217,7 +218,9 @@ export default function Upload() {
                 color: q.status === 'done' ? '#4ADE80' : q.status === 'failed' ? '#EF4444' : '#FACC15',
                 fontFamily: 'monospace',
               }}>
-                {q.status === 'uploading' ? '⏳ ' : q.status === 'done' ? '✓ ' : '✕ '}
+                {/* No prefix while in flight — q.message already reads
+                    'Uploading…', so the row is never blank. */}
+                {q.status === 'done' ? '✓ ' : q.status === 'failed' ? '✕ ' : ''}
                 {q.message}
               </span>
             </div>
@@ -248,7 +251,7 @@ export default function Upload() {
               padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', overflow: 'hidden' }}>
-                <span style={{ fontSize: '1.2rem', flexShrink: 0 }}>📄</span>
+                <span style={{ fontSize: '1.2rem', flexShrink: 0 }}><FileText size={18} /></span>
                 <div style={{ overflow: 'hidden' }}>
                   <div style={{
                     color: '#E8EAF0', fontSize: '0.85rem', fontWeight: '600',
@@ -280,7 +283,7 @@ export default function Upload() {
                   }}
                   title="Delete file"
                 >
-                  🗑️
+                  <Trash2 size={15} />
                 </button>
               </div>
             </div>

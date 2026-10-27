@@ -38,15 +38,26 @@ async def fetch_graph(
             "built": true,
             "built_at": "2025-07-05T...",
             "nodes": [
-                {"id": "GR_2024_transfer", "label": "GR_2024_transfer", "filename": "GR_2024_transfer.pdf"},
+                {
+                    "id": "GR_2024_transfer.pdf",   <- the source_file
+                    "label": "GR_2024_transfer",    <- the stem
+                    "filename": "GR_2024_transfer.pdf",
+                    "gr_number": "मराग्रं-2025/प्र.क्र.58",
+                    "doc_date": "2026-08-14",       <- or null
+                    "subject": "...",
+                    "resolved": true               <- false for "ext:" nodes
+                },
                 ...
             ],
             "edges": [
                 {
-                    "source": "GR_2024_transfer",
-                    "target": "GR_2021_transfer",
+                    "source": "GR_2024_transfer.pdf",
+                    "target": "GR_2021_transfer.pdf",
                     "relation": "supersedes",
-                    "snippet": "...text evidence..."
+                    "ref_index": 2,
+                    "match_reason": "strong_key",   <- or "date_and_number", or ""
+                    "ambiguous": false,
+                    "evidence": "...text evidence..."
                 },
                 ...
             ],
@@ -55,28 +66,57 @@ async def fetch_graph(
                 "total_edges": 3,
                 "supersedes_count": 2,
                 "amends_count": 1,
-                "refers_to_count": 0
+                "refers_to_count": 0,
+                "unknown_targets": 0,
+                "references_count": 0,
+                "resolved_nodes": 4,
+                "external_nodes": 1,
+                "ambiguous_edges": 0,
+                "unresolved_edges": 1
             }
         }
+
+    Every pre-existing key is still here. Nodes and edges carry the added
+    fields documented above, and the graph is read from the JSON snapshot
+    when MongoDB holds no graph — see core.gr_graph.get_graph().
     """
     graph = await get_graph()
 
-    # Compute edge type breakdown for frontend stats display
+    nodes = graph.get("nodes", [])
     edges = graph.get("edges", [])
+
+    # .get() throughout rather than e["relation"]: a graph written by an
+    # older build has no ref_index or resolved, and a stats endpoint that
+    # raises KeyError on last week's data is worse than one that counts a
+    # missing field as absent.
+    def count_relation(name):
+        return sum(1 for e in edges if e.get("relation") == name)
+
     stats = {
-        "total_nodes":     len(graph.get("nodes", [])),
-        "total_edges":     len(edges),
-        "supersedes_count": sum(1 for e in edges if e["relation"] == "supersedes"),
-        "amends_count":     sum(1 for e in edges if e["relation"] == "amends"),
-        "refers_to_count":  sum(1 for e in edges if e["relation"] == "refers_to"),
+        # ── pre-existing keys, unchanged ──────────────────
+        "total_nodes":      len(nodes),
+        "total_edges":      len(edges),
+        "supersedes_count": count_relation("supersedes"),
+        "amends_count":     count_relation("amends"),
+        # Kept for the frontends already reading it. The current builder
+        # labels a plain citation "references"; "refers_to" was the old
+        # value and still counts if an older graph is being served.
+        "refers_to_count":  count_relation("refers_to"),
         "unknown_targets":  sum(1 for e in edges if e.get("target") == "Unknown"),
+
+        # ── added ─────────────────────────────────────────
+        "references_count": count_relation("references"),
+        "resolved_nodes":   sum(1 for n in nodes if n.get("resolved")),
+        "external_nodes":   sum(1 for n in nodes if not n.get("resolved")),
+        "ambiguous_edges":  sum(1 for e in edges if e.get("ambiguous")),
+        "unresolved_edges": sum(1 for e in edges if not e.get("match_reason")),
     }
 
     return {
         "success":  True,
         "built":    graph.get("built", False),
         "built_at": graph.get("built_at", ""),
-        "nodes":    graph.get("nodes", []),
+        "nodes":    nodes,
         "edges":    edges,
         "stats":    stats,
     }
